@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/main.css';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
@@ -39,7 +38,7 @@ import Footer from '../components/Footer.astro';
   (function () {
     function initNavScroll() {
       const nav = document.getElementById('mainNav');
-      if (!nav) return;
+      if (!nav || nav.getAttribute('data-nav-variant') !== 'hero') return;
       const onScroll = () => {
         if (window.scrollY > 60) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');

@@ -1,36 +1,60 @@
 ---
 ---
-  <!-- ═══ GALLERY ════════════════════════════════════════════════ -->
-  <section id="gallery">
-    <div class="gallery-intro">
-      <h2>A Taste of What <em>We Create</em></h2>
-      <a href="#">View Full Gallery</a>
+  <section id="gallery" class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
+    <div class="gallery-intro mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <h2 class="max-w-[380px] font-serif text-[clamp(28px,3vw,42px)] font-light leading-snug text-dark-brown">
+        A Taste of What <em class="italic text-dark-red">We Create</em>
+      </h2>
+      <a
+        href="#"
+        class="flex items-center gap-2.5 font-body text-[11px] tracking-[0.25em] text-dark-red uppercase"
+        >View Full Gallery</a
+      >
     </div>
-    <div class="gallery-grid">
-      <div class="g-item">
-        <div class="g-item-bg g-item-bg-1" style="height:100%"></div>
+    <div
+      class="grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-[260px_260px]"
+    >
+      <div
+        class="g-item relative min-h-[280px] overflow-hidden bg-[var(--bg-gallery-tile)] md:col-span-2 lg:col-span-1 lg:row-span-2 lg:min-h-0"
+      >
+        <div class="g-item-bg g-item-bg-1 h-full min-h-[inherit] w-full"></div>
         <div class="g-item-overlay"></div>
-        <span class="g-item-tag">Wedding Feast</span>
+        <span
+          class="absolute bottom-4 left-[18px] font-body text-[10px] tracking-[0.2em] text-cream/60 uppercase"
+          >Wedding Feast</span
+        >
       </div>
-      <div class="g-item">
-        <div class="g-item-bg g-item-bg-2" style="height:100%"></div>
+      <div class="g-item relative min-h-[200px] overflow-hidden bg-[var(--bg-gallery-tile)] lg:min-h-0">
+        <div class="g-item-bg g-item-bg-2 h-full w-full"></div>
         <div class="g-item-overlay"></div>
-        <span class="g-item-tag">Artisan Plating</span>
+        <span
+          class="absolute bottom-4 left-[18px] font-body text-[10px] tracking-[0.2em] text-cream/60 uppercase"
+          >Artisan Plating</span
+        >
       </div>
-      <div class="g-item">
-        <div class="g-item-bg g-item-bg-3" style="height:100%"></div>
+      <div class="g-item relative min-h-[200px] overflow-hidden bg-[var(--bg-gallery-tile)] lg:min-h-0">
+        <div class="g-item-bg g-item-bg-3 h-full w-full"></div>
         <div class="g-item-overlay"></div>
-        <span class="g-item-tag">Live Station</span>
+        <span
+          class="absolute bottom-4 left-[18px] font-body text-[10px] tracking-[0.2em] text-cream/60 uppercase"
+          >Live Station</span
+        >
       </div>
-      <div class="g-item">
-        <div class="g-item-bg g-item-bg-4" style="height:100%"></div>
+      <div class="g-item relative min-h-[200px] overflow-hidden bg-[var(--bg-gallery-tile)] lg:min-h-0">
+        <div class="g-item-bg g-item-bg-4 h-full w-full"></div>
         <div class="g-item-overlay"></div>
-        <span class="g-item-tag">Corporate Event</span>
+        <span
+          class="absolute bottom-4 left-[18px] font-body text-[10px] tracking-[0.2em] text-cream/60 uppercase"
+          >Corporate Event</span
+        >
       </div>
-      <div class="g-item">
-        <div class="g-item-bg g-item-bg-5" style="height:100%"></div>
+      <div class="g-item relative min-h-[200px] overflow-hidden bg-[var(--bg-gallery-tile)] lg:min-h-0">
+        <div class="g-item-bg g-item-bg-5 h-full w-full"></div>
         <div class="g-item-overlay"></div>
-        <span class="g-item-tag">Private Dining</span>
+        <span
+          class="absolute bottom-4 left-[18px] font-body text-[10px] tracking-[0.2em] text-cream/60 uppercase"
+          >Private Dining</span
+        >
       </div>
     </div>
   </section>

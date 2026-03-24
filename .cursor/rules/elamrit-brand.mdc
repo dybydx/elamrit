@@ -12,7 +12,7 @@ Luxury catering / “Luxe Feast”: warm, gentle, romantic, light and inviting. 
 
 ## Color palette (exact hex only)
 
-Use CSS variables in `src/styles/main.css` and `src/styles/about.css` when editing those files; elsewhere match these values.
+Use CSS variables in `src/styles/app.css` (`:root` and `@theme`) when editing global tokens; elsewhere match these values.
 
 | Role | Hex | Token in CSS |
 |------|-----|----------------|

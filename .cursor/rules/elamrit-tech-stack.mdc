@@ -1,0 +1,29 @@
+---
+description: Elamrit — Astro stack, project layout, and coding conventions
+alwaysApply: true
+---
+
+# Tech stack
+
+- **Framework:** Astro 5, **output:** static (`astro build` → `dist/`). No SSR/API routes unless explicitly added.
+- **Language:** TypeScript where Astro supports it (`src/env.d.ts`, `astro.config.mjs`). Prefer `.astro` + small vanilla client scripts over adding React/Vue unless the project adopts them.
+- **Styling:** Tailwind CSS v4 via [`@tailwindcss/vite`](astro.config.mjs). Global entry [`src/styles/app.css`](src/styles/app.css) (imported from [`BaseLayout.astro`](src/layouts/BaseLayout.astro)): `@import "tailwindcss"`, `@theme` tokens, and a small block for non-utility patterns (keyframes, nav dropdown, hero overlay, etc.). Do not duplicate brand tokens—follow [elamrit-brand.mdc](elamrit-brand.mdc).
+- **Assets:** Files that must keep stable URLs (video, favicons, legacy static HTML) go in [`public/`](public/) and are referenced from the site root (e.g. `/videos/...`).
+
+# Project layout
+
+| Path | Purpose |
+|------|---------|
+| `src/pages/` | Routes (`index.astro` → `/`, `about.astro` → `/about`). |
+| `src/layouts/` | Shared document shell (e.g. `BaseLayout.astro`). |
+| `src/components/` | Reusable fragments; **PascalCase** names (`Nav.astro`, `Hero.astro`). |
+| `src/styles/` | Global styles (`app.css`: Tailwind + complex CSS). |
+| `public/` | Unprocessed static files copied to `dist/` as-is. |
+
+# Coding conventions
+
+- **Composition:** Prefer importing components in pages/layouts over runtime `fetch()` of HTML partials.
+- **Client JS:** Use `<script is:inline>` only when the DOM or `window` globals must match existing markup (e.g. hero mute, nav scroll). Avoid large inline scripts; extract to a small module under `src/` if logic grows.
+- **Links:** Internal routes use site-root paths: `/`, `/about`, `/#section`, `/about#section`. Fix relative `.html` links when touching nav/footer.
+- **Config:** [`astro.config.mjs`](astro.config.mjs) — keep `site` accurate for production when URLs matter (canonicals, future sitemap).
+- **Scope:** Change only files needed for the task; match existing naming and import style. Do not add unsolicited markdown docs or start the dev server unless the user asks.

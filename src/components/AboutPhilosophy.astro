@@ -1,43 +1,95 @@
 ---
 ---
-  <!-- ═══ PHILOSOPHY ════════════════════════════════════════════ -->
-  <section id="philosophy">
-    <div class="phil-header">
-      <h2>The Elamrit <em>Philosophy</em></h2>
-      <p>Three principles govern everything we create — from the smallest canapé to a 1000-guest wedding feast. These are not rules we follow; they are the instincts we have cultivated over years of obsessive craft.</p>
+  <section id="philosophy" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        The Elamrit <em class="italic text-dark-red">Philosophy</em>
+      </h2>
+      <p class="font-body text-lg leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Three principles govern everything we create — from the smallest canapé to a 1000-guest wedding feast. These are
+        not rules we follow; they are the instincts we have cultivated over years of obsessive craft.
+      </p>
     </div>
-    <div class="phil-pillars">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z"/>
-          <path d="M22 16V32M16 24L22 16L28 24"/>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <div
+        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
+      >
+        <div
+          class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
+        >
+          01
+        </div>
+        <svg
+          class="mb-7 h-11 w-11 text-gray-orange"
+          viewBox="0 0 44 44"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+        >
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z"></path>
+          <path d="M22 16V32M16 24L22 16L28 24"></path>
         </svg>
-        <h3 class="pillar-title">Craft Without Compromise</h3>
-        <div class="pillar-divider"></div>
-        <p class="pillar-text">Every dish is a deliberate act. We source the finest seasonal produce, work with master chefs trained in Indian and international culinary traditions, and refuse to let scale diminish quality. Whether we are serving 20 or 2,000, the standard does not move.</p>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Craft Without Compromise</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-base leading-[1.8] text-[var(--text-muted-on-cream)]">
+          Every dish is a deliberate act. We source the finest seasonal produce, work with master chefs trained in Indian
+          and international culinary traditions, and refuse to let scale diminish quality. Whether we are serving 20 or
+          2,000, the standard does not move.
+        </p>
       </div>
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="22" cy="22" r="16"/>
-          <path d="M22 8v8M22 28v8M8 22h8M28 22h8"/>
-          <circle cx="22" cy="22" r="4"/>
+      <div
+        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
+      >
+        <div
+          class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
+        >
+          02
+        </div>
+        <svg
+          class="mb-7 h-11 w-11 text-gray-orange"
+          viewBox="0 0 44 44"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+        >
+          <circle cx="22" cy="22" r="16"></circle>
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8"></path>
+          <circle cx="22" cy="22" r="4"></circle>
         </svg>
-        <h3 class="pillar-title">Experience by Design</h3>
-        <div class="pillar-divider"></div>
-        <p class="pillar-text">A feast is more than food — it is theatre. We design the entire sensory arc of your event: the arrival welcome, the live counter choreography, the tablescapes, the dessert reveal. Every moment is choreographed to create wonder and delight.</p>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Experience by Design</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-base leading-[1.8] text-[var(--text-muted-on-cream)]">
+          A feast is more than food — it is theatre. We design the entire sensory arc of your event: the arrival
+          welcome, the live counter choreography, the tablescapes, the dessert reveal. Every moment is choreographed to
+          create wonder and delight.
+        </p>
       </div>
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
-          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34"/>
-          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28"/>
-          <line x1="10" y1="34" x2="34" y2="34"/>
+      <div
+        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
+      >
+        <div
+          class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
+        >
+          03
+        </div>
+        <svg
+          class="mb-7 h-11 w-11 text-gray-orange"
+          viewBox="0 0 44 44"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+        >
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34"></path>
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28"></path>
+          <line x1="10" y1="34" x2="34" y2="34"></line>
         </svg>
-        <h3 class="pillar-title">Rooted in Tradition</h3>
-        <div class="pillar-divider"></div>
-        <p class="pillar-text">India's culinary heritage is breathtaking in its breadth and depth. We celebrate it — drawing from regional traditions, family recipes, and cultural rituals to ensure every meal feels authentic to the occasion and resonant with the guests it serves.</p>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Rooted in Tradition</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-base leading-[1.8] text-[var(--text-muted-on-cream)]">
+          India's culinary heritage is breathtaking in its breadth and depth. We celebrate it — drawing from regional
+          traditions, family recipes, and cultural rituals to ensure every meal feels authentic to the occasion and
+          resonant with the guests it serves.
+        </p>
       </div>
     </div>
   </section>

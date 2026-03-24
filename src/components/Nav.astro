@@ -1,7 +1,27 @@
 ---
+/**
+ * `hero` — over full-bleed hero (e.g. video): transparent until scroll adds `.scrolled`.
+ * `solid` — interior pages: same mega-menu as home, bar always “scrolled” (cream/blush).
+ */
+interface Props {
+  variant?: 'hero' | 'solid';
+}
+
+const { variant = 'hero' } = Astro.props;
+const isSolid = variant === 'solid';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const onAbout = path === '/about';
+
+/* In-page anchors only work on home; from other routes, send users to home sections. */
+const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
 ---
-  <!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
-  <nav id="mainNav">
+
+  <nav
+    id="mainNav"
+    class:list={[{ 'nav-solid': isSolid }]}
+    data-nav-variant={variant}
+  >
     <a href="/" class="nav-logo">
       <svg viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="30" cy="14" rx="6" ry="10" stroke="currentColor" stroke-width="1.5" />
@@ -16,14 +36,12 @@
         <path d="M30 52 C24 57 16 61 8 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         <path d="M30 52 C36 57 44 61 52 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
-      <div class="nav-logo-text">
+      <div class="nav-logo-text flex flex-col gap-px">
         <span class="nav-logo-name">ELAMRIT</span>
         <span class="nav-logo-tag">Luxe Feast</span>
       </div>
     </a>
     <div class="nav-links">
-
-      <!-- Services -->
       <div class="nav-item has-dropdown">
         <a href="/services">Services</a>
         <div class="dropdown-menu dropdown-mega">
@@ -44,7 +62,6 @@
         </div>
       </div>
 
-      <!-- Menus -->
       <div class="nav-item has-dropdown">
         <a href="/menus">Menus</a>
         <div class="dropdown-menu">
@@ -59,7 +76,6 @@
         </div>
       </div>
 
-      <!-- Locations -->
       <div class="nav-item has-dropdown">
         <a href="/catering-in">Locations</a>
         <div class="dropdown-menu">
@@ -75,14 +91,12 @@
         </div>
       </div>
 
-      <!-- Gallery -->
       <div class="nav-item">
         <a href="/gallery">Gallery</a>
       </div>
 
-      <!-- About -->
-      <div class="nav-item has-dropdown">
-        <a href="/about">About</a>
+      <div class:list={['nav-item', 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
+        <a href="/about" aria-current={onAbout ? 'page' : undefined}>About</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Elamrit</span>
           <a href="/about#story">Our Story</a>
@@ -93,9 +107,8 @@
         </div>
       </div>
 
-      <!-- Food Junction -->
       <div class="nav-item has-dropdown">
-        <a href="#food-junction">Food Junction</a>
+        <a href={foodJunctionHref}>Food Junction</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Our Sister Brand</span>
           <a href="/food-junction">About Food Junction</a>
@@ -104,7 +117,6 @@
           <a href="/food-junction/get-quote">Get a Quote</a>
         </div>
       </div>
-
     </div>
     <a href="#" class="nav-cta">Get a Quote</a>
   </nav>
