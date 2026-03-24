@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/main.css';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import BrandIntro from '../components/BrandIntro.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import Experience from '../components/Experience.astro';
+import SectionBreak from '../components/SectionBreak.astro';
+import FoodJunction from '../components/FoodJunction.astro';
+import Clients from '../components/Clients.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Elamrit — Luxe Feast | Premium Catering Pune & Pan India"
+  description="Elamrit crafts unforgettable culinary experiences for weddings, corporate events, and social celebrations. Premium luxury catering across Pune and Pan India."
+>
+  <Nav />
+  <Hero />
+  <Marquee />
+  <BrandIntro />
+  <Services />
+  <Gallery />
+  <Experience />
+  <SectionBreak />
+  <FoodJunction />
+  <Clients />
+  <Testimonials />
+  <CtaSection />
+  <Footer />
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    function initNavScroll() {
+      const nav = document.getElementById('mainNav');
+      if (!nav) return;
+      const onScroll = () => {
+        if (window.scrollY > 60) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    window.toggleMute = function toggleMute() {
+      const video = document.getElementById('heroVideo');
+      const muteBtn = document.getElementById('muteBtn');
+      const iconMuted = document.getElementById('iconMuted');
+      const iconSound = document.getElementById('iconSound');
+      if (!video || !muteBtn || !iconMuted || !iconSound) return;
+      video.muted = !video.muted;
+      if (video.muted) {
+        iconMuted.style.display = 'block';
+        iconSound.style.display = 'none';
+        muteBtn.classList.remove('unmuted');
+      } else {
+        iconMuted.style.display = 'none';
+        iconSound.style.display = 'block';
+        muteBtn.classList.add('unmuted');
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', initNavScroll);
+  })();
+</script>

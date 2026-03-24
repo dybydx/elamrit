@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/about.css';
+import AboutNav from '../components/AboutNav.astro';
+import AboutPageHero from '../components/AboutPageHero.astro';
+import AboutStory from '../components/AboutStory.astro';
+import AboutPhilosophy from '../components/AboutPhilosophy.astro';
+import AboutValuesStrip from '../components/AboutValuesStrip.astro';
+import AboutStats from '../components/AboutStats.astro';
+import AboutTeam from '../components/AboutTeam.astro';
+import AboutLocations from '../components/AboutLocations.astro';
+import AboutCta from '../components/AboutCta.astro';
+import AboutFooter from '../components/AboutFooter.astro';
+---
+
+<BaseLayout
+  title="About Elamrit — Our Story, Philosophy & Team"
+  description="Learn the story behind Elamrit Luxe Feast — the philosophy, the people, and the passion that drives premium catering across Pune and Pan India."
+>
+  <AboutNav />
+  <AboutPageHero />
+  <AboutStory />
+  <AboutPhilosophy />
+  <AboutValuesStrip />
+  <AboutStats />
+  <AboutTeam />
+  <AboutLocations />
+  <AboutCta />
+  <AboutFooter />
+</BaseLayout>
