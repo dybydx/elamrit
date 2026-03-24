@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elamrit — Website Sitemap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Garamond&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --dark-brown:   #24211f;
+      --dark-red:     #51030C;
+      --cream:        #fff8f0;
+      --green:        #b5c38d;
+      --gray-orange:  #bd9476;
+      --blush:        #d6b9ab;
+      --light-blush:  #f5e8e0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+      color: var(--dark-brown);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--dark-red);
+      color: var(--cream);
+      padding: 48px 60px 36px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .brand-lockup { display: flex; flex-direction: column; gap: 4px; }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .brand-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--blush);
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blush);
+      line-height: 2;
+    }
+    .header-meta strong { color: var(--cream); display: block; font-size: 14px; }
+
+    /* ── INTRO ── */
+    .intro {
+      background-color: var(--dark-brown);
+      color: var(--blush);
+      padding: 20px 60px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .intro span { opacity: 0.7; }
+    .intro span strong { color: var(--cream); opacity: 1; font-weight: 600; }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      padding: 40px 60px 8px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label .line {
+      flex: 1;
+      height: 1px;
+      background: var(--gray-orange);
+      opacity: 0.4;
+    }
+    .section-label h2 {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray-orange);
+      white-space: nowrap;
+    }
+
+    /* ── MAIN GRID ── */
+    .sitemap-grid {
+      padding: 8px 60px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      border: 1px solid rgba(81,3,12,0.15);
+      border-radius: 2px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .card.wide { grid-column: span 2; }
+    @media (max-width: 700px) { .card.wide { grid-column: span 1; } }
+
+    .card-header {
+      background-color: var(--dark-red);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-header h3 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cream);
+      font-weight: 400;
+    }
+    .card-header .url-badge {
+      font-size: 10px;
+      color: var(--blush);
+      letter-spacing: 1px;
+      background: rgba(255,248,240,0.12);
+      padding: 2px 8px;
+      border-radius: 1px;
+    }
+
+    .card-header.green-bg  { background-color: #3d5a2b; }
+    .card-header.gold-bg   { background-color: var(--gray-orange); }
+    .card-header.brown-bg  { background-color: var(--dark-brown); }
+    .card-header.blush-bg  { background-color: var(--blush); }
+    .card-header.blush-bg h3 { color: var(--dark-brown); }
+    .card-header.blush-bg .url-badge { color: var(--dark-brown); background: rgba(36,33,31,0.1); }
+
+    .card-body { padding: 0; }
+
+    /* ── PAGE ROW ── */
+    .page-row {
+      display: flex;
+      align-items: flex-start;
+      padding: 11px 18px;
+      border-bottom: 1px solid rgba(81,3,12,0.06);
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .page-row:last-child { border-bottom: none; }
+    .page-row:hover { background: var(--light-blush); }
+
+    .page-row .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dark-red);
+      flex-shrink: 0;
+      margin-top: 5px;
+      opacity: 0.5;
+    }
+    .page-row .dot.green { background: var(--green); }
+    .page-row .dot.gold  { background: var(--gray-orange); }
+    .page-row .dot.brown { background: var(--dark-brown); }
+    .page-row .dot.blush { background: var(--blush); }
+
+    .page-row .page-info { flex: 1; }
+    .page-row .page-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark-brown);
+      line-height: 1.3;
+      font-style: normal;
+    }
+    .page-row .page-url {
+      font-size: 10px;
+      letter-spacing: 0.8px;
+      color: var(--dark-red);
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+    .page-row .page-desc {
+      font-size: 12px;
+      color: #6b5f58;
+      margin-top: 3px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Sub-pages indent */
+    .sub-row {
+      padding-left: 36px;
+      background: rgba(255,248,240,0.5);
+    }
+    .sub-row .dot { opacity: 0.3; width: 5px; height: 5px; }
+
+    /* ── SEO BADGE ── */
+    .seo-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .badge {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 1px;
+    }
+    .badge.red    { background: rgba(81,3,12,0.1);  color: var(--dark-red); }
+    .badge.green  { background: rgba(181,195,141,0.25); color: #3d5a2b; }
+    .badge.gold   { background: rgba(189,148,118,0.2); color: #7a5230; }
+    .badge.blue   { background: rgba(100,130,180,0.15); color: #2a4a80; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-brown);
+      color: var(--blush);
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    footer .legend { display: flex; gap: 20px; flex-wrap: wrap; }
+    footer .legend-item { display: flex; align-items: center; gap: 6px; }
+    footer .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ── SUB-BRAND SECTION ── */
+    .subbrand-banner {
+      margin: 0 60px 0;
+      background: var(--dark-brown);
+      color: var(--cream);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-left: 4px solid var(--green);
+    }
+    .subbrand-banner .sb-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .subbrand-banner .sb-name {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--cream);
+    }
+    .subbrand-banner .sb-desc {
+      font-size: 12px;
+      color: var(--blush);
+      font-style: italic;
+      margin-left: auto;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand-lockup">
+    <div class="brand-name">Elamrit</div>
+    <div class="brand-tagline">Luxe Feast</div>
+  </div>
+  <div class="header-meta">
+    <strong>Website Sitemap</strong>
+    <span>Premium Catering · Pune · Pan India</span><br/>
+    <span>Target Market: Singapore</span><br/>
+    <span>Version 1.0 · March 2026</span>
+  </div>
+</header>
+
+<!-- INTRO STRIP -->
+<div class="intro">
+  <span><strong>Total Pages:</strong> 40+</span>
+  <span><strong>SEO Strategy:</strong> Location + Service + Event Type Keywords</span>
+  <span><strong>Sub-Brand:</strong> Food Junction Caterers (Affordable Catering)</span>
+  <span><strong>Target Geo:</strong> Pune · Pan India · Singapore</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 1 — CORE PAGES
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Core Pages</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <!-- HOME -->
+  <div class="card wide">
+    <div class="card-header">
+      <h3>Home</h3>
+      <span class="url-badge">/</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Homepage</div>
+          <div class="page-url">elamrit.com/</div>
+          <div class="page-desc">Hero section, brand story intro, service highlights, gallery preview, Food Junction CTA, testimonials, enquiry CTA</div>
+          <div class="seo-badges">
+            <span class="badge red">Primary Landing</span>
+            <span class="badge green">Luxury Catering Pune</span>
+            <span class="badge green">Best Caterers Pune</span>
+            <span class="badge gold">H1: Luxury Wedding & Event Catering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="card">
+    <div class="card-header brown-bg">
+      <h3>About Elamrit</h3>
+      <span class="url-badge">/about</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">About Us</div>
+          <div class="page-url">/about</div>
+          <div class="page-desc">Brand story, mission, premium positioning overview</div>
+          <div class="seo-badges"><span class="badge red">Elamrit Catering Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Our Story</div>
+          <div class="page-url">/about/our-story</div>
+          <div class="page-desc">Founders, origin, culinary philosophy, pan-India journey</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Our Philosophy</div>
+          <div class="page-url">/about/our-philosophy</div>
+          <div class="page-desc">Luxe Feast ethos — craft, elegance, experience</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Our Team</div>
+          <div class="page-url">/about/our-team</div>
+          <div class="page-desc">Executive chefs, event directors, culinary specialists</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Awards & Recognition</div>
+          <div class="page-url">/about/awards</div>
+          <div class="page-desc">Accolades, press features, industry recognitions</div>
+          <div class="seo-badges"><span class="badge green">Trust Signal</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="card">
+    <div class="card-header brown-bg">
+      <h3>Gallery</h3>
+      <span class="url-badge">/gallery</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Gallery Overview</div>
+          <div class="page-url">/gallery</div>
+          <div class="page-desc">Curated visual portfolio of events and cuisine</div>
+          <div class="seo-badges"><span class="badge green">Image SEO</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Events Gallery</div>
+          <div class="page-url">/gallery/events</div>
+          <div class="page-desc">Weddings, corporate events, social celebrations</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Food Photography</div>
+          <div class="page-url">/gallery/food</div>
+          <div class="page-desc">Plated dishes, live stations, dessert spreads</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Table Setup & Décor</div>
+          <div class="page-url">/gallery/setup-decor</div>
+          <div class="page-desc">Tablescapes, buffet setups, live counter presentations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 2 — SERVICES
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Services — SEO Core</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <!-- WEDDING CATERING -->
+  <div class="card wide">
+    <div class="card-header">
+      <h3>Wedding Catering</h3>
+      <span class="url-badge">/services/wedding-catering</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Wedding Catering Services</div>
+          <div class="page-url">/services/wedding-catering</div>
+          <div class="page-desc">Luxury wedding catering overview — menus, experience, consultation</div>
+          <div class="seo-badges">
+            <span class="badge red">Wedding Caterers Pune</span>
+            <span class="badge red">Luxury Wedding Catering India</span>
+            <span class="badge gold">High Search Volume</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Hindu Wedding Catering</div>
+          <div class="page-url">/services/wedding-catering/hindu-weddings</div>
+          <div class="page-desc">Traditional ceremonies — Vidhi, Haldi, Baraat, Reception</div>
+          <div class="seo-badges"><span class="badge red">Hindu Wedding Caterers</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Pre-Wedding Event Catering</div>
+          <div class="page-url">/services/wedding-catering/pre-wedding-events</div>
+          <div class="page-desc">Mehendi, Sangeet, Engagement parties, Cocktail nights</div>
+          <div class="seo-badges"><span class="badge red">Sangeet Catering Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Destination Wedding Catering</div>
+          <div class="page-url">/services/wedding-catering/destination-weddings</div>
+          <div class="page-desc">Pan-India travel catering for luxury destination weddings</div>
+          <div class="seo-badges"><span class="badge red">Destination Wedding Caterers India</span><span class="badge green">Pan India</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Multicultural & Fusion Weddings</div>
+          <div class="page-url">/services/wedding-catering/multicultural-weddings</div>
+          <div class="page-desc">Intercultural menus for diverse wedding celebrations</div>
+          <div class="seo-badges"><span class="badge blue">Singapore Relevance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPORATE CATERING -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Corporate Catering</h3>
+      <span class="url-badge">/services/corporate-catering</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Corporate Catering Services</div>
+          <div class="page-url">/services/corporate-catering</div>
+          <div class="page-desc">Premium catering for businesses, MNCs, conferences</div>
+          <div class="seo-badges"><span class="badge red">Corporate Caterers Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Corporate Events & Conferences</div>
+          <div class="page-url">/services/corporate-catering/events-conferences</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Product Launch Catering</div>
+          <div class="page-url">/services/corporate-catering/product-launches</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Business Lunch & Dinner</div>
+          <div class="page-url">/services/corporate-catering/business-dining</div>
+          <div class="page-desc">C-suite dining, investor events, boardroom catering</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Annual Day & Gala Dinners</div>
+          <div class="page-url">/services/corporate-catering/gala-dinners</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL EVENTS -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Social Event Catering</h3>
+      <span class="url-badge">/services/social-events</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Social Event Catering</div>
+          <div class="page-url">/services/social-events</div>
+          <div class="page-desc">Intimate gatherings to grand celebrations</div>
+          <div class="seo-badges"><span class="badge red">Party Caterers Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Birthday Celebration Catering</div>
+          <div class="page-url">/services/social-events/birthday-catering</div>
+          <div class="page-desc">Milestone birthdays, luxury private celebrations</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Anniversary & Milestone Events</div>
+          <div class="page-url">/services/social-events/anniversary-catering</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Cocktail Parties & Sundowners</div>
+          <div class="page-url">/services/social-events/cocktail-parties</div>
+          <div class="page-desc">Canapés, live stations, cocktail menus</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">House Warming & Puja Events</div>
+          <div class="page-url">/services/social-events/house-warming-puja</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECIALITY SERVICES -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Speciality Services</h3>
+      <span class="url-badge">/services</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Private Dining Experience</div>
+          <div class="page-url">/services/private-dining</div>
+          <div class="page-desc">Bespoke in-home fine dining, intimate luxury experiences</div>
+          <div class="seo-badges"><span class="badge blue">Singapore Relevance</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Live Cooking Stations</div>
+          <div class="page-url">/services/live-cooking-stations</div>
+          <div class="page-desc">Chaat, pasta, carving, dessert, fusion live counters</div>
+          <div class="seo-badges"><span class="badge red">Live Food Stations</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Outdoor & Venue Catering</div>
+          <div class="page-url">/services/outdoor-catering</div>
+          <div class="page-desc">Farmhouses, resorts, banquet halls, open-air events</div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot"></div>
+        <div class="page-info">
+          <div class="page-name">Pan India Catering</div>
+          <div class="page-url">/services/pan-india-catering</div>
+          <div class="page-desc">Logistics, team deployment, quality assurance across India</div>
+          <div class="seo-badges"><span class="badge red">Pan India Caterers</span><span class="badge green">National Reach</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 3 — MENUS
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Menus — Content Depth & SEO</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <div class="card wide">
+    <div class="card-header gold-bg">
+      <h3>Menu Pages</h3>
+      <span class="url-badge">/menus</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Menu Overview</div>
+          <div class="page-url">/menus</div>
+          <div class="page-desc">Curated menu categories, seasonal specials, custom menu builder CTA</div>
+          <div class="seo-badges"><span class="badge gold">Catering Menu India</span><span class="badge red">Luxury Catering Menu</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Indian Cuisine</div>
+          <div class="page-url">/menus/indian-cuisine</div>
+          <div class="page-desc">North Indian, South Indian, Rajasthani, Bengali, street food — wedding & event menus</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">International Cuisine</div>
+          <div class="page-url">/menus/international-cuisine</div>
+          <div class="page-desc">Continental, Asian, Mediterranean, Middle Eastern, Pan-Asian</div>
+          <div class="seo-badges"><span class="badge blue">Singapore Relevance</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Fusion & Modern Indian</div>
+          <div class="page-url">/menus/fusion-cuisine</div>
+          <div class="page-desc">Indo-Western, progressive plating, molecular gastronomy elements</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Desserts & Confectionery</div>
+          <div class="page-url">/menus/desserts</div>
+          <div class="page-desc">Artisan desserts, mithai, patisserie, live dessert stations, wedding cakes</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Beverages & Mocktails</div>
+          <div class="page-url">/menus/beverages</div>
+          <div class="page-desc">Welcome drinks, mocktail bars, signature beverages, traditional sharbats</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot gold"></div>
+        <div class="page-info">
+          <div class="page-name">Custom Menu Builder</div>
+          <div class="page-url">/menus/custom-menu</div>
+          <div class="page-desc">Interactive tool for guests to build bespoke event menus</div>
+          <div class="seo-badges"><span class="badge green">Conversion Tool</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 4 — LOCATIONS (LOCAL SEO)
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Location Pages — Local SEO</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <div class="card wide">
+    <div class="card-header green-bg">
+      <h3>Location-Based Pages</h3>
+      <span class="url-badge">/catering-in</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Catering in Pune — Headquarters</div>
+          <div class="page-url">/catering-in/pune</div>
+          <div class="page-desc">Premium event & wedding catering in Pune — full service overview</div>
+          <div class="seo-badges">
+            <span class="badge red">Caterers in Pune</span>
+            <span class="badge red">Wedding Caterers Pune</span>
+            <span class="badge green">Primary Location Page</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Wedding Catering Pune</div>
+          <div class="page-url">/catering-in/pune/wedding-catering</div>
+          <div class="page-desc">Dedicated page for Pune wedding catering — venues, galleries, FAQs</div>
+          <div class="seo-badges"><span class="badge red">Wedding Catering Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Catering in Mumbai</div>
+          <div class="page-url">/catering-in/mumbai</div>
+          <div class="page-desc">Luxury catering services for Mumbai events and weddings</div>
+          <div class="seo-badges"><span class="badge red">Caterers in Mumbai</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Catering in Delhi NCR</div>
+          <div class="page-url">/catering-in/delhi-ncr</div>
+          <div class="seo-badges"><span class="badge red">Luxury Caterers Delhi</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Catering in Bangalore</div>
+          <div class="page-url">/catering-in/bangalore</div>
+          <div class="seo-badges"><span class="badge red">Event Caterers Bangalore</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Catering in Hyderabad</div>
+          <div class="page-url">/catering-in/hyderabad</div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Pan India Catering</div>
+          <div class="page-url">/catering-in/pan-india</div>
+          <div class="page-desc">Nationwide event catering — how we deliver Luxe Feast across India</div>
+          <div class="seo-badges"><span class="badge red">Pan India Wedding Caterers</span><span class="badge green">National SEO</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Singapore — Coming Soon</div>
+          <div class="page-url">/catering-in/singapore</div>
+          <div class="page-desc">Luxury Indian catering for Singapore events — waitlist & enquiry page</div>
+          <div class="seo-badges">
+            <span class="badge blue">Indian Caterers Singapore</span>
+            <span class="badge blue">Luxury Catering Singapore</span>
+            <span class="badge green">Future Market</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 5 — FOOD JUNCTION SUB-BRAND
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Food Junction Caterers — Sub-Brand</h2>
+  <div class="line"></div>
+</div>
+
+<div class="subbrand-banner">
+  <div>
+    <div class="sb-title">Part of the Elamrit Family</div>
+    <div class="sb-name">Food Junction Caterers</div>
+  </div>
+  <div class="sb-desc">Affordable catering without compromising on quality<br/>Separate section within elamrit.com or foodjunctioncaterers.com</div>
+</div>
+
+<div class="sitemap-grid" style="margin-top:20px">
+
+  <div class="card wide">
+    <div class="card-header green-bg">
+      <h3>Food Junction Pages</h3>
+      <span class="url-badge">/food-junction</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Food Junction — Home / About</div>
+          <div class="page-url">/food-junction</div>
+          <div class="page-desc">Intro to the affordable catering sub-brand, link to Elamrit parent brand</div>
+          <div class="seo-badges">
+            <span class="badge green">Affordable Caterers Pune</span>
+            <span class="badge green">Budget Catering Pune</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Services</div>
+          <div class="page-url">/food-junction/services</div>
+          <div class="page-desc">Corporate tiffin, office catering, budget weddings, small events</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Menus & Packages</div>
+          <div class="page-url">/food-junction/menus</div>
+          <div class="page-desc">Affordable menu packages with transparent pricing</div>
+          <div class="seo-badges"><span class="badge green">Catering Packages Pune</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Testimonials</div>
+          <div class="page-url">/food-junction/testimonials</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot green"></div>
+        <div class="page-info">
+          <div class="page-name">Get a Quote</div>
+          <div class="page-url">/food-junction/get-a-quote</div>
+          <div class="page-desc">Quick quote form — guest count, event type, date, location</div>
+          <div class="seo-badges"><span class="badge green">Conversion Page</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 6 — CONTENT / BLOG
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>The Elamrit Journal — Content & SEO</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <div class="card wide">
+    <div class="card-header blush-bg">
+      <h3>Journal / Blog</h3>
+      <span class="url-badge">/journal</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot blush"></div>
+        <div class="page-info">
+          <div class="page-name">The Elamrit Journal</div>
+          <div class="page-url">/journal</div>
+          <div class="page-desc">Stories from the kitchen, event recaps, culinary inspiration — content marketing hub</div>
+          <div class="seo-badges"><span class="badge red">Long-Tail SEO</span><span class="badge green">Content Marketing</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot blush"></div>
+        <div class="page-info">
+          <div class="page-name">Wedding Catering Tips & Trends</div>
+          <div class="page-url">/journal/wedding-catering</div>
+          <div class="page-desc">Articles: "How to Choose a Caterer for Your Pune Wedding", "2025 Wedding Menu Trends"</div>
+          <div class="seo-badges"><span class="badge red">Wedding Catering Advice</span></div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot blush"></div>
+        <div class="page-info">
+          <div class="page-name">Event Planning Guides</div>
+          <div class="page-url">/journal/event-planning</div>
+          <div class="page-desc">"Corporate Event Catering Checklist", "Live Station Ideas for Weddings"</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot blush"></div>
+        <div class="page-info">
+          <div class="page-name">Culinary Trends</div>
+          <div class="page-url">/journal/culinary-trends</div>
+          <div class="page-desc">"Luxury Catering Trends India 2025", "Fusion Wedding Menus Rising"</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot blush"></div>
+        <div class="page-info">
+          <div class="page-name">Behind the Feast</div>
+          <div class="page-url">/journal/behind-the-feast</div>
+          <div class="page-desc">Kitchen stories, chef spotlights, event day recaps — brand storytelling</div>
+          <div class="seo-badges"><span class="badge green">Brand Authority</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 7 — CONVERSION & UTILITY
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>Conversion & Utility Pages</h2>
+  <div class="line"></div>
+</div>
+
+<div class="sitemap-grid">
+
+  <div class="card">
+    <div class="card-header brown-bg">
+      <h3>Contact & Enquiry</h3>
+      <span class="url-badge">/contact</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Contact Us</div>
+          <div class="page-url">/contact</div>
+          <div class="page-desc">Phone, WhatsApp, address, Google Maps embed, general enquiry form</div>
+        </div>
+      </div>
+      <div class="page-row sub-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Get a Quote</div>
+          <div class="page-url">/contact/get-a-quote</div>
+          <div class="page-desc">Event type, date, guest count, location, menu preferences</div>
+          <div class="seo-badges"><span class="badge green">Primary CTA</span><span class="badge red">Conversion Page</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header brown-bg">
+      <h3>Testimonials</h3>
+      <span class="url-badge">/testimonials</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Client Testimonials</div>
+          <div class="page-url">/testimonials</div>
+          <div class="page-desc">Video testimonials, written reviews, notable event clients — trust signals</div>
+          <div class="seo-badges"><span class="badge green">Trust & Credibility</span><span class="badge red">Social Proof</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header brown-bg">
+      <h3>Legal & Utility</h3>
+      <span class="url-badge">Footer Pages</span>
+    </div>
+    <div class="card-body">
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Privacy Policy</div>
+          <div class="page-url">/privacy-policy</div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Terms & Conditions</div>
+          <div class="page-url">/terms</div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">Sitemap (XML)</div>
+          <div class="page-url">/sitemap.xml</div>
+          <div class="page-desc">Auto-generated XML sitemap for Google Search Console submission</div>
+          <div class="seo-badges"><span class="badge green">Technical SEO</span></div>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="dot brown"></div>
+        <div class="page-info">
+          <div class="page-name">404 — Page Not Found</div>
+          <div class="page-url">/404</div>
+          <div class="page-desc">Branded error page with navigation back to key sections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     SEO STRATEGY NOTE
+══════════════════════════════════════════ -->
+<div class="section-label">
+  <div class="line"></div>
+  <h2>SEO Strategy Notes</h2>
+  <div class="line"></div>
+</div>
+
+<div style="padding: 0 60px 60px; display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:20px;">
+
+  <div style="background:var(--dark-red);color:var(--cream);padding:24px;border-radius:2px;">
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blush);margin-bottom:12px;">Keyword Strategy</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.8;color:var(--cream);">
+      <strong style="display:block;margin-bottom:6px;font-size:15px;">Primary Keywords</strong>
+      Luxury caterers Pune · Wedding caterers Pune · Premium catering India · Elamrit Luxe Feast
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.8;margin-top:14px;color:var(--blush);">
+      <strong style="display:block;margin-bottom:6px;font-size:15px;color:var(--cream);">Secondary Keywords</strong>
+      Corporate catering Pune · Event catering Mumbai · Pan India wedding caterers · Indian caterers Singapore
+    </div>
+  </div>
+
+  <div style="background:var(--dark-brown);color:var(--cream);padding:24px;border-radius:2px;">
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--blush);margin-bottom:12px;">Technical SEO</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:2;color:var(--blush);">
+      ✦ Schema markup: LocalBusiness + FoodEstablishment<br/>
+      ✦ Google Business Profile — Pune HQ<br/>
+      ✦ XML sitemap → Google Search Console<br/>
+      ✦ robots.txt configured<br/>
+      ✦ Canonical URLs on all pages<br/>
+      ✦ Open Graph tags (social sharing)<br/>
+      ✦ Core Web Vitals optimised
+    </div>
+  </div>
+
+  <div style="background:var(--light-blush);color:var(--dark-brown);padding:24px;border-radius:2px;border:1px solid rgba(81,3,12,0.15);">
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dark-red);margin-bottom:12px;">Singapore Readiness</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:2;color:var(--dark-brown);">
+      ✦ /catering-in/singapore — launch-ready page<br/>
+      ✦ Waitlist capture form<br/>
+      ✦ International menus highlighted<br/>
+      ✦ Multicultural wedding content<br/>
+      ✦ Hreflang tags when live (en-SG)<br/>
+      ✦ Singapore keyword seeding from Day 1
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-size:13px;letter-spacing:2px;color:var(--blush);">
+    ELAMRIT · LUXE FEAST &nbsp;·&nbsp; Sitemap v1.0
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--dark-red)"></div>
+      <span>Elamrit Core</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#3d5a2b"></div>
+      <span>Location / Food Junction</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--gray-orange)"></div>
+      <span>Menus</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--dark-brown)"></div>
+      <span>Utility / About</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--blush)"></div>
+      <span>Journal / Blog</span>
+    </div>
+  </div>
+  <div style="text-align:right;">
+    <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(214,185,171,0.5);margin-bottom:4px;">Designed &amp; Developed by</div>
+    <div style="font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);font-weight:600;">WebWeaver Labs</div>
+    <div style="font-size:10px;letter-spacing:1.5px;color:var(--blush);margin-top:2px;">webweaverlabs.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

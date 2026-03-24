@@ -1,0 +1,89 @@
+  <!-- ═══ HERO — FULL-SCREEN VIDEO ══════════════════════════════ -->
+  <section id="hero">
+
+    <!-- ─── VIDEO BACKGROUND ─────────────────────────────────── -->
+    <div class="hero-video-bg">
+      <!--
+        ╔══════════════════════════════════════════════════════════════╗
+        ║  VIDEO PLACEHOLDER                                           ║
+        ║  To add your reel, replace the `src` attribute below:       ║
+        ║    • Self-hosted:  src="videos/hero-reel.mp4"               ║
+        ║    • External CDN: src="https://your-cdn.com/reel.mp4"      ║
+        ║                                                              ║
+        ║  Recommended spec: 1920×1080, H.264, 15–30 sec loop, <15MB  ║
+        ║  The `poster` image is shown until the video loads.         ║
+        ╚══════════════════════════════════════════════════════════════╝
+      -->
+      <video id="heroVideo" autoplay loop muted playsinline
+        poster="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1920&q=85"
+        src="videos/hero-reel.mp4">
+      </video>
+    </div>
+
+    <!-- ─── OVERLAY ───────────────────────────────────────────── -->
+    <div class="hero-overlay"></div>
+
+    <!-- ─── CENTRED CONTENT ───────────────────────────────────── -->
+    <div class="hero-content">
+
+      <div class="hero-eyebrow">Pune &nbsp;&middot;&nbsp; Mumbai &nbsp;&middot;&nbsp; Pan India</div>
+
+      <h1 class="hero-brand-name">ELAMRIT</h1>
+
+      <!-- Ornamental divider with botanical motif -->
+      <div class="hero-ornament">
+        <span class="hero-ornament-line"></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C12 2 7.5 7.5 7.5 12C7.5 16.5 12 22 12 22C12 22 16.5 16.5 16.5 12C16.5 7.5 12 2 12 2Z"
+            stroke="#d6b9ab" stroke-width="0.9" />
+          <path d="M2 12C2 12 7.5 7.5 12 7.5C16.5 7.5 22 12 22 12C22 12 16.5 16.5 12 16.5C7.5 16.5 2 12 2 12Z"
+            stroke="#d6b9ab" stroke-width="0.9" />
+        </svg>
+        <span class="hero-tagline">L U X E &nbsp;&nbsp; F E A S T</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C12 2 7.5 7.5 7.5 12C7.5 16.5 12 22 12 22C12 22 16.5 16.5 16.5 12C16.5 7.5 12 2 12 2Z"
+            stroke="#d6b9ab" stroke-width="0.9" />
+          <path d="M2 12C2 12 7.5 7.5 12 7.5C16.5 7.5 22 12 22 12C22 12 16.5 16.5 12 16.5C7.5 16.5 2 12 2 12Z"
+            stroke="#d6b9ab" stroke-width="0.9" />
+        </svg>
+        <span class="hero-ornament-line right"></span>
+      </div>
+
+      <p class="hero-description">
+        Crafting unforgettable culinary experiences for weddings,<br />
+        corporate milestones &amp; intimate celebrations across India.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Begin Your Journey</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+
+    </div><!-- /hero-content -->
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+      <span>Scroll</span>
+    </div>
+
+    <!-- Mute/Unmute toggle -->
+    <button class="video-mute-btn" id="muteBtn" onclick="toggleMute()" title="Toggle sound"
+      aria-label="Toggle video sound">
+      <!-- Muted icon (default) -->
+      <svg id="iconMuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.6">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <line x1="23" y1="9" x2="17" y2="15" />
+        <line x1="17" y1="9" x2="23" y2="15" />
+      </svg>
+      <!-- Sound icon (hidden initially) -->
+      <svg id="iconSound" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.6" style="display:none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+      </svg>
+    </button>
+
+  </section><!-- /hero -->

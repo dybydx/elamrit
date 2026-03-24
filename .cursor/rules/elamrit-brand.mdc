@@ -1,0 +1,46 @@
+---
+description: Elamrit brand — colors, type, tone, and UI rules from official guidelines (The Ardour & Co., July 2025)
+globs: "**/*.{html,css,js}"
+alwaysApply: false
+---
+
+# Elamrit brand (from ELAMRIT Brand Guidelines)
+
+## Positioning
+
+Luxury catering / “Luxe Feast”: warm, gentle, romantic, light and inviting. Copy and layout should feel premium and calm, not loud or generic startup.
+
+## Color palette (exact hex only)
+
+Use CSS variables in `css/main.css` and `css/about.css` when editing those files; elsewhere match these values.
+
+| Role | Hex | Token in CSS |
+|------|-----|----------------|
+| Dark gray brown | `#24211f` | `--dark-brown` |
+| Dark red | `#51030C` | `--dark-red` |
+| Light orange (cream) | `#fff8f0` | `--cream` |
+| Gray yellow green | `#b5c38d` | `--green` |
+| Gray orange | `#bd9476` | `--gray-orange` |
+| Light orange (blush) | `#d6b9ab` | `--blush` |
+
+**Balance (guideline):** dark browns/reds carry most of the composition; cream is a large breathable base; greens and warm neutrals (gray-orange, blush) are supporting accents. Avoid neon, pure black backgrounds, or palettes outside this system unless the user explicitly asks.
+
+## Typography (guideline → web)
+
+Official spec faces:
+
+- **Aboreto** — display / logo-adjacent; wide letter-spacing; uppercase for primary headings.
+- **Garamond (black / italic)** — elegant headings and editorial lines; respect generous or tight tracking per lockups in the PDF (do not arbitrarily crush or stretch letter-spacing).
+- **Felix Titling** — display alternate where the PDF shows it.
+- **Ivy Journal** — editorial / mixed case for supportive lines (e.g. waitlist-style UI).
+
+**Current site stack:** `--font-display`: Aboreto; `--font-serif`: Cormorant Garamond; `--font-body`: EB Garamond. When adding Felix Titling or Ivy Journal, load licensed/web equivalents only if available; otherwise keep the existing trio and match *roles* (display vs serif editorial vs body).
+
+## Logo and assets
+
+Do not squash, rotate, or add effects that break the clear-space rules from the PDF. Prefer existing SVG/wordmark assets over redrawing the mark.
+
+## Do / don’t (quick)
+
+- Do: generous whitespace, soft contrast on cream, uppercase micro-labels with measured `letter-spacing`, italic serif for pull quotes where appropriate.
+- Don’t: default UI fonts (system stacks) for customer-facing chrome; arbitrary new accent colors; cramped all-caps without spacing adjustments.
