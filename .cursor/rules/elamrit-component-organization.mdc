@@ -1,0 +1,17 @@
+---
+description: Page-based component folder structure for Astro routes
+globs: "src/{pages,components}/**/*.astro"
+alwaysApply: false
+---
+
+# Component organization for pages
+
+- Keep `src/components/ui/` for reusable primitives only (`Button`, `Card`, variants, utilities).
+- Keep `src/components/shared/` for cross-page sections (for example `Nav`).
+- For each route, group page-specific sections under a page folder:
+  - `src/components/home/`
+  - `src/components/about/`
+  - future routes should follow the same pattern (for example `src/components/services/`).
+- Inside each page folder, organize by section intent, not by date or author (for example `hero`, `story`, `services`, `showcase`, `cta`).
+- When adding a new page section, place it in the matching page/section folder and import from `src/pages/<route>.astro`.
+- Avoid dumping new page sections at `src/components/` root unless they are truly shared across multiple pages.

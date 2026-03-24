@@ -17,7 +17,7 @@ alwaysApply: true
 |------|---------|
 | `src/pages/` | Routes (`index.astro` → `/`, `about.astro` → `/about`). |
 | `src/layouts/` | Shared document shell (e.g. `BaseLayout.astro`). |
-| `src/components/` | Reusable fragments; **PascalCase** names (`Nav.astro`, `Hero.astro`). Shared controls in `components/ui/` (`Button.astro`, `Card.astro`, `*-variants.ts`, `cn` in [`src/lib/utils.ts`](src/lib/utils.ts)). |
+| `src/components/` | Page-organized and shared fragments (`home/*`, `about/*`, `shared/*`). Shared controls stay in `components/ui/` (`Button.astro`, `Card.astro`, `*-variants.ts`, `cn` in [`src/lib/utils.ts`](src/lib/utils.ts)). |
 | `src/styles/` | Global styles (`app.css`: Tailwind + complex CSS). |
 | `public/` | Unprocessed static files copied to `dist/` as-is. |
 
