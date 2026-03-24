@@ -1,15 +1,12 @@
 ---
+import Button from '@/components/ui/Button.astro';
 ---
   <section id="gallery" class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
     <div class="gallery-intro mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
       <h2 class="max-w-[380px] font-serif text-[clamp(28px,3vw,42px)] font-light leading-snug text-dark-brown">
         A Taste of What <em class="italic text-dark-red">We Create</em>
       </h2>
-      <a
-        href="#"
-        class="flex items-center gap-2.5 font-body text-[11px] tracking-[0.25em] text-dark-red uppercase"
-        >View Full Gallery</a
-      >
+      <Button href="#" variant="linkDarkRed">View Full Gallery</Button>
     </div>
     <div
       class="grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-[260px_260px]"

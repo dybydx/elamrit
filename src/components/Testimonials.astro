@@ -1,4 +1,5 @@
 ---
+import Card from '@/components/ui/Card.astro';
 ---
   <section id="testimonials" class="bg-light-blush px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
     <div class="mb-14 text-left">
@@ -7,7 +8,7 @@
       <div class="mt-6 h-px w-12 bg-dark-red"></div>
     </div>
     <div class="mt-14 grid grid-cols-1 gap-7 lg:grid-cols-3 lg:gap-7">
-      <div class="testi-card relative bg-cream px-9 py-11">
+      <Card variant="testimonial">
         <p class="testi-quote relative z-[1] mb-7 font-body text-[17px] italic leading-[1.8] text-[var(--text-muted-on-cream)]">
           "Elamrit transformed our daughter's wedding into a culinary spectacle. Every dish told a story — from the
           welcome sharbat to the final dessert. Our guests are still talking about it months later."
@@ -17,8 +18,8 @@
           Priya &amp; Anand Kulkarni
         </div>
         <div class="testi-event mt-1 font-body text-xs italic text-dark-red/65">Wedding · Pune · 400 Guests</div>
-      </div>
-      <div class="testi-card relative bg-cream px-9 py-11">
+      </Card>
+      <Card variant="testimonial">
         <p class="testi-quote relative z-[1] mb-7 font-body text-[17px] italic leading-[1.8] text-[var(--text-muted-on-cream)]">
           "For our annual leadership conference, we needed catering that matched our brand's premium positioning. Elamrit
           delivered flawlessly — the live stations were a talking point for days."
@@ -28,8 +29,8 @@
         <div class="testi-event mt-1 font-body text-xs italic text-dark-red/65">
           Corporate Gala · Mumbai · 250 Guests
         </div>
-      </div>
-      <div class="testi-card relative bg-cream px-9 py-11">
+      </Card>
+      <Card variant="testimonial">
         <p class="testi-quote relative z-[1] mb-7 font-body text-[17px] italic leading-[1.8] text-[var(--text-muted-on-cream)]">
           "The private dining experience they curated for our anniversary was breathtaking. A 7-course menu designed
           around our story. I've never felt more celebrated."
@@ -37,6 +38,6 @@
         <div class="mb-5 h-px w-8 bg-dark-red"></div>
         <div class="testi-name font-body text-[11px] tracking-[0.2em] text-dark-brown uppercase">Seema Nair</div>
         <div class="testi-event mt-1 font-body text-xs italic text-dark-red/65">Private Dining · Pune · Intimate</div>
-      </div>
+      </Card>
     </div>
   </section>

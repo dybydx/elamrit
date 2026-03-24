@@ -1,4 +1,5 @@
 ---
+import Card from '@/components/ui/Card.astro';
 ---
   <section id="philosophy" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
     <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
@@ -11,9 +12,7 @@
       </p>
     </div>
     <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
-      <div
-        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
-      >
+      <Card variant="pillar">
         <div
           class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
         >
@@ -36,10 +35,8 @@
           and international culinary traditions, and refuse to let scale diminish quality. Whether we are serving 20 or
           2,000, the standard does not move.
         </p>
-      </div>
-      <div
-        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
-      >
+      </Card>
+      <Card variant="pillar">
         <div
           class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
         >
@@ -63,10 +60,8 @@
           welcome, the live counter choreography, the tablescapes, the dessert reveal. Every moment is choreographed to
           create wonder and delight.
         </p>
-      </div>
-      <div
-        class="pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300"
-      >
+      </Card>
+      <Card variant="pillar">
         <div
           class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25"
         >
@@ -90,6 +85,6 @@
           traditions, family recipes, and cultural rituals to ensure every meal feels authentic to the occasion and
           resonant with the guests it serves.
         </p>
-      </div>
+      </Card>
     </div>
   </section>

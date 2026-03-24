@@ -730,12 +730,12 @@ footer.site-footer .footer-col li a:hover::before {
   gap: 16px;
 }
 
-/* ═══ CTA section — outline button on tinted ground ═══ */
-#cta-section .btn-outline-cta {
+/* ═══ Outline button (dark-red on cream / tinted sections — was #cta-section scoped) ═══ */
+.btn-outline-cta {
   @apply inline-block border border-dark-red/35 bg-transparent px-[38px] py-[15px] font-body text-[11px] tracking-[0.2em] text-dark-red uppercase transition-all duration-300;
 }
 
-#cta-section .btn-outline-cta:hover {
+.btn-outline-cta:hover {
   @apply border-dark-red bg-cream/75;
 }
 

@@ -1,4 +1,6 @@
 ---
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
 ---
   <section
     id="food-junction"
@@ -22,15 +24,13 @@
         Quality catering that fits every budget. Food Junction brings the Elamrit commitment to flavour and service to
         corporate tiffins, office lunches, and smaller celebrations — without the luxe price tag.
       </p>
-      <a href="#" class="btn-green">Explore Food Junction</a>
+      <Button href="#" variant="green">Explore Food Junction</Button>
     </div>
     <div
       class="flex flex-col justify-center gap-1.5 px-8 py-12 md:px-12 lg:px-[72px] lg:py-16"
       style="background: var(--fj-panel-right)"
     >
-      <div
-        class="flex items-start gap-5 border border-[rgba(189,148,118,0.35)] border-l-[3px] border-l-green bg-[color-mix(in_srgb,var(--cream)_94%,var(--white)_6%)] px-6 py-5 shadow-[0_6px_28px_rgba(36,33,31,0.06)] transition-[border-color,background,box-shadow] duration-200 hover:border-dark-red/20 hover:border-l-dark-red hover:bg-cream hover:shadow-[0_10px_36px_rgba(81,3,12,0.08)]"
-      >
+      <Card variant="foodJunction">
         <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">01</div>
         <div>
           <h4 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Corporate Tiffin Service</h4>
@@ -38,10 +38,8 @@
             Daily office meals and corporate lunch packages crafted for teams of all sizes.
           </p>
         </div>
-      </div>
-      <div
-        class="flex items-start gap-5 border border-[rgba(189,148,118,0.35)] border-l-[3px] border-l-green bg-[color-mix(in_srgb,var(--cream)_94%,var(--white)_6%)] px-6 py-5 shadow-[0_6px_28px_rgba(36,33,31,0.06)] transition-[border-color,background,box-shadow] duration-200 hover:border-dark-red/20 hover:border-l-dark-red hover:bg-cream hover:shadow-[0_10px_36px_rgba(81,3,12,0.08)]"
-      >
+      </Card>
+      <Card variant="foodJunction">
         <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">02</div>
         <div>
           <h4 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Budget Event Catering</h4>
@@ -49,10 +47,8 @@
             Weddings, birthdays, and social events with full-service catering at accessible price points.
           </p>
         </div>
-      </div>
-      <div
-        class="flex items-start gap-5 border border-[rgba(189,148,118,0.35)] border-l-[3px] border-l-green bg-[color-mix(in_srgb,var(--cream)_94%,var(--white)_6%)] px-6 py-5 shadow-[0_6px_28px_rgba(36,33,31,0.06)] transition-[border-color,background,box-shadow] duration-200 hover:border-dark-red/20 hover:border-l-dark-red hover:bg-cream hover:shadow-[0_10px_36px_rgba(81,3,12,0.08)]"
-      >
+      </Card>
+      <Card variant="foodJunction">
         <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">03</div>
         <div>
           <h4 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Transparent Packages</h4>
@@ -60,6 +56,6 @@
             Clear pricing, no hidden costs. Get an instant quote for your event within 24 hours.
           </p>
         </div>
-      </div>
+      </Card>
     </div>
   </section>

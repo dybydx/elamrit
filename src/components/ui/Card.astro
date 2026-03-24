@@ -1,0 +1,19 @@
+---
+import { cardVariants, type CardVariantProps } from './card-variants';
+import { cn } from '@/lib/utils';
+
+type Variant = NonNullable<CardVariantProps['variant']>;
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+}
+
+const { variant = 'default', class: className, ...rest } = Astro.props as Props &
+  Record<string, unknown>;
+const classes = cn(cardVariants({ variant }), className);
+---
+
+<div data-slot="card" class={classes} {...rest}>
+  <slot />
+</div>

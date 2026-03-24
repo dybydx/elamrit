@@ -1,4 +1,5 @@
 ---
+import Card from '@/components/ui/Card.astro';
 ---
   <section id="team" class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]">
     <div class="mb-16">
@@ -12,7 +13,7 @@
       </h2>
     </div>
     <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
-      <div class="team-card">
+      <Card variant="bare" class="team-card">
         <div
           class="team-photo relative mb-5 aspect-[3/4] overflow-hidden bg-[color-mix(in_srgb,var(--cream)_70%,var(--gray-orange)_30%)]"
         >
@@ -30,8 +31,8 @@
           With 18 years across India's finest hotels and private kitchens, Arjun brings an unrivalled command of both
           classical Indian and contemporary global cuisine.
         </p>
-      </div>
-      <div class="team-card">
+      </Card>
+      <Card variant="bare" class="team-card">
         <div
           class="team-photo relative mb-5 aspect-[3/4] overflow-hidden bg-[color-mix(in_srgb,var(--cream)_70%,var(--gray-orange)_30%)]"
         >
@@ -49,8 +50,8 @@
           Priya leads the visual and experiential design of every event — from tablescapes to live counter choreography.
           She trained in hospitality design in Milan and London.
         </p>
-      </div>
-      <div class="team-card">
+      </Card>
+      <Card variant="bare" class="team-card">
         <div
           class="team-photo relative mb-5 aspect-[3/4] overflow-hidden bg-[color-mix(in_srgb,var(--cream)_70%,var(--gray-orange)_30%)]"
         >
@@ -68,8 +69,8 @@
           Kavita's artisan desserts and confectionery have become an Elamrit signature — a marriage of French technique
           and Indian soul that leaves guests speechless.
         </p>
-      </div>
-      <div class="team-card">
+      </Card>
+      <Card variant="bare" class="team-card">
         <div
           class="team-photo relative mb-5 aspect-[3/4] overflow-hidden bg-[color-mix(in_srgb,var(--cream)_70%,var(--gray-orange)_30%)]"
         >
@@ -87,6 +88,6 @@
           Siddharth ensures every event unfolds with military precision and effortless grace — managing Pan India
           logistics, vendor relations, and service excellence.
         </p>
-      </div>
+      </Card>
     </div>
   </section>

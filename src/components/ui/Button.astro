@@ -1,0 +1,29 @@
+---
+import { buttonVariants, type ButtonVariantProps } from './button-variants';
+import { cn } from '@/lib/utils';
+
+type Variant = NonNullable<ButtonVariantProps['variant']>;
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const props = Astro.props as Props & Record<string, unknown>;
+const { variant = 'primary', class: className, href, type = 'button', ...rest } = props;
+const classes = cn(buttonVariants({ variant }), className);
+---
+
+{
+  href ? (
+    <a href={href} class={classes} data-slot="button" {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} data-slot="button" {...rest}>
+      <slot />
+    </button>
+  )
+}

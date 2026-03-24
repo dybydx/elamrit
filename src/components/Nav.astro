@@ -1,4 +1,5 @@
 ---
+import Button from '@/components/ui/Button.astro';
 /**
  * `hero` — over full-bleed hero (e.g. video): transparent until scroll adds `.scrolled`.
  * `solid` — interior pages: same mega-menu as home, bar always “scrolled” (cream/blush).
@@ -118,5 +119,5 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         </div>
       </div>
     </div>
-    <a href="#" class="nav-cta">Get a Quote</a>
+    <Button href="#" variant="navCta">Get a Quote</Button>
   </nav>

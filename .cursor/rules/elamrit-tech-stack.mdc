@@ -8,6 +8,7 @@ alwaysApply: true
 - **Framework:** Astro 5, **output:** static (`astro build` → `dist/`). No SSR/API routes unless explicitly added.
 - **Language:** TypeScript where Astro supports it (`src/env.d.ts`, `astro.config.mjs`). Prefer `.astro` + small vanilla client scripts over adding React/Vue unless the project adopts them.
 - **Styling:** Tailwind CSS v4 via [`@tailwindcss/vite`](astro.config.mjs). Global entry [`src/styles/app.css`](src/styles/app.css) (imported from [`BaseLayout.astro`](src/layouts/BaseLayout.astro)): `@import "tailwindcss"`, `@theme` tokens, and a small block for non-utility patterns (keyframes, nav dropdown, hero overlay, etc.). Do not duplicate brand tokens—follow [elamrit-brand.mdc](elamrit-brand.mdc).
+- **UI primitives (shadcn-style, Astro):** Use [`src/components/ui/Button.astro`](src/components/ui/Button.astro) and [`Card.astro`](src/components/ui/Card.astro) (plus `CardHeader`, `CardTitle`, etc. when helpful) for CTAs and card shells. Variants live in [`button-variants.ts`](src/components/ui/button-variants.ts) and [`card-variants.ts`](src/components/ui/card-variants.ts) and map to existing classes in `app.css` (e.g. `btn-primary`, `service-card`)—do **not** paste duplicate long Tailwind strings on pages. If you need a new look: add a **variant** in the relevant `*-variants.ts` (reusing or composing existing `app.css` utilities), then use that variant from the component. Reserve raw `<a class="btn-…">` / one-off card class blobs for rare exceptions only.
 - **Assets:** Files that must keep stable URLs (video, favicons, legacy static HTML) go in [`public/`](public/) and are referenced from the site root (e.g. `/videos/...`).
 
 # Project layout
@@ -16,7 +17,7 @@ alwaysApply: true
 |------|---------|
 | `src/pages/` | Routes (`index.astro` → `/`, `about.astro` → `/about`). |
 | `src/layouts/` | Shared document shell (e.g. `BaseLayout.astro`). |
-| `src/components/` | Reusable fragments; **PascalCase** names (`Nav.astro`, `Hero.astro`). |
+| `src/components/` | Reusable fragments; **PascalCase** names (`Nav.astro`, `Hero.astro`). Shared controls in `components/ui/` (`Button.astro`, `Card.astro`, `*-variants.ts`, `cn` in [`src/lib/utils.ts`](src/lib/utils.ts)). |
 | `src/styles/` | Global styles (`app.css`: Tailwind + complex CSS). |
 | `public/` | Unprocessed static files copied to `dist/` as-is. |
 

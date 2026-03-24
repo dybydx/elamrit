@@ -1,4 +1,6 @@
 ---
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
 ---
   <section
     id="experience"
@@ -14,34 +16,34 @@
         your vision to life.
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-7">
-        <a href="/about" class="btn-cream">Our Philosophy</a>
-        <a href="#" class="btn-ghost text-blush">How We Work</a>
+        <Button href="/about" variant="cream">Our Philosophy</Button>
+        <Button variant="ghost" href="#" class="text-blush">How We Work</Button>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-0.5 sm:grid-cols-2">
-      <div class="bg-cream/5 px-6 py-7">
+      <Card variant="experienceTile">
         <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Cuisine</span>
         <span class="font-serif text-xl italic leading-snug text-cream"
           >Indian, International & Fusion — from Rajasthani dals to Mediterranean mezze</span
         >
-      </div>
-      <div class="bg-cream/5 px-6 py-7">
+      </Card>
+      <Card variant="experienceTile">
         <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Presentation</span>
         <span class="font-serif text-xl italic leading-snug text-cream"
           >Editorial plating and live station theatre that commands attention</span
         >
-      </div>
-      <div class="bg-cream/5 px-6 py-7">
+      </Card>
+      <Card variant="experienceTile">
         <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Reach</span>
         <span class="font-serif text-xl italic leading-snug text-cream"
           >Pan India deployment with full logistics — Pune, Mumbai, Delhi, Goa &amp; beyond</span
         >
-      </div>
-      <div class="bg-cream/5 px-6 py-7">
+      </Card>
+      <Card variant="experienceTile">
         <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Bespoke</span>
         <span class="font-serif text-xl italic leading-snug text-cream"
           >Custom menus built around your event, dietary needs, and cultural traditions</span
         >
-      </div>
+      </Card>
     </div>
   </section>
