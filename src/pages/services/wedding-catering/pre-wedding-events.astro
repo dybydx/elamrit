@@ -1,0 +1,144 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+---
+
+<BaseLayout
+  title="Pre-wedding Event Catering — Elamrit Luxe Feast"
+  description="Catering for mehendi, haldi, sangeet, and welcome dinners — each with its own curated menu and elevated service format by Elamrit Luxe Feast."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Wedding Catering', href: '/services/wedding-catering' },
+      { label: 'Pre-wedding Events' },
+    ]}
+    titleHtml="PRE-WEDDING<br />EVENTS"
+    description="Different moments. Different moods. One composed standard of hospitality — across every celebration."
+    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaLabel="Get a Quote"
+    secondaryCtaHref="/services/wedding-catering"
+    secondaryCtaLabel="All Wedding Services"
+  />
+
+  <!-- Story section -->
+  <section
+    id="prewedding-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Mehendi · Haldi · Sangeet
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">Menus for Every Mood</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Food that matches the <em class="italic text-dark-red">energy</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Mehendi calls for playful, grazing formats. Haldi needs light freshness. Sangeet deserves drama and abundance. We tailor the service style — buffet, live counters, cocktail bites, or a hybrid — so food enhances the atmosphere it's served in.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Each pre-wedding function is a world of its own — the food should feel like it was made for that world."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We plan guest flow around performances, speeches, and ritual moments — so service is seamless and the host never has to worry about when the food arrives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="prewedding-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        What We <em class="italic text-dark-red">Cover</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Every pre-wedding event is designed to feel distinct — a different colour, a different rhythm, a different reason to gather. We plan accordingly.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Format by Function</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Welcome dinner gets a plated course. Mehendi gets a roaming bites setup. Sangeet gets a full live-station buffet. We design each one differently.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Live Counter Drama</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Chaat stations, grill counters, dessert carts — interactive formats that add energy to sangeet and cocktail evenings and give guests something to gather around.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Performance-Aware Flow</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We coordinate with your event manager to ensure service pauses for speeches, dances, and key moments — so the programme is never disrupted by food cues.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Functions', value: 'Up to 5 days' },
+      { label: 'Popular', value: 'Mehendi & Sangeet' },
+      { label: 'Add-on', value: 'Dessert Theatre' },
+      { label: 'Dietary', value: 'Veg / Jain / NV' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What makes pre-wedding events <em>feel</em> different"
+    description="Each function deserves its own menu identity — light, playful, bold, or dramatic. We design formats around the energy of the event and coordinate service around performances so the programme stays smooth."
+    bullets={[
+      'Distinct menu identity per function (mehendi / haldi / sangeet)',
+      'Cocktail-friendly bites and roaming service options',
+      'Live counters designed as focal points for guests',
+      'Performance-aware pacing and pause points',
+      'Dietary variety and clear guest-facing labelling',
+    ]}
+    ctaHref="/contact/get-a-quote"
+    ctaLabel="Request a Quote"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

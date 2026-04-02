@@ -1,0 +1,141 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+---
+
+<BaseLayout
+  title="Hindu Wedding Catering — Elamrit Luxe Feast"
+  description="Hindu wedding catering with ritual-aware planning, composed service pacing, and refined menus for ceremonies, receptions and multi-day functions — by Elamrit Luxe Feast."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Wedding Catering', href: '/services/wedding-catering' },
+      { label: 'Hindu Weddings' },
+    ]}
+    titleHtml="HINDU<br />WEDDINGS"
+    description="Ritual timing, guest flow, and menu rhythm — planned with the quiet confidence your families will feel."
+    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaLabel="Get a Quote"
+    secondaryCtaHref="/services/wedding-catering"
+    secondaryCtaLabel="All Wedding Services"
+  />
+
+  <!-- Feature section -->
+  <section
+    id="hindu-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Approach</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        A feast that respects the <em class="italic text-dark-red">sequence</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Hindu wedding events move with ritual cadence — no two ceremonies are alike in timing, need, or expectation. We align menu service with key moments so hospitality never interrupts meaning, and every guest is served with warmth and grace.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Food at a wedding should feel like a blessing — not a transaction."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We work closely with families to understand dietary customs, puja timing, and the emotional register of each function — then we plan everything else around that.
+      </p>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="hindu-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        What We <em class="italic text-dark-red">Bring</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Every Hindu wedding function is a world unto itself. We show up prepared for all of it — from the early morning haldi to the late-night sangeet bites.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Ritual-Aware Timing</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Service is coordinated around the ceremony, not the other way around. We study the function schedule before we plan the kitchen timeline.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Menus with Balance</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Comforting classics and elevated signatures with thoughtful Jain, veg, and non-veg options — so every guest finds something familiar and something special.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Gracious Hospitality</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Our team is trained to interact with elders, guests, and children with equal ease — service that reflects the warmth your family wants to project.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Format', value: 'Buffet & Plated' },
+      { label: 'Menu', value: 'Veg / Jain / NV' },
+      { label: 'Add-on', value: 'Live Stations' },
+      { label: 'Scale', value: '50 – 2,000' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What your families <em>feel</em> on the day"
+    description="A Hindu wedding is paced by ritual and emotion. We handle the backstage choreography — timing, temperature, replenishment, and guest flow — so your families experience only warmth, ease, and abundance."
+    bullets={[
+      'Ritual-aware timing plan aligned with the ceremony schedule',
+      'Menu architecture: comfort classics + elevated signatures',
+      'Jain, veg, and non-veg handling with clear labelling',
+      'Staffing, counters, and replenishment choreography',
+      'Optional live stations for sangeet / reception energy',
+    ]}
+    ctaHref="/contact/get-a-quote"
+    ctaLabel="Request a Quote"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

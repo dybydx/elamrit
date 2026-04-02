@@ -1,0 +1,52 @@
+---
+import PageHero from '@/components/shared/PageHero.astro';
+import Button from '@/components/ui/Button.astro';
+
+type BreadcrumbItem = { label: string; href?: string };
+type HeroVariant = 'split' | 'center';
+
+interface Props {
+  variant?: HeroVariant;
+  breadcrumb: BreadcrumbItem[];
+  titleHtml: string;
+  description: string;
+  imageClass?: string;
+  quote?: string;
+  quoteAttribution?: string;
+  primaryCtaHref: string;
+  primaryCtaLabel: string;
+  secondaryCtaHref: string;
+  secondaryCtaLabel: string;
+}
+
+const {
+  variant = 'split',
+  breadcrumb,
+  titleHtml,
+  description,
+  imageClass = 'ph-image',
+  quote,
+  quoteAttribution,
+  primaryCtaHref,
+  primaryCtaLabel,
+  secondaryCtaHref,
+  secondaryCtaLabel,
+} = Astro.props as Props;
+---
+
+<PageHero
+  variant={variant}
+  breadcrumb={breadcrumb}
+  titleHtml={titleHtml}
+  description={description}
+  descriptionClass="w-full max-w-none"
+  imageClass={imageClass}
+  quote={quote}
+  quoteAttribution={quoteAttribution}
+>
+  <div class:list={['mt-8 flex flex-wrap gap-4', variant === 'center' ? 'justify-center' : '']}>
+    <Button href={primaryCtaHref} variant="creamOnDark">{primaryCtaLabel}</Button>
+    <Button href={secondaryCtaHref} variant="outlineCream">{secondaryCtaLabel}</Button>
+  </div>
+</PageHero>
+

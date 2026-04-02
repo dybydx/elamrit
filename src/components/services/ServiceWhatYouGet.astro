@@ -1,0 +1,42 @@
+---
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+
+interface Props {
+  label?: string;
+  titleHtml: string;
+  description: string;
+  bullets: string[];
+  ctaHref: string;
+  ctaLabel: string;
+}
+
+const { label = 'What you get', titleHtml, description, bullets, ctaHref, ctaLabel } = Astro.props as Props;
+---
+
+<section class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-24">
+  <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+    <div>
+      <SectionHeader label={label} labelTone="muted" showDivider={true} dividerClass="mx-0">
+        <span set:html={titleHtml} />
+      </SectionHeader>
+      <p class="mt-5 max-w-[70ch] font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        {description}
+      </p>
+      <div class="mt-9">
+        <Button href={ctaHref} variant="navCta">{ctaLabel}</Button>
+      </div>
+    </div>
+
+    <Card class="p-8">
+      <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Included</div>
+      <ul class="mt-4 grid list-none gap-2.5 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+        {bullets.map((b) => (
+          <li>{b}</li>
+        ))}
+      </ul>
+    </Card>
+  </div>
+</section>
+

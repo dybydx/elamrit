@@ -1,0 +1,220 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Corporate Catering — Elamrit Luxe Feast"
+  description="Premium corporate catering by Elamrit — conferences, product launches, gala dinners, and business dining delivered with calm precision and elevated service."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Corporate Catering' },
+    ]}
+    titleHtml="CORPORATE<br />CATERING"
+    description="Operationally precise, beautifully served — catering that reflects the stature and ambition of your organisation."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="Corporate catering should feel like the meeting was always going to go this well."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section
+    id="corporate-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Corporate · Pan India
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">The Elamrit Approach</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Service that matches your <em class="italic text-dark-red">organisation's standard</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Corporate events carry the weight of your brand. Every detail — from the first bite at a product launch to the plated finale at an annual gala — is a reflection of how your organisation operates. We make that reflection flattering.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "The best corporate catering is remembered for being seamless — not for being food."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We coordinate with your event and facilities teams, align with venue regulations, and deliver service that runs like clockwork — so your leadership can focus on the agenda.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Request a Corporate Quote</Button>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="corporate-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Built for <em class="italic text-dark-red">Precision</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Corporate events have tighter windows, larger stakeholder scrutiny, and less room for improvisation. We plan accordingly — and then over-prepare.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="8" y="10" width="28" height="24" rx="1" />
+          <path d="M16 10V7M28 10V7" />
+          <path d="M8 18h28" />
+          <path d="M14 24h8M14 29h5" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Agenda-Aligned Service</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Meal breaks, networking windows, and pre/post-session service are all mapped to your programme — so food arrives exactly when you need it and disappears before you don't.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Brand-Level Presentation</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Menus, serviceware, plating, and staff presentation can be tailored to align with your brand identity and event theme — from minimal to curated.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Dietary Intelligence</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          International guests, diverse dietary requirements, and VIP preferences — handled with discretion, detailed pre-event coordination, and staff who anticipate before they are asked.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Dark strip -->
+  <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
+    <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Scale</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">20 to 1,500</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Formats</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Plated &amp; Buffet</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Coverage</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Pan India</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Lead time</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">2 weeks min.</div>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Corporate formats grid -->
+  <section id="corporate-formats" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]" style="background: var(--bg-services-home)">
+    <SectionHeader class="mb-16" label="Corporate Formats" align="center" showDivider={true}>
+      Service for Every <em>Business Occasion</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-[18px]">
+      <a href="/services/corporate-catering/events-conferences" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="6" y="10" width="28" height="22" rx="1" />
+            <path d="M14 10V8M26 10V8" />
+            <path d="M6 16h28" />
+            <path d="M14 22h12M14 27h8" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Events &amp; Conferences</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Multi-day conferences, seminars, and summits — meal coordination across full-day schedules without a single timing slip.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/product-launches" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 8l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Product Launches</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            High-energy canapés, cocktail receptions, and themed food concepts that amplify the excitement of your brand moment.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/business-dining" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="20" cy="14" r="7" />
+            <path d="M10 34C10 28.5 14.5 24 20 24C25.5 24 30 28.5 30 34" />
+            <path d="M8 22h4M28 22h4" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Business Dining</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Boardroom lunches and executive dinners — plated, discreet, and tuned to the register of your senior stakeholders.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/gala-dinners" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">04</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M8 32C8 32 10 16 20 10C30 16 32 32 32 32" />
+            <path d="M14 26C14 26 16 20 20 18C24 20 26 26 26 26" />
+            <line x1="8" y1="32" x2="32" y2="32" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Gala Dinners</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Annual award evenings, charity galas, and festive corporate nights — a full sensory experience from arrival to the final dessert.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

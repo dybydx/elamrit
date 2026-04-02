@@ -44,32 +44,34 @@ Notes:
 
 ### 02) Wedding catering
 
-- [ ] `/services/wedding-catering`
-- [ ] `/services/wedding-catering/hindu-weddings`
-- [ ] `/services/wedding-catering/pre-wedding-events`
-- [ ] `/services/wedding-catering/destination-weddings`
-- [ ] `/services/wedding-catering/multicultural-weddings`
+- [x] `/services/wedding-catering`
+- [x] `/services/wedding-catering/hindu-weddings`
+- [x] `/services/wedding-catering/pre-wedding-events`
+- [x] `/services/wedding-catering/destination-weddings`
+- [x] `/services/wedding-catering/multicultural-weddings`
 
 ### 03) Corporate & social
 
-- [ ] `/services/corporate-catering`
-- [ ] `/services/corporate-catering/events-conferences`
-- [ ] `/services/corporate-catering/product-launches`
-- [ ] `/services/corporate-catering/business-dining`
-- [ ] `/services/corporate-catering/gala-dinners`
+- [x] `/services/corporate-catering`
+- [x] `/services/corporate-catering/events-conferences`
+- [x] `/services/corporate-catering/product-launches`
+- [x] `/services/corporate-catering/business-dining`
+- [x] `/services/corporate-catering/gala-dinners`
 
-- [ ] `/services/social-events`
-- [ ] `/services/social-events/birthday-catering`
-- [ ] `/services/social-events/anniversary-catering`
-- [ ] `/services/social-events/cocktail-parties`
-- [ ] `/services/social-events/house-warming-puja`
+- [x] `/services/social-celebrations` (slug aligned with nav)
+- [x] `/services/social-celebrations/birthday-catering`
+- [x] `/services/social-celebrations/anniversary-catering`
+- [x] `/services/social-celebrations/cocktail-parties`
+- [x] `/services/social-celebrations/house-warming-puja`
 
 ### 04) Specialty services
 
-- [ ] `/services/private-dining`
-- [ ] `/services/live-cooking-stations`
+- [x] `/services/private-dining`
+- [x] `/services/live-stations` (nav slug)
 - [ ] `/services/outdoor-catering`
-- [ ] `/services/pan-india-catering`
+- [x] `/services/pan-india-catering`
+- [x] `/services/destination-weddings` (nav-level specialty page)
+- [x] `/services/theme-catering`
 
 ### 05) Menu pages
 
@@ -125,11 +127,12 @@ Notes:
 - [x] Create `/privacy-policy` + `/terms`
 - [x] Create `/testimonials` (can re-use homepage testimonials content)
 
-### Phase B — Services core (primary SEO landing pages)
-- [ ] Create `/services/wedding-catering` + children
-- [ ] Create `/services/corporate-catering` + children
-- [ ] Create `/services/social-events` + children
-- [ ] Create specialty service pages
+### Phase B — Services core (primary SEO landing pages) ✓ COMPLETE
+- [x] Create `/services/wedding-catering` + children (hindu-weddings, pre-wedding-events, destination-weddings, multicultural-weddings)
+- [x] Create `/services/corporate-catering` + children (events-conferences, product-launches, business-dining, gala-dinners)
+- [x] Create `/services/social-celebrations` + children (birthday-catering, anniversary-catering, cocktail-parties, house-warming-puja)
+- [x] Create `/services/private-dining`
+- [x] Create specialty service pages (live-stations, pan-india-catering, destination-weddings, theme-catering)
 
 ### Phase C — Menus (supports services + quote funnel)
 - [ ] Create `/menus` + category pages
@@ -149,6 +152,6 @@ Notes:
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 7 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`)
+- **Routes complete**: 28 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 

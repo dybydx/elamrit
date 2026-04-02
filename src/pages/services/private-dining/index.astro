@@ -1,0 +1,152 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+---
+
+<BaseLayout
+  title="Private Dining — Elamrit Luxe Feast"
+  description="Bespoke private dining at home or venue — a personal chef, curated multi-course menu, and impeccable service that feels like your own restaurant by Elamrit Luxe Feast."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Private Dining' },
+    ]}
+    titleHtml="PRIVATE<br />DINING"
+    description="Bespoke in-home dining — a personal chef, a curated menu, and impeccable service within the intimacy of your space."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="Private dining is the most personal thing we do — and the most rewarding."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Request Private Dining</Button>
+      <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section
+    id="private-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Experience</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        A restaurant-grade experience <em class="italic text-dark-red">in your own space</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Private dining is our most intimate service — a fully personalised culinary experience built for 6 to 30 guests. One chef, one dedicated service team, one menu designed around you. The result is an evening that feels like the best restaurant you've ever been to, except you never had to leave home.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Private dining is theatre in its most intimate form — every course a scene, every guest the audience."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We handle everything from the tasting consultation to the final toast — arriving set-up ready and leaving without a trace.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Request Private Dining</Button>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Intimate · Bespoke · Extraordinary
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="private-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Designed Around <em class="italic text-dark-red">You</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        No two private dining experiences are alike. We start with a consultation, build the menu around your taste and occasion, and then disappear into the background once service begins.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Tasting Consultation</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We meet with you before the event — understanding the occasion, your guests' palates, and the flavour profile you want to build the evening around.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Curated Multi-course Menu</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          A composed menu designed as a journey — from the first amuse-bouche to the dessert — with each course chosen to complement the next.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">White-glove Service</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          A dedicated service team trained for intimacy — present when needed, invisible when not. Wine poured before it's asked for. Courses timed to conversation.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Strip -->
+  <ServiceStatsStrip
+    items={[
+      { label: 'Scale', value: '6 – 30 guests' },
+      { label: 'Format', value: 'Plated courses' },
+      { label: 'Venue', value: 'Home or villa' },
+      { label: 'Includes', value: 'Tasting consult' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What makes private dining feel <em>personal</em>"
+    description="Private dining succeeds on pacing and detail. We design the menu as a journey, coordinate the service like a fine restaurant, and handle the entire setup and reset so your space stays calm and pristine."
+    bullets={[
+      'Tasting-led consultation to understand palate and occasion',
+      'Curated multi-course menu built as a progression',
+      'White-glove service pacing aligned to conversation',
+      'Dietary handling with individual-level attention',
+      'Setup, cleanup, and reset — leaving without a trace',
+    ]}
+    ctaHref="/contact/get-a-quote"
+    ctaLabel="Request Private Dining"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

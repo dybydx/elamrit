@@ -1,0 +1,158 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Services — Elamrit Luxe Feast"
+  description="Explore Elamrit's premium catering services — weddings, corporate events, social celebrations, private dining, and specialty formats across Pune and Pan India."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
+    titleHtml="CATERING<br />SERVICES"
+    description="Choose the occasion. We design the flow, the service style, and the menu — so your event feels effortless and elevated."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="Every service is choreography — timing, temperature, and hospitality in perfect sync."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
+    </div>
+  </PageHero>
+
+  <!-- Core services -->
+  <section
+    id="services-core"
+    class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
+    style="background: var(--bg-services-home)"
+  >
+    <SectionHeader class="mb-16" label="What We Offer" align="center" showDivider={true}>
+      A Service for <em>Every Occasion</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-[18px]">
+      <a href="/services/wedding-catering" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+          <svg class="mb-6 h-[clamp(44px,4.5vw,52px)] w-[clamp(44px,4.5vw,52px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 4C20 4 8 12 8 22C8 28.6 13.4 34 20 34C26.6 34 32 28.6 32 22C32 12 20 4 20 4Z" />
+            <path d="M20 14V34M14 20L20 14L26 20" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Wedding Catering</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            From grand Hindu ceremonies to intimate destination weddings — we orchestrate culinary narratives that honour your most significant celebration.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore Weddings</span>
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+          <svg class="mb-6 h-[clamp(44px,4.5vw,52px)] w-[clamp(44px,4.5vw,52px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="6" y="10" width="28" height="22" rx="1" />
+            <path d="M14 10V8M26 10V8" />
+            <path d="M6 16h28" />
+            <path d="M14 22h4M22 22h4M14 27h4" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Corporate Catering</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Board meetings, product launches, annual galas — premium catering solutions that reflect your organisation's stature and ambition.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Corporate Services</span>
+        </Card>
+      </a>
+
+      <a href="/services/social-celebrations" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+          <svg class="mb-6 h-[clamp(44px,4.5vw,52px)] w-[clamp(44px,4.5vw,52px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="20" cy="20" r="14" />
+            <path d="M20 10v10l7 4" />
+            <path d="M10 20h4M26 20h4M20 10v4M20 26v4" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Social Celebrations</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Birthdays, anniversaries, cocktail evenings — turning everyday milestones into extraordinary memories through food and experience.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Social Events</span>
+        </Card>
+      </a>
+
+      <a href="/services/private-dining" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">04</span>
+          <svg class="mb-6 h-[clamp(44px,4.5vw,52px)] w-[clamp(44px,4.5vw,52px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M8 32C8 32 10 16 20 10C30 16 32 32 32 32" />
+            <path d="M14 26C14 26 16 20 20 18C24 20 26 26 26 26" />
+            <line x1="8" y1="32" x2="32" y2="32" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Private Dining</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Bespoke in-home dining experiences — a personal chef, a curated menu, and impeccable service within the intimacy of your space.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Private Dining</span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <!-- Specialties — dark-red contrast section -->
+  <section
+    id="specialties"
+    class="grid grid-cols-1 items-center gap-10 bg-dark-red px-5 py-20 md:gap-20 md:px-10 lg:grid-cols-2 lg:px-20 lg:py-20"
+  >
+    <div>
+      <span class="mb-4 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">Specialty Services</span>
+      <h2 class="font-serif text-[clamp(30px,3.5vw,48px)] font-light leading-tight text-cream">
+        Beyond the <em class="italic">Expected</em>
+      </h2>
+      <p class="mt-6 max-w-[440px] font-body text-xl leading-[1.85] text-cream/70">
+        Some occasions demand more than great food — they need theatre, scale, and craft that travels. Our specialty formats are built for exactly that.
+      </p>
+      <div class="mt-11 flex flex-wrap items-center gap-5">
+        <Button href="/contact/get-a-quote" variant="cream">Get a Quote</Button>
+        <Button href="/about" variant="ghost" class="text-blush">Our Philosophy</Button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 sm:grid-cols-2">
+      <a href="/services/live-stations" class="group block">
+        <Card variant="experienceTile" class="transition-colors duration-200 group-hover:bg-cream/10">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Specialty</span>
+          <span class="font-serif text-xl italic leading-snug text-cream">Live Cooking Stations — high energy, high aroma, high recall</span>
+        </Card>
+      </a>
+      <a href="/services/pan-india-catering" class="group block">
+        <Card variant="experienceTile" class="transition-colors duration-200 group-hover:bg-cream/10">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Specialty</span>
+          <span class="font-serif text-xl italic leading-snug text-cream">Pan India Catering — full logistics, on-ground teams, any city</span>
+        </Card>
+      </a>
+      <a href="/services/destination-weddings" class="group block">
+        <Card variant="experienceTile" class="transition-colors duration-200 group-hover:bg-cream/10">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Specialty</span>
+          <span class="font-serif text-xl italic leading-snug text-cream">Destination Weddings — travel-ready operations built for new venues</span>
+        </Card>
+      </a>
+      <a href="/services/theme-catering" class="group block">
+        <Card variant="experienceTile" class="transition-colors duration-200 group-hover:bg-cream/10">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Specialty</span>
+          <span class="font-serif text-xl italic leading-snug text-cream">Theme &amp; Concept Catering — curated worlds around your occasion</span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

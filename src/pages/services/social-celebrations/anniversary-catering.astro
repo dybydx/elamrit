@@ -1,0 +1,139 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+---
+
+<BaseLayout
+  title="Anniversary Catering — Elamrit Luxe Feast"
+  description="Anniversary celebration catering — intimate dinners to grand gatherings, with menus and service that carry the weight and warmth of the occasion by Elamrit Luxe Feast."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Social Celebrations', href: '/services/social-celebrations' },
+      { label: 'Anniversary Catering' },
+    ]}
+    titleHtml="ANNIVERSARY<br />CATERING"
+    description="From intimate dinners for two families to grand anniversary evenings — food that carries the weight of the occasion."
+    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaLabel="Get a Quote"
+    secondaryCtaHref="/services/social-celebrations"
+    secondaryCtaLabel="All Social Services"
+  />
+
+  <section class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]">
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Intimate · Celebratory · Warm
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">Anniversary Catering</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Food that honours <em class="italic text-dark-red">the years shared</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        An anniversary celebration is a story retold — and the food should feel like a reflection of the couple, the family, and the journey. We design menus with memory and meaning, whether it's a 25th silver anniversary or a 50th golden milestone.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "The best anniversary dinner feels like the first one — just better planned."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Intimate plated dinners for 30 to grand celebrations for 500 — we match the format to the feeling the occasion deserves.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Built with <em class="italic text-dark-red">Intention</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Every element of an anniversary celebration is considered — not just the menu, but the pacing, the mood, and the moments.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Sentimental Menus</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Dishes from cherished memories, regional specialities from their home cities, and elevated classics that feel both familiar and special.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Paced for Moments</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Service flows around your evening's key moments — toasts, family tributes, and the couple's own time to receive and celebrate.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Intimate or Grand</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We adjust our approach for the scale — the warmth and personalisation remains regardless of whether you're hosting 30 or 300.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Scale', value: '30 – 500' },
+      { label: 'Format', value: 'Plated & Buffet' },
+      { label: 'Menu approach', value: 'Personal & curated' },
+      { label: 'Popular add-on', value: 'Signature cocktails' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What makes anniversaries feel <em>meaningful</em>"
+    description="Anniversary events are intimate by nature, even at scale. We design menus with memory and pace the evening around moments — toasts, tributes, and the couple at the centre."
+    bullets={[
+      'Menu curation inspired by the couple’s story and palate',
+      'Pacing aligned to speeches, tributes, and key moments',
+      'Flexible formats: intimate plated to grand buffets',
+      'Warm service that suits multi-generation gatherings',
+      'Dessert finale planning for a memorable close',
+    ]}
+    ctaHref="/contact/get-a-quote"
+    ctaLabel="Request a Quote"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

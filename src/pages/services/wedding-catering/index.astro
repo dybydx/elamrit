@@ -1,0 +1,220 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Wedding Catering — Elamrit Luxe Feast"
+  description="Premium wedding catering by Elamrit — curated menus, live stations, and seamless service for ceremonies, sangeet, receptions, and multi-day celebrations across Pune and Pan India."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Wedding Catering' },
+    ]}
+    titleHtml="WEDDING<br />CATERING"
+    description="From sacred rituals to sparkling receptions — we compose a wedding feast that feels refined, abundant, and effortlessly timed."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="A wedding menu should feel like a story — familiar, surprising, and unforgettable."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section
+    id="wedding-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Weddings · Pan India
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">The Elamrit Approach</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Designed for <em class="italic text-dark-red">multi-day</em> celebrations
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We plan each meal as its own moment — balancing ritual timing, guest flow, and service pace. You get calm coordination, consistent warmth, and a menu that stays memorable from the first welcome drink to the last dessert.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "We don't just feed guests — we compose the emotional arc of your celebration."
+        </p>
+      </blockquote>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        From meticulous sourcing to live counter choreography and tablescapes — every element is briefed, rehearsed, and executed with the quiet confidence that lets your family be fully present.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Request a Wedding Quote</Button>
+    </div>
+  </section>
+
+  <!-- Philosophy pillars -->
+  <section id="wedding-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        How We <em class="italic text-dark-red">Work</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Three principles run through every wedding we cater — from a 40-person intimate function to a 1200-guest grand reception. These are not rules we follow; they are habits we have cultivated through years of obsessive craft.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Ritual-Aware Planning</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We align service cadence with the ceremony schedule — so hospitality never interrupts meaning. The food appears when guests are ready, not when it's convenient for the kitchen.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Menus with Memory</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Every menu is built around your family's palate — familiar touchpoints, elevated signatures, and a mix of cuisines that ensures every guest finds something they love.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Invisible Operations</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Staffing, logistics, replenishment, temperature, timing — all handled backstage. Your family sees warmth and grace. We see the choreography that makes it possible.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Values strip -->
+  <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
+    <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">We Serve</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">20 to 2,000</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">We Cover</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Pan India</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Formats</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Plated &amp; Live</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Expertise</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">10+ Years</div>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Wedding formats grid -->
+  <section id="wedding-formats" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]" style="background: var(--bg-services-home)">
+    <SectionHeader class="mb-16" label="Wedding Formats" align="center" showDivider={true}>
+      Choose Your <em>Celebration Style</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-[18px]">
+      <a href="/services/wedding-catering/hindu-weddings" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 6L14 14H26L20 6Z" />
+            <path d="M14 14C14 14 8 18 8 26H32C32 18 26 14 26 14" />
+            <line x1="8" y1="34" x2="32" y2="34" />
+            <line x1="20" y1="26" x2="20" y2="34" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Hindu Weddings</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Ritual-aware menus, priest timing coordination, and gracious hospitality — for families navigating the full ceremony arc.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Hindu Weddings</span>
+        </Card>
+      </a>
+
+      <a href="/services/wedding-catering/pre-wedding-events" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="20" cy="14" r="8" />
+            <path d="M12 30C12 25.6 15.6 22 20 22C24.4 22 28 25.6 28 30" />
+            <path d="M6 36C6 31.6 9.6 28 14 28M34 36C34 31.6 30.4 28 26 28" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Pre-wedding Events</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Mehendi, haldi, sangeet, welcome dinners — each with its own mood, format, and menu identity designed to match the energy.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Pre-wedding Events</span>
+        </Card>
+      </a>
+
+      <a href="/services/wedding-catering/destination-weddings" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="20" cy="18" r="8" />
+            <path d="M20 26C20 26 8 32 8 38H32C32 32 20 26 20 26Z" />
+            <path d="M20 10V6M14 12L10 8M26 12L30 8" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Destination Weddings</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Travel-ready operations, vendor coordination, and on-ground execution — quality consistent regardless of city or venue.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Destination Weddings</span>
+        </Card>
+      </a>
+
+      <a href="/services/wedding-catering/multicultural-weddings" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">04</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="14" cy="16" r="7" />
+            <circle cx="26" cy="16" r="7" />
+            <path d="M8 34C8 29.6 10.8 26 14 26M32 34C32 29.6 29.2 26 26 26M20 28C20 28 17 30 17 34H23C23 30 20 28 20 28Z" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Multicultural Weddings</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Multiple traditions, diverse palates — unified into one composed experience where every guest feels at home.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Multicultural Weddings</span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

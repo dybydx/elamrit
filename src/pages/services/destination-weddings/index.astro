@@ -1,0 +1,101 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Destination Wedding Catering — Elamrit Luxe Feast"
+  description="Destination wedding catering specialists — travel-ready operations, consistent quality, and composed execution for weddings in any city or venue across India."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Destination Weddings' },
+    ]}
+    titleHtml="DESTINATION<br />WEDDINGS"
+    description="New city, new venue, same standard — composed execution that travels beautifully, wherever you choose to celebrate."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="We bring Pune's obsessive preparation to every wedding, wherever it happens."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Wedding</Button>
+      <Button href="/services/wedding-catering" variant="outlineCream">All Wedding Services</Button>
+    </div>
+  </PageHero>
+
+  <section class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]">
+    <div>
+      <SectionEyebrow class="mb-4">Travel-Ready Catering</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Logistics that feel <em class="italic text-dark-red">invisible</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Destination weddings are won or lost backstage — transport, sourcing, kitchen prep, staffing, and timing. We've refined a travel-ready operations model across dozens of destination weddings in Rajasthan, Goa, Kerala, Himachal, and beyond. Guests never see the logistics. They only see the feast.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Distance doesn't dilute the standard. The planning just starts earlier."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We begin weeks before the date — walkthroughs, vendor briefings, supply chain mapping, and service rehearsals — so by the time we arrive on-site, every variable is already resolved.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Plan Your Wedding</Button>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Rajasthan · Goa · Kerala &amp; beyond
+      </div>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 items-center gap-10 bg-dark-red px-5 py-20 md:gap-20 md:px-10 lg:grid-cols-2 lg:px-20 lg:py-20">
+    <div>
+      <span class="mb-4 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">Operations</span>
+      <h2 class="font-serif text-[clamp(30px,3.5vw,48px)] font-light leading-tight text-cream">
+        The work that happens <em class="italic">before</em> we travel
+      </h2>
+      <p class="mt-6 max-w-[440px] font-body text-xl leading-[1.85] text-cream/70">
+        A destination wedding is a project — not just an event. The planning starts weeks ahead, and every detail is locked before the team departs.
+      </p>
+      <div class="mt-11 flex flex-wrap items-center gap-5">
+        <Button href="/contact/get-a-quote" variant="cream">Get a Quote</Button>
+        <Button href="/services/pan-india-catering" variant="ghost" class="text-blush">Pan India Catering</Button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 sm:grid-cols-2">
+      <Card variant="experienceTile">
+        <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Pre-travel</span>
+        <span class="font-serif text-xl italic leading-snug text-cream">Venue walkthroughs and kitchen assessment</span>
+      </Card>
+      <Card variant="experienceTile">
+        <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Sourcing</span>
+        <span class="font-serif text-xl italic leading-snug text-cream">Local vendor briefings and quality checks</span>
+      </Card>
+      <Card variant="experienceTile">
+        <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">On-site</span>
+        <span class="font-serif text-xl italic leading-snug text-cream">Dedicated event lead and full service team</span>
+      </Card>
+      <Card variant="experienceTile">
+        <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-blush uppercase">Consistency</span>
+        <span class="font-serif text-xl italic leading-snug text-cream">Same quality checks as our Pune home events</span>
+      </Card>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

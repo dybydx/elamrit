@@ -1,0 +1,136 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+---
+
+<BaseLayout
+  title="Business Dining & Boardroom Catering — Elamrit Luxe Feast"
+  description="Executive boardroom lunches, business dinners, and senior stakeholder dining — plated, discreet, and precisely executed by Elamrit Luxe Feast."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Corporate Catering', href: '/services/corporate-catering' },
+      { label: 'Business Dining' },
+    ]}
+    titleHtml="BUSINESS<br />DINING"
+    description="Plated, discreet, and precisely timed — boardroom lunches and executive dinners that reflect your organisation's standard."
+    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaLabel="Get a Quote"
+    secondaryCtaHref="/services/corporate-catering"
+    secondaryCtaLabel="All Corporate Services"
+  />
+
+  <section class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]">
+    <div>
+      <SectionEyebrow class="mb-4">Executive Catering</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        The meal that earns <em class="italic text-dark-red">the room's respect</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Senior leadership dining requires a different kind of precision — subtlety, timing, and an understanding of when to be present and when to disappear. We've served board lunches, partner dinners, and VIP receptions with the discretion and quality they demand.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "At the highest level, catering is invisible — noticed only when it's extraordinary."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Pre-event briefings capture every preference, allergy, and protocol — so nothing is left to chance on the day.
+      </p>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+    </div>
+  </section>
+
+  <section class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Built for <em class="italic text-dark-red">Discretion</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        The finer points of executive dining — timing, preferences, protocol — are handled before the day begins. On the day, service is seamless and unobtrusive.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Pre-event Briefing</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Individual dietary preferences, cultural protocols, seating requirements, and service timing — all captured and confirmed before service begins.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Plated Course Service</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Restaurant-grade plated courses — starter, main, dessert — with the pacing of a fine dining establishment and the warmth of personal hospitality.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Quiet Competence</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Our service team in executive settings is trained to be present without being intrusive — refills happen, plates are cleared, but conversation is never interrupted.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Format', value: 'Plated Courses' },
+      { label: 'Scale', value: '10 – 80 guests' },
+      { label: 'Venue', value: 'Boardroom ready' },
+      { label: 'Briefing', value: 'Pre-event call' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What makes executive dining feel <em>effortless</em>"
+    description="Business dining is about discretion and pacing. We brief preferences in advance and execute restaurant-grade plated service — present when needed, invisible when not."
+    bullets={[
+      'Pre-event briefing: preferences, allergies, protocol',
+      'Plated course pacing aligned to the meeting agenda',
+      'Discreet service team trained for executive settings',
+      'Dietary handling with individual-level care',
+      'Cleanup and reset so the venue stays pristine',
+    ]}
+    ctaHref="/contact/get-a-quote"
+    ctaLabel="Request a Quote"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

@@ -1,0 +1,194 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Social Celebrations Catering — Elamrit Luxe Feast"
+  description="Catering for birthdays, anniversaries, cocktail parties, and house-warming pujas — joyful, gracious, and guest-first service by Elamrit Luxe Feast."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Social Celebrations' },
+    ]}
+    titleHtml="SOCIAL<br />CELEBRATIONS"
+    description="Birthdays, anniversaries, cocktail evenings, house-warmings — turning everyday milestones into extraordinary memories."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="The best social celebrations feel like the host thought of everything — because we helped them."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section
+    id="social-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Elamrit Approach</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Every milestone <em class="italic text-dark-red">deserves its own feast</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Social celebrations are deeply personal. Whether it's a 50th birthday with 200 guests or an intimate anniversary dinner for 30, the occasion deserves the same care, craft, and hospitality we bring to any major event.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "A great celebration is one where the host is as relaxed as the guests — because the food is taken care of."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We handle everything from menu design to service staffing so you can be fully present for what matters.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Request a Quote</Button>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Social · Personal · Joyful
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="social-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Personal, <em class="italic text-dark-red">Precise</em> &amp; Joyful
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Social occasions are intimate — the host knows every guest by name. We plan accordingly, with the care and attention that scale cannot substitute.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Host-First Planning</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We work with you directly — not a template — to understand the occasion, the guest list, and the feeling you want the evening to carry.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Curated Menus</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Menus designed around the guest of honour, the palate of the room, and the energy of the event — not a catalogue selection.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Warm, Familiar Service</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Our team for social events brings warmth, approachability, and a guest-first attitude — appropriate for intimate gatherings, not just large events.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Formats grid -->
+  <section id="social-formats" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]" style="background: var(--bg-services-home)">
+    <SectionHeader class="mb-16" label="Social Formats" align="center" showDivider={true}>
+      Catered for Every <em>Celebration</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-[18px]">
+      <a href="/services/social-celebrations/birthday-catering" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 8C20 8 16 4 16 2C16 4 20 8 20 8C20 8 24 4 24 2C24 4 20 8 20 8Z" />
+            <rect x="8" y="14" width="24" height="18" rx="1" />
+            <line x1="8" y1="20" x2="32" y2="20" />
+            <line x1="20" y1="14" x2="20" y2="32" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Birthday Catering</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Milestone birthdays from 40 to 400 guests — menus, formats, and service that honour the person and delight the crowd.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/social-celebrations/anniversary-catering" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M20 34C20 34 6 26 6 16C6 10.5 10.5 6 16 6C18.2 6 20 8 20 8C20 8 21.8 6 24 6C29.5 6 34 10.5 34 16C34 26 20 34 20 34Z" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Anniversary Catering</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Intimate dinners to grand anniversary celebrations — food that carries the weight and warmth of the occasion it's marking.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/social-celebrations/cocktail-parties" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M8 6h24L20 22V34M14 34h12" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">Cocktail Parties</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Roaming bites, live counters, and artful canapés — cocktail formats designed for conversation, movement, and memorable first impressions.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+
+      <a href="/services/social-celebrations/house-warming-puja" class="group block">
+        <Card variant="service">
+          <span class="mb-5 block font-display text-[clamp(44px,4.8vw,56px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">04</span>
+          <svg class="mb-6 h-[clamp(40px,4vw,48px)] w-[clamp(40px,4vw,48px)] text-gray-orange opacity-85" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M6 20L20 8L34 20" />
+            <path d="M10 20v14h20V20" />
+            <rect x="15" y="26" width="10" height="8" />
+          </svg>
+          <h3 class="mb-4 font-serif text-[clamp(22px,2.15vw,28px)] leading-snug font-normal text-dark-brown">House-warming &amp; Puja</h3>
+          <p class="mb-7 font-body text-[clamp(15px,1.35vw,17px)] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Gruhapravesh ceremonies and puja functions — ritual-aware service with auspicious menus and gracious hospitality.
+          </p>
+          <span class="service-link flex items-center gap-2 font-body text-[clamp(11px,0.95vw,12px)] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">Explore</span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
