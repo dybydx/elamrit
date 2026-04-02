@@ -1,0 +1,161 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
+---
+
+<BaseLayout
+  title="Fusion Cuisine Menus — Elamrit Luxe Feast"
+  description="Fusion cuisine catering by Elamrit — dishes that weave Indian and global traditions into something fresh, familiar, and surprising. Perfect for modern and multicultural celebrations."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Menus', href: '/menus' },
+      { label: 'Fusion Cuisine' },
+    ]}
+    titleHtml="FUSION<br />CUISINE"
+    description="Where culinary traditions meet with intention — dishes that feel both discovered and remembered, designed for guests who expect the unexpected."
+    primaryCtaHref="/menus/custom-menu"
+    primaryCtaLabel="Build a Custom Menu"
+    secondaryCtaHref="/menus"
+    secondaryCtaLabel="All Menu Categories"
+  />
+
+  <!-- Feature section -->
+  <section
+    id="fusion-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Philosophy</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Fusion done with <em class="italic text-dark-red">restraint</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Great fusion cuisine is not about mixing everything and hoping for complexity. It is a disciplined conversation between two traditions — knowing when to let one lead, and when to let both shine equally. We don't gimmick; we compose.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Fusion at its best makes a guest ask — 'How have I never had this before?'"
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Think tandoori-spiced salmon with yuzu, or a masala-braised short rib with miso. Or simply a menu that opens with Indian and transitions gracefully into global courses. Fusion is a spectrum — we work with you to find the right register for your event.
+      </p>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="fusion-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Three Kinds of <em class="italic text-dark-red">Fusion</em>
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Fusion can mean many things at an event. We categorise our approach clearly so you can choose what suits your occasion.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Dish-Level Fusion</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Individual dishes that combine two traditions — Indian spice profiles on global proteins, or classic Indian formats with international technique.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Course-Level Flow</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          A menu that opens Indian and closes continental — or begins globally and arrives at a familiar Indian dessert. The journey feels intentional throughout.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Station Fusion</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Parallel live counters — a chaat station beside a taco bar, or an Indian kebab grill next to a Yakiniku counter. Guests navigate the world in one room.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <MenuGallery
+    label="Fusion Cuisine"
+    tile1={{
+      imageSrc: '/images/menus/gallery-fusion-1.png',
+      imageAlt: 'Dramatic fusion fine-dining plate with Indian-spiced glaze and modern presentation.',
+      caption: 'Chef’s fusion',
+    }}
+    tile2={{
+      imageSrc: '/images/menus/gallery-fusion-2.png',
+      imageAlt: 'Upscale fusion canapés on marble with warm event lighting.',
+      caption: 'Fusion station',
+    }}
+    tile3={{
+      imageSrc: '/images/menus/gallery-fusion-3.png',
+      imageAlt: 'Plated fusion main with rich jus and elegant garnish.',
+      caption: 'Plated fusion',
+    }}
+  />
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Approach', value: 'Intentional Fusion' },
+      { label: 'Best For', value: 'Modern Celebrations' },
+      { label: 'Format', value: 'Plated · Buffet · Live' },
+      { label: 'Scale', value: '20 – 1,000 guests' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What your guests <em>remember</em>"
+    description="Fusion menus create conversation — dishes guests have never seen, that still feel rooted and satisfying. This is Elamrit's most creative menu territory."
+    bullets={[
+      'Dish-level fusion: Indian spice meets global technique',
+      'Course-flow menus that transition between traditions',
+      'Live fusion station concepts for interactive service',
+      'Multicultural event expertise — works for NRI weddings, international guests',
+      'Dietary requirements handled across all fusion variations',
+      'Chef-led menu consultation to dial in the right fusion register',
+    ]}
+    ctaHref="/menus/custom-menu"
+    ctaLabel="Design a Fusion Menu"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

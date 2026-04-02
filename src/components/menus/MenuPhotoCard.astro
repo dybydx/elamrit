@@ -1,0 +1,87 @@
+---
+interface Props {
+  href: string;
+  number: string;
+  title: string;
+  description: string;
+  linkLabel: string;
+  /** Optional hero image (site root path, e.g. `/images/menus/...`). When set, `imageAlt` should describe the dish for accessibility. */
+  imageSrc?: string;
+  imageAlt?: string;
+  /** Fallback when `imageSrc` is omitted — inline CSS placeholder color. */
+  bgStyle?: string;
+  /** Lighter gradient when placeholder/image area is already dark (e.g. solid dark red). */
+  darkBg?: boolean;
+}
+
+const {
+  href,
+  number,
+  title,
+  description,
+  linkLabel,
+  imageSrc,
+  imageAlt = '',
+  bgStyle = 'background: color-mix(in srgb, var(--gray-orange) 50%, var(--cream) 50%)',
+  darkBg = false,
+} = Astro.props as Props;
+---
+
+<a href={href} class="group block">
+  <div class="relative aspect-[4/5] overflow-hidden rounded-sm">
+    <div class="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+      {
+        imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            width="1024"
+            height="1280"
+          />
+        ) : (
+          <div class="h-full w-full" style={bgStyle} />
+        )
+      }
+    </div>
+
+    <div
+      class:list={[
+        'pointer-events-none absolute inset-0 transition-opacity duration-300',
+        darkBg
+          ? 'bg-gradient-to-t from-dark-brown/70 via-dark-brown/30 to-dark-brown/10'
+          : 'bg-gradient-to-t from-dark-brown/92 via-dark-brown/40 to-dark-brown/5 group-hover:opacity-90',
+      ]}
+    />
+
+    <div class="pointer-events-none absolute top-6 left-7 font-display text-[10px] tracking-[0.34em] text-cream/45 uppercase">
+      {number}
+    </div>
+
+    <div class="absolute inset-x-0 bottom-0 p-7 lg:p-8">
+      <h3 class="mb-3 font-serif text-[clamp(24px,2.4vw,32px)] font-light leading-tight text-cream">
+        {title}
+      </h3>
+      <p class="mb-5 line-clamp-2 font-body text-[15px] leading-[1.6] text-cream/68">
+        {description}
+      </p>
+      <span
+        class="pointer-events-none inline-flex items-center gap-2 font-body text-[11px] tracking-[0.22em] text-gray-orange uppercase transition-colors duration-200 group-hover:text-cream"
+      >
+        {linkLabel}
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
+          aria-hidden="true"
+        >
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>

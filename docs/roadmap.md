@@ -75,13 +75,13 @@ Notes:
 
 ### 05) Menu pages
 
-- [ ] `/menus` — Menu Overview
-- [ ] `/menus/indian-cuisine`
-- [ ] `/menus/international-cuisine`
-- [ ] `/menus/fusion-cuisine`
-- [ ] `/menus/desserts`
-- [ ] `/menus/beverages`
-- [ ] `/menus/custom-menu` — Custom Menu Builder
+- [x] `/menus` — Menu Overview
+- [x] `/menus/indian-cuisine`
+- [x] `/menus/international-cuisine`
+- [x] `/menus/fusion-cuisine`
+- [x] `/menus/desserts`
+- [x] `/menus/beverages`
+- [x] `/menus/custom-menu` — Custom Menu Builder
 
 ### 06) Location pages (Local SEO) — `/catering-in/*`
 
@@ -134,9 +134,9 @@ Notes:
 - [x] Create `/services/private-dining`
 - [x] Create specialty service pages (live-stations, pan-india-catering, destination-weddings, theme-catering)
 
-### Phase C — Menus (supports services + quote funnel)
-- [ ] Create `/menus` + category pages
-- [ ] Create `/menus/custom-menu` (even if MVP is a guided form)
+### Phase C — Menus (supports services + quote funnel) ✓ COMPLETE
+- [x] Create `/menus` + category pages
+- [x] Create `/menus/custom-menu` (even if MVP is a guided form)
 
 ### Phase D — Local SEO (locations)
 - [ ] Create `/catering-in/*` pages (start with Pune HQ + Pan-India)
@@ -152,6 +152,6 @@ Notes:
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 28 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes)
+- **Routes complete**: 35 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 

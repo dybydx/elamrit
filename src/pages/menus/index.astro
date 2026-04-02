@@ -1,0 +1,159 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import MenuPhotoCard from '@/components/menus/MenuPhotoCard.astro';
+---
+
+<BaseLayout
+  title="Menus — Elamrit Luxe Feast"
+  description="Explore Elamrit's curated menu categories — Indian, International, Fusion, Desserts, Beverages — or build a fully custom menu for your event."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Menus' },
+    ]}
+    titleHtml="OUR<br />MENUS"
+    description="Every menu we compose is a considered conversation — between your palate, your occasion, and our craft. Explore our cuisine categories or design your own."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="A great menu is less about what you serve and more about how it makes people feel."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/menus/custom-menu" variant="creamOnDark">Build a Custom Menu</Button>
+      <Button href="/contact/get-a-quote" variant="outlineCream">Get a Quote</Button>
+    </div>
+  </PageHero>
+
+  <!-- Intro section -->
+  <section
+    id="menus-intro"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Menus · Curated &amp; Custom
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">The Elamrit Kitchen</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Food that tells a <em class="italic text-dark-red">story</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We don't hand clients a printed menu and say choose. We begin with your occasion — its size, tone, cultural context, and guest diversity — and then architect a menu that feels inevitable, like it could not have been any other way.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Every dish on the table should have a reason to be there — and a guest who lights up when they find it."
+        </p>
+      </blockquote>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        From a regional Indian thali to a multi-course continental plated dinner — our kitchen carries the range to honour every palate in the room.
+      </p>
+      <Button href="/menus/custom-menu" variant="storyLink">Start with a Custom Menu</Button>
+    </div>
+  </section>
+
+  <!-- Stats strip -->
+  <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
+    <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Cuisines</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Indian &amp; Global</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Dietary</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Veg / Jain / NV</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Formats</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Buffet &amp; Plated</div>
+      </Card>
+      <Card variant="bare" class="px-10 py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Always</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Custom-ready</div>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Menu categories photo grid -->
+  <section id="menu-categories" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]" style="background: var(--bg-services-home)">
+    <SectionHeader class="mb-14" label="Menu Categories" align="center" showDivider={true}>
+      Explore by <em>Cuisine</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      <MenuPhotoCard
+        href="/menus/indian-cuisine"
+        number="01"
+        title="Indian Cuisine"
+        description="Regional classics, elevated signatures, live stations — from Rajasthani daals to Mughlai kebab counters and South Indian spreads."
+        linkLabel="Explore Indian"
+        imageSrc="/images/menus/menu-card-indian.png"
+        imageAlt="Curated North Indian wedding buffet spread in copper serveware on cream linen — biryani, curries, and naan arranged for Elamrit luxury catering."
+      />
+      <MenuPhotoCard
+        href="/menus/international-cuisine"
+        number="02"
+        title="International Cuisine"
+        description="Continental, Mediterranean, Pan-Asian — curated for cosmopolitan gatherings where guests bring diverse expectations."
+        linkLabel="Explore International"
+        imageSrc="/images/menus/menu-card-international.png"
+        imageAlt="Plated continental fine dining course on white china with warm candlelit ambience — Elamrit international catering."
+      />
+      <MenuPhotoCard
+        href="/menus/fusion-cuisine"
+        number="03"
+        title="Fusion Cuisine"
+        description="Two traditions, woven with intention — dishes that feel both discovered and remembered, for modern and multicultural events."
+        linkLabel="Explore Fusion"
+        imageSrc="/images/menus/menu-card-fusion.png"
+        imageAlt="Artistic fusion dish combining Indian spicing with modern fine dining plating — terracotta plate on dark wood."
+      />
+      <MenuPhotoCard
+        href="/menus/desserts"
+        number="04"
+        title="Desserts"
+        description="Indian mithai, live dessert counters, plated sweets — the final chapter of any great feast, remembered long after the event."
+        linkLabel="Explore Desserts"
+        imageSrc="/images/menus/menu-card-desserts.png"
+        imageAlt="Luxury dessert spread with Indian mithai and delicate pastries on blush and cream tones — Elamrit patisserie presentation."
+      />
+      <MenuPhotoCard
+        href="/menus/beverages"
+        number="05"
+        title="Beverages"
+        description="Welcome drinks, signature sherbets, mocktails — curated to complement your menu from the first arrival to the last toast."
+        linkLabel="Explore Beverages"
+        imageSrc="/images/menus/menu-card-beverages.png"
+        imageAlt="Elegant non-alcoholic mocktails in crystal glassware with citrus and herb garnish on cream linen."
+      />
+      <MenuPhotoCard
+        href="/menus/custom-menu"
+        number="06"
+        title="Custom Menu"
+        description="Your occasion, your palate. Tell us your vision and we'll compose a menu built entirely around you."
+        linkLabel="Build Your Menu"
+        imageSrc="/images/menus/menu-card-custom.png"
+        imageAlt="Bespoke catering still life with spices, cream ceramics, and burgundy linen — moody luxury table setting for a custom Elamrit menu."
+        darkBg={true}
+      />
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

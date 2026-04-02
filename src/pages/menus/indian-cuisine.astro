@@ -1,0 +1,162 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
+---
+
+<BaseLayout
+  title="Indian Cuisine Menus — Elamrit Luxe Feast"
+  description="Authentic Indian cuisine catering by Elamrit — regional specialities, elevated classics, live stations, and curated Jain, veg, and non-veg menus for weddings and events."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Menus', href: '/menus' },
+      { label: 'Indian Cuisine' },
+    ]}
+    titleHtml="INDIAN<br />CUISINE"
+    description="Centuries of regional depth, presented with quiet refinement — from Rajasthani daal baati to Mughlai kebab counters and Chettinad curries."
+    primaryCtaHref="/menus/custom-menu"
+    primaryCtaLabel="Build a Custom Menu"
+    secondaryCtaHref="/menus"
+    secondaryCtaLabel="All Menu Categories"
+  />
+
+  <!-- Feature section -->
+  <section
+    id="indian-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Range</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        India has a hundred <em class="italic text-dark-red">kitchens</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We treat Indian cuisine not as a single category but as a continent of flavours — each region with its own pantry, technique, and philosophy. Whether your event calls for the richness of North Indian royal fare or the coastal lightness of a Maharashtrian menu, we plan it with precision.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "Authenticity is in the technique, not just the name of the dish."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We source key ingredients regionally, train our chefs in the specific idiom of each cuisine, and build menus that honour the cultural significance of every dish we serve.
+      </p>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="indian-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        How We <em class="italic text-dark-red">Approach</em> It
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Indian cuisine at Elamrit goes well beyond a standard wedding buffet. We bring regional depth, live counter energy, and thoughtful dietary handling to every event.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Regional Authenticity</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          From Awadhi biryani to Gujarati thali — each region is given its own distinct treatment, not homogenised into a "generic Indian" spread.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Live Counter Energy</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Chaat stations, tawa counters, dosa corners — live food is theatre. We choreograph each station so guests experience the aroma, the theatre, and the warmth together.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Dietary Precision</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Jain, pure veg, and non-veg sections handled with complete separation — clearly labelled, thoughtfully plated, so every guest feels genuinely catered to.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <MenuGallery
+    label="Indian Cuisine"
+    tile1={{
+      imageSrc: '/images/menus/gallery-indian-1.png',
+      imageAlt: 'Premium Indian live chaat counter with brass platters, chutneys, and colourful garnishes.',
+      caption: 'Live stations',
+    }}
+    tile2={{
+      imageSrc: '/images/menus/gallery-indian-2.png',
+      imageAlt: 'Regional Indian thali on a brass tray with curries, dal, roti, and pickles.',
+      caption: 'Regional thali',
+    }}
+    tile3={{
+      imageSrc: '/images/menus/gallery-indian-3.png',
+      imageAlt: 'Grilled kebab skewers with vegetables and raita on a slate platter.',
+      caption: 'Kebab counter',
+    }}
+  />
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Regions', value: 'North · South · West' },
+      { label: 'Dietary', value: 'Veg / Jain / NV' },
+      { label: 'Formats', value: 'Buffet · Live · Plated' },
+      { label: 'Scale', value: '20 – 2,000 guests' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    titleHtml="What your guests <em>experience</em>"
+    description="Indian cuisine at Elamrit is composed to satisfy families across generations — elders looking for the familiar, younger guests looking for the elevated, and everyone in between."
+    bullets={[
+      'Regional Indian menu architecture (North, South, West, East)',
+      'Comfort classics alongside elevated signatures',
+      'Jain, pure veg, and non-veg clearly separated and labelled',
+      'Live counter options — chaat, tawa, dosa, kebab, dessert',
+      'Buffet or plated service based on your event format',
+      'Full staffing, replenishment, and presentation choreography',
+    ]}
+    ctaHref="/menus/custom-menu"
+    ctaLabel="Build a Custom Indian Menu"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

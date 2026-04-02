@@ -1,0 +1,162 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Card from '@/components/ui/Card.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
+import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
+import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
+import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
+---
+
+<BaseLayout
+  title="Desserts — Elamrit Luxe Feast"
+  description="Dessert catering by Elamrit — Indian mithai, plated global sweets, live dessert counters, and custom dessert spreads for weddings, galas, and celebrations."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <ChildServiceHero
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Menus', href: '/menus' },
+      { label: 'Desserts' },
+    ]}
+    titleHtml="DESSERTS"
+    description="The final chapter of every great feast — Indian mithai, live dessert counters, plated sweets, and the grand conclusion your guests deserve."
+    primaryCtaHref="/menus/custom-menu"
+    primaryCtaLabel="Build a Custom Menu"
+    secondaryCtaHref="/menus"
+    secondaryCtaLabel="All Menu Categories"
+  />
+
+  <!-- Feature section -->
+  <section
+    id="desserts-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">The Sweet Finish</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Remembered long after the <em class="italic text-dark-red">last bite</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Desserts are the emotional punctuation of a celebration. They arrive when guests are content, the energy is warm, and everyone is ready to be delighted. We treat this moment with the weight it deserves — never an afterthought, always a considered finish.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "The dessert spread is the last thing guests see and the first thing they tell their friends about."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        From traditional mithais to plated global desserts and theatrical live stations — we match the sweet spread to the tone of your event and the preferences of your guests.
+      </p>
+    </div>
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="desserts-pillars" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]" style="background: var(--bg-philosophy)">
+    <div class="mb-16 grid grid-cols-1 items-end gap-6 md:mb-20 lg:grid-cols-[1fr_2fr] lg:gap-[60px]">
+      <h2 class="font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Three Ways to <em class="italic text-dark-red">Sweeten</em> It
+      </h2>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Dessert at an event is not one thing — it is the moment, the setting, and the choice. We offer three approaches, often combined.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-0.5 lg:grid-cols-3">
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">01</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="22" cy="22" r="16" />
+          <path d="M22 8v8M22 28v8M8 22h8M28 22h8" />
+          <circle cx="22" cy="22" r="4" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Indian Mithai</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Traditional ladoos, barfis, halwa, and seasonal sweets — made fresh with quality ingredients and presented with care for cultural authenticity.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">02</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M22 6C22 6 8 14 8 26C8 33.7 14.3 40 22 40C29.7 40 36 33.7 36 26C36 14 22 6 22 6Z" />
+          <path d="M22 16V32M16 24L22 16L28 24" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Live Dessert Stations</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Gulab jamun counters, jalebi stations, chocolate fountains, gelato carts, crepe stations — live dessert is theatre, and it energises the final act of your event.
+        </p>
+      </Card>
+      <Card variant="pillar">
+        <div class="pointer-events-none absolute top-8 right-8 font-display text-[52px] leading-none tracking-wide text-dark-red/25">03</div>
+        <svg class="mb-7 h-11 w-11 text-gray-orange" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 34C10 34 12 20 22 14C32 20 34 34 34 34" />
+          <path d="M16 28C16 28 18 22 22 20C26 22 28 28 28 28" />
+          <line x1="10" y1="34" x2="34" y2="34" />
+        </svg>
+        <h3 class="pillar-title mb-4 font-serif text-2xl font-normal text-dark-brown">Plated Global Desserts</h3>
+        <div class="mb-6 h-0.5 w-8 bg-dark-red"></div>
+        <p class="font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Panna cotta, tarte tatin, mousse, tiramisu, and more — beautifully plated international desserts for formal dinners and gala receptions.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <MenuGallery
+    label="Desserts"
+    tile1={{
+      imageSrc: '/images/menus/gallery-desserts-1.png',
+      imageAlt: 'Tiered dessert display with mithai, macarons, and blush-toned styling.',
+      caption: 'Dessert display',
+    }}
+    tile2={{
+      imageSrc: '/images/menus/gallery-desserts-2.png',
+      imageAlt: 'Crisp jalebi with rabri in brass serveware and warm backlight.',
+      caption: 'Live jalebi station',
+    }}
+    tile3={{
+      imageSrc: '/images/menus/gallery-desserts-3.png',
+      imageAlt: 'Assorted Indian mithai and festive sweets on a styled platter.',
+      caption: 'Indian mithai',
+    }}
+  />
+
+  <ServiceStatsStrip
+    items={[
+      { label: 'Options', value: 'Indian · Global' },
+      { label: 'Style', value: 'Live · Plated · Display' },
+      { label: 'Dietary', value: 'Jain &amp; Vegan Ready' },
+      { label: 'Best For', value: 'All Event Types' },
+    ]}
+  />
+
+  <ServiceWhatYouGet
+    label="What's included"
+    titleHtml="A sweet finish that guests <em>talk about</em>"
+    description="Desserts at Elamrit are never a table of store-bought sweets. Every spread is fresh, purposefully curated, and matched to the tone of your occasion."
+    bullets={[
+      'Fresh Indian mithai — traditional and seasonal varieties',
+      'Live dessert stations — jalebi, gulab jamun, gelato, crepes',
+      'Plated international desserts for formal dining',
+      'Display dessert tables for weddings and receptions',
+      'Jain and vegan-friendly sweet options available',
+      'Presentation and display styling included',
+    ]}
+    ctaHref="/menus/custom-menu"
+    ctaLabel="Plan a Dessert Spread"
+  />
+
+  <Testimonials />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

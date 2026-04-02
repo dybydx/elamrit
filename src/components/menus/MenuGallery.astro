@@ -1,0 +1,119 @@
+---
+interface TileProps {
+  /** Site root path to image, e.g. `/images/menus/gallery-indian-1.png` */
+  imageSrc?: string;
+  imageAlt?: string;
+  bgStyle?: string;
+  caption?: string;
+}
+
+interface Props {
+  label?: string;
+  tile1?: TileProps;
+  tile2?: TileProps;
+  tile3?: TileProps;
+}
+
+const {
+  label = 'Gallery',
+  tile1 = {},
+  tile2 = {},
+  tile3 = {},
+} = Astro.props as Props;
+
+const t1bg = tile1.bgStyle ?? 'background: color-mix(in srgb, var(--gray-orange) 58%, var(--cream) 42%)';
+const t2bg = tile2.bgStyle ?? 'background: color-mix(in srgb, var(--cream) 65%, var(--gray-orange) 35%)';
+const t3bg = tile3.bgStyle ?? 'background: color-mix(in srgb, var(--cream) 60%, var(--dark-red) 25%)';
+---
+
+<section class="px-5 pt-10 pb-20 md:px-10 md:pt-14 lg:px-20 lg:pb-[100px]" style="background: var(--bg-services-home)">
+  <div class="mb-6 flex items-center gap-3">
+    <span class="font-body text-[11px] tracking-[0.28em] text-gray-orange uppercase">{label}</span>
+    <div class="h-px w-10 bg-gray-orange/35"></div>
+  </div>
+
+  <div
+    class="grid gap-2.5 overflow-hidden rounded-sm [grid-template-columns:2fr_1fr] [grid-template-rows:240px_240px] md:[grid-template-rows:280px_280px] lg:[grid-template-rows:300px_300px]"
+  >
+    <!-- Large tile -->
+    <div class="group relative row-span-2 overflow-hidden bg-dark-brown/10">
+      {
+        tile1.imageSrc ? (
+          <img
+            src={tile1.imageSrc}
+            alt={tile1.imageAlt ?? ''}
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="1600"
+          />
+        ) : (
+          <div class="absolute inset-0 h-full w-full" style={t1bg} />
+        )
+      }
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-brown/50 via-transparent to-transparent opacity-80" />
+      {
+        tile1.caption && (
+          <span class="absolute bottom-4 left-5 translate-y-1 font-body text-[11px] tracking-[0.24em] text-cream/95 uppercase opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {tile1.caption}
+          </span>
+        )
+      }
+    </div>
+
+    <!-- Top-right -->
+    <div class="group relative overflow-hidden bg-dark-brown/10">
+      {
+        tile2.imageSrc ? (
+          <img
+            src={tile2.imageSrc}
+            alt={tile2.imageAlt ?? ''}
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="600"
+          />
+        ) : (
+          <div class="absolute inset-0 h-full w-full" style={t2bg} />
+        )
+      }
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-brown/45 via-transparent to-transparent opacity-70" />
+      {
+        tile2.caption && (
+          <span class="absolute bottom-4 left-5 translate-y-1 font-body text-[11px] tracking-[0.24em] text-cream/95 uppercase opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {tile2.caption}
+          </span>
+        )
+      }
+    </div>
+
+    <!-- Bottom-right -->
+    <div class="group relative overflow-hidden bg-dark-brown/10">
+      {
+        tile3.imageSrc ? (
+          <img
+            src={tile3.imageSrc}
+            alt={tile3.imageAlt ?? ''}
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="600"
+          />
+        ) : (
+          <div class="absolute inset-0 h-full w-full" style={t3bg} />
+        )
+      }
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-brown/45 via-transparent to-transparent opacity-70" />
+      {
+        tile3.caption && (
+          <span class="absolute bottom-4 left-5 translate-y-1 font-body text-[11px] tracking-[0.24em] text-cream/95 uppercase opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {tile3.caption}
+          </span>
+        )
+      }
+    </div>
+  </div>
+</section>
