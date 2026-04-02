@@ -42,14 +42,18 @@ const { variant = 'home' } = Astro.props;
       <h2 class="font-serif text-[clamp(28px,3.5vw,48px)] font-light leading-tight text-cream">
         Ready to Create<br /><em class="italic">Your Unforgettable Feast?</em>
       </h2>
-      <p class="mt-4 max-w-xl font-body text-lg leading-[1.8] text-cream/65">
+      <p class="mt-4 max-w-xl font-body text-[18px] leading-[1.8] text-cream/70">
         Speak to our event specialists. We'll listen to your vision, understand your occasion, and craft a bespoke
         culinary experience that exceeds every expectation.
       </p>
     </div>
-    <div class="flex flex-col items-start gap-3.5">
-      <Button href="#">Get a Quote</Button>
-      <Button href="#" variant="outlineCream">View Menus</Button>
+    <div class="flex w-full flex-col items-stretch gap-3.5 lg:items-start">
+      <Button
+        href="#"
+        class="w-full border border-cream/35 text-center text-[13px] tracking-[0.16em] hover:border-cream/70 hover:bg-cream/90 hover:text-dark-red lg:w-[240px]"
+      >
+        Get a Quote
+      </Button>
     </div>
   </section>
 )}

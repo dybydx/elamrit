@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/shared/Nav.astro';
-import AboutPageHero from '../components/about/intro/AboutPageHero.astro';
+import PageHero from '../components/shared/PageHero.astro';
 import AboutStory from '../components/about/story/AboutStory.astro';
 import AboutPhilosophy from '../components/about/story/AboutPhilosophy.astro';
 import AboutValuesStrip from '../components/about/story/AboutValuesStrip.astro';
@@ -17,7 +17,16 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
   bottomCta="about"
 >
   <Nav variant="solid" />
-  <AboutPageHero />
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+    titleHtml="ABOUT<br />ELAMRIT"
+    description="The story behind the feast — our origins, our craft, and the people who bring it all to life."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="We don't just cater events. We compose experiences that become memories."
+    quoteAttribution="Elamrit Philosophy"
+  />
   <AboutStory />
   <AboutPhilosophy />
   <AboutValuesStrip />
