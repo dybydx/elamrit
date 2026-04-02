@@ -690,6 +690,32 @@ footer.site-footer .footer-col li a:hover::before {
   gap: 16px;
 }
 
+/* ═══ Journal — first related strip on blog / event slug (contrast vs cream body) ═══ */
+.journal-related-band {
+  margin-top: 5rem;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  padding: 3.5rem 1.25rem 3.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--gray-orange) 26%, transparent);
+  background: color-mix(in srgb, var(--light-blush) 72%, var(--cream) 28%);
+}
+
+@media (min-width: 768px) {
+  .journal-related-band {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+    padding: 4rem 2.5rem 4.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .journal-related-band {
+    margin-left: -5rem;
+    margin-right: -5rem;
+    padding: 4.5rem 5rem 5rem;
+  }
+}
+
 /* ═══ Blog / MDX article body ═══ */
 .blog-prose :where(h2) {
   @apply mb-5 font-serif text-[clamp(24px,2.8vw,32px)] font-light leading-tight text-dark-brown;

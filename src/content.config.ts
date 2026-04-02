@@ -17,4 +17,21 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const events = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/events' }),
+  schema: z.object({
+    title: z.string(),
+    breadcrumbTitle: z.string(),
+    /** When the event takes place (ISO date YYYY-MM-DD) */
+    eventAt: z.string(),
+    excerpt: z.string(),
+    tag: z.string(),
+    heroImageSrc: z.string(),
+    quote: z.string(),
+    quoteAttribution: z.string(),
+    /** City or venue line for cards and hero */
+    location: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, events };

@@ -7,26 +7,26 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
-import BlogPostGrid from '@/components/blog/BlogPostGrid.astro';
-import BlogPagination from '@/components/blog/BlogPagination.astro';
+import EventPostGrid from '@/components/events/EventPostGrid.astro';
+import EventPagination from '@/components/events/EventPagination.astro';
 import {
-  BLOG_PAGE_SIZE,
-  blogHubHero,
-  sliceBlogPage,
-  sortBlogEntries,
-  totalBlogPages,
-} from '@/lib/blog';
+  EVENT_PAGE_SIZE,
+  eventsHubHero,
+  sliceEventPage,
+  sortEventEntries,
+  totalEventPages,
+} from '@/lib/events';
 
-const all = await getCollection('blog');
-const sorted = sortBlogEntries(all);
+const all = await getCollection('events');
+const sorted = sortEventEntries(all);
 const page = 1;
-const posts = sliceBlogPage(sorted, page, BLOG_PAGE_SIZE);
-const totalPages = totalBlogPages(sorted.length);
+const events = sliceEventPage(sorted, page, EVENT_PAGE_SIZE);
+const totalPages = totalEventPages(sorted.length);
 ---
 
 <BaseLayout
-  title="Blog — Elamrit Luxe Feast"
-  description="Articles on wedding feasts, corporate programmes, and memorable catering — from the Elamrit team. Pune, Pan India, and editorial notes for hosts and planners."
+  title="Events — Elamrit Luxe Feast"
+  description="Selected programmes and celebrations we have catered — format notes, pacing, and how the table supported the room."
   bottomCta="about"
 >
   <Nav variant="solid" />
@@ -37,14 +37,14 @@ const totalPages = totalBlogPages(sorted.length);
     breadcrumb={[
       { label: 'Home', href: '/' },
       { label: 'Journal', href: '/journal' },
-      { label: 'Blog' },
+      { label: 'Events' },
     ]}
-    titleHtml="THE<br />BLOG"
-    description="Longer reads on timing, generosity, and execution — written for anyone planning a feast that has to work in the real world, not only in a mood board."
+    titleHtml="EVENTS"
+    description="Short write-ups of real programmes — what the brief asked for, how service and menu worked together, and what we would repeat on the next floor."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
-    heroImageSrc={blogHubHero}
-    quote="We publish slowly, on purpose — each piece should earn the time you spend with it."
+    heroImageSrc={eventsHubHero}
+    quote="Every room has a rhythm; our job is to feed it without stealing the spotlight."
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
@@ -56,36 +56,35 @@ const totalPages = totalBlogPages(sorted.length);
   <section class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
     <div class="mx-auto mb-14 max-w-[680px] text-center">
       <div class="mb-4 flex justify-center">
-        <SectionEyebrow>Articles</SectionEyebrow>
+        <SectionEyebrow>Showcases</SectionEyebrow>
       </div>
       <p class="font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-        The blog is where dated pieces live — newest first. We add articles when they are ready to be useful, not to fill a
-        calendar; bookmark the hub or start with a conversation about your own programme.
+        Events are dated snapshots — newest first. They complement longer articles on the blog; together they live under Journal.
       </p>
     </div>
 
     <SectionHeader class="mb-4" label="Latest" align="center" showDivider={true}>
-      From the <em>kitchen &amp; floor</em>
+      On the <em>floor</em>
     </SectionHeader>
     <p class="mx-auto mb-12 max-w-[1100px] text-center font-body text-[15px] leading-relaxed text-[var(--text-muted-on-cream)]">
-      {sorted.length} article{sorted.length === 1 ? '' : 's'}
+      {sorted.length} event{sorted.length === 1 ? '' : 's'}
       {
         totalPages > 1 ? (
           <>
             {' '}
-            · {posts.length} on this page ·{' '}
+            · {events.length} on this page ·{' '}
             <a
-              href="/blog/page/2"
+              href="/events/page/2"
               class="text-dark-red underline decoration-dark-red/30 underline-offset-4 transition-colors hover:text-gray-orange hover:decoration-gray-orange/50"
             >
-              Older posts →
+              Older events →
             </a>
           </>
         ) : null
       }
     </p>
-    <BlogPostGrid posts={posts} startIndex={0} />
-    <BlogPagination currentPage={page} totalPages={totalPages} />
+    <EventPostGrid events={events} startIndex={0} />
+    <EventPagination currentPage={page} totalPages={totalPages} />
   </section>
 
   <SiteFooter slot="footer" />

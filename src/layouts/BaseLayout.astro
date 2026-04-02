@@ -2,13 +2,101 @@
 import '../styles/app.css';
 import PageCta from '@/components/shared/PageCta.astro';
 
+const DEFAULT_OG_IMAGE = '/images/gallery/elamrit-gallery-wedding-feast.png';
+const SITE_FALLBACK = 'https://elamrit.com';
+
+interface ArticleMeta {
+  headline: string;
+  datePublished: string;
+  dateModified?: string;
+  section?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   bottomCta?: false | 'home' | 'about';
+  /** Site-root path (leading /) for og:image and twitter:image */
+  image?: string;
+  ogType?: 'website' | 'article';
+  robots?: string;
+  /** Omit default Organization + WebSite (+ optional BlogPosting) JSON-LD */
+  noJsonLd?: boolean;
+  article?: ArticleMeta;
 }
 
-const { title, description, bottomCta = false } = Astro.props;
+const {
+  title,
+  description,
+  bottomCta = false,
+  image: imageProp,
+  ogType = 'website',
+  robots = 'index, follow',
+  noJsonLd = false,
+  article,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(SITE_FALLBACK);
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imagePath = imageProp ?? DEFAULT_OG_IMAGE;
+const ogImageURL = new URL(imagePath, siteUrl).href;
+const siteOrigin = siteUrl.origin;
+
+const gaId =
+  typeof import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID === 'string'
+    ? import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID.trim()
+    : '';
+
+const orgId = `${siteOrigin}/#organization`;
+const websiteId = `${siteOrigin}/#website`;
+
+const jsonLdGraph: Record<string, unknown>[] = [];
+
+if (!noJsonLd) {
+  jsonLdGraph.push(
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: 'Elamrit',
+      url: siteOrigin,
+      description:
+        'Premium luxury catering for weddings, corporate events, and celebrations across Pune and Pan India.',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: 'Elamrit',
+      url: siteOrigin,
+      publisher: { '@id': orgId },
+    },
+  );
+
+  if (article) {
+    jsonLdGraph.push({
+      '@type': 'BlogPosting',
+      headline: article.headline,
+      description,
+      datePublished: article.datePublished,
+      dateModified: article.dateModified ?? article.datePublished,
+      image: [ogImageURL],
+      author: { '@type': 'Organization', name: 'Elamrit' },
+      publisher: { '@id': orgId },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalURL.href,
+      },
+      ...(article.section ? { articleSection: article.section } : {}),
+    });
+  }
+}
+
+const jsonLdSafe =
+  jsonLdGraph.length > 0
+    ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': jsonLdGraph,
+      }).replace(/</g, '\\u003c')
+    : null;
 ---
 
 <!doctype html>
@@ -16,14 +104,56 @@ const { title, description, bottomCta = false } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#24211f" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Elamrit" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    {article ? <meta property="article:published_time" content={article.datePublished} /> : null}
+    {article?.dateModified ? (
+      <meta property="article:modified_time" content={article.dateModified} />
+    ) : null}
+    {article?.section ? <meta property="article:section" content={article.section} /> : null}
+
+    {jsonLdSafe ? <script type="application/ld+json" set:html={jsonLdSafe} /> : null}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
       rel="stylesheet"
     />
+
+    {
+      gaId ? (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', gaId);
+          </script>
+        </>
+      ) : null
+    }
+
     <slot name="head" />
   </head>
   <body>

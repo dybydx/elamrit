@@ -15,6 +15,9 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path === '/about';
 const onGallery = path === '/gallery';
 const onBlog = path.startsWith('/blog');
+const onEvents = path.startsWith('/events');
+const onJournalHub = path === '/journal';
+const onJournalSection = onJournalHub || onBlog || onEvents;
 const onFoodJunction = path.startsWith('/food-junction');
 const onContact = path === '/contact' || path.startsWith('/contact/');
 
@@ -118,8 +121,14 @@ const navLinkClasses =
         <a href="/gallery" class={navLinkClasses} aria-current={onGallery ? 'page' : undefined}>Gallery</a>
       </div>
 
-      <div class:list={[navItemClasses, { 'nav-current': isSolid && onBlog }]}>
-        <a href="/blog" class={navLinkClasses} aria-current={onBlog ? 'page' : undefined}>Blog</a>
+      <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onJournalSection }]}>
+        <a href="/journal" class={navLinkClasses} aria-current={onJournalHub ? 'page' : undefined}>Journal</a>
+        <div class="dropdown-menu">
+          <span class="dropdown-heading">Read &amp; browse</span>
+          <a href="/journal">Overview</a>
+          <a href="/blog" aria-current={onBlog ? 'page' : undefined}>Blog</a>
+          <a href="/events" aria-current={onEvents ? 'page' : undefined}>Events</a>
+        </div>
       </div>
 
       <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
@@ -272,7 +281,16 @@ const navLinkClasses =
       </li>
 
       <li class="mobile-nav-item">
-        <a href="/blog" class="mobile-nav-plain-link" aria-current={onBlog ? 'page' : undefined}>Blog</a>
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-journal')" aria-expanded="false" aria-controls="mob-journal">
+          Journal
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-journal" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">Read &amp; browse</span>
+          <a href="/journal">Overview</a>
+          <a href="/blog">Blog</a>
+          <a href="/events">Events</a>
+        </div>
       </li>
 
       <li class="mobile-nav-item">

@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Card from '@/components/ui/Card.astro';
+import { formatBlogDate } from '@/lib/blog';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+{
+  posts.length > 0 ? (
+    <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[18px]">
+      {posts.map((post) => (
+        <a href={`/blog/${post.id}`} class="group block h-full">
+          <Card variant="service" class="flex h-full flex-col">
+            <span class="mb-2 block font-body text-[12px] tracking-[0.2em] text-gray-orange uppercase">
+              {formatBlogDate(post.data.publishedAt)}
+            </span>
+            <p class="mb-2 font-body text-[11px] tracking-[0.22em] text-dark-brown/70 uppercase">{post.data.tag}</p>
+            <h3 class="mb-3 font-serif text-[clamp(18px,2vw,22px)] font-normal leading-snug text-dark-brown">
+              {post.data.title}
+            </h3>
+            <p class="mb-4 flex-1 font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)] line-clamp-3">
+              {post.data.excerpt}
+            </p>
+            <span class="service-link mt-auto inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">
+              Read article
+            </span>
+          </Card>
+        </a>
+      ))}
+    </div>
+  ) : null
+}

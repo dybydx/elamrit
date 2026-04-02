@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Card from '@/components/ui/Card.astro';
+import { formatEventDate } from '@/lib/events';
+
+interface Props {
+  events: CollectionEntry<'events'>[];
+  startIndex?: number;
+}
+
+const { events, startIndex = 0 } = Astro.props;
+---
+
+<div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2 lg:gap-[18px]">
+  {
+    events.map((ev, i) => (
+      <a href={`/events/${ev.id}`} class="group block h-full">
+        <Card variant="service" class="flex h-full flex-col">
+          <span class="mb-3 block font-body text-[12px] tracking-[0.2em] text-gray-orange uppercase">
+            {formatEventDate(ev.data.eventAt)}
+            {ev.data.location ? ` · ${ev.data.location}` : ''}
+          </span>
+          <span class="mb-4 block font-display text-[clamp(36px,4vw,48px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">
+            {String(startIndex + i + 1).padStart(2, '0')}
+          </span>
+          <p class="mb-2 font-body text-[11px] tracking-[0.22em] text-dark-brown/70 uppercase">{ev.data.tag}</p>
+          <h2 class="mb-3 font-serif text-[clamp(20px,2.2vw,26px)] font-normal leading-snug text-dark-brown">
+            {ev.data.title}
+          </h2>
+          <p class="mb-6 flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            {ev.data.excerpt}
+          </p>
+          <span class="service-link mt-auto inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">
+            Event details
+          </span>
+        </Card>
+      </a>
+    ))
+  }
+</div>

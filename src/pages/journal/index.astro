@@ -1,0 +1,66 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { journalHubHero } from '@/lib/journal';
+---
+
+<BaseLayout
+  title="Journal — Elamrit Luxe Feast"
+  description="Articles and event showcases from Elamrit — long reads on the blog, dated programme notes under events."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    class="!min-h-[48vh] lg:!min-h-[54vh]"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Journal' }]}
+    titleHtml="JOURNAL"
+    description="Two shelves in one place: the blog for longer editorial pieces, and events for concise write-ups of programmes we have catered."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={journalHubHero}
+    quote="Useful before it is loud — that is the bar for anything we publish."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/about" variant="outlineCream">About Elamrit</Button>
+    </div>
+  </PageHero>
+
+  <section class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
+    <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2 md:gap-[18px]">
+      <a href="/blog" class="group block h-full">
+        <Card variant="service" class="flex h-full flex-col p-8 md:p-10">
+          <p class="mb-3 font-body text-[12px] tracking-[0.22em] text-gray-orange uppercase">Long reads</p>
+          <h2 class="mb-4 font-serif text-[clamp(24px,2.5vw,32px)] font-normal leading-snug text-dark-brown">Blog</h2>
+          <p class="mb-8 flex-1 font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+            Timing, menus, and execution — articles for hosts and planners who want the feast to work in the real world.
+          </p>
+          <span class="service-link inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">
+            Open blog →
+          </span>
+        </Card>
+      </a>
+      <a href="/events" class="group block h-full">
+        <Card variant="service" class="flex h-full flex-col p-8 md:p-10">
+          <p class="mb-3 font-body text-[12px] tracking-[0.22em] text-gray-orange uppercase">Showcases</p>
+          <h2 class="mb-4 font-serif text-[clamp(24px,2.5vw,32px)] font-normal leading-snug text-dark-brown">Events</h2>
+          <p class="mb-8 flex-1 font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+            Dated snapshots of programmes we have catered — format, pacing, and how the table supported the room.
+          </p>
+          <span class="service-link inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange">
+            Browse events →
+          </span>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
