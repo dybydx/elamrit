@@ -11,9 +11,9 @@ const { items } = Astro.props as Props;
 ---
 
 <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
-  <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
+  <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
     {items.slice(0, 4).map((item) => (
-      <Card variant="bare" class="px-10 py-[52px]">
+      <Card variant="bare" class="px-7 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-[52px]">
         <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">{item.label}</span>
         <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">{item.value}</div>
       </Card>

@@ -8,6 +8,7 @@ import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { social as socialHero } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -28,6 +29,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
     description="Birthdays, anniversaries, cocktail evenings, house-warmings — turning everyday milestones into extraordinary memories."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={socialHero}
     quote="The best social celebrations feel like the host thought of everything — because we helped them."
     quoteAttribution="Elamrit"
   >

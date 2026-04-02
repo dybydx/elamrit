@@ -9,6 +9,7 @@ import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { menuInternational } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
       { label: 'International Cuisine' },
     ]}
     titleHtml="INTERNATIONAL<br />CUISINE"
+    heroImageSrc={menuInternational}
     description="Continental plated, Mediterranean spreads, Pan-Asian live stations — global flavours composed for guests who bring the world's expectations to your table."
     primaryCtaHref="/menus/custom-menu"
     primaryCtaLabel="Build a Custom Menu"

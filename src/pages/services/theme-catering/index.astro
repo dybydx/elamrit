@@ -6,6 +6,7 @@ import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { themeCatering } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -26,6 +27,7 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
     description="A curated world built around your occasion — menu, presentation, and service all woven into a single cohesive experience."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={themeCatering}
     quote="A theme is not decoration — it's the flavour of the entire evening."
     quoteAttribution="Elamrit"
   >

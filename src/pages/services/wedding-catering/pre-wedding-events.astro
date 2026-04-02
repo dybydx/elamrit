@@ -8,6 +8,7 @@ import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
 import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import { weddingPreEvent } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
       { label: 'Pre-wedding Events' },
     ]}
     titleHtml="PRE-WEDDING<br />EVENTS"
+    heroImageSrc={weddingPreEvent}
     description="Different moments. Different moods. One composed standard of hospitality — across every celebration."
     primaryCtaHref="/contact/get-a-quote"
     primaryCtaLabel="Get a Quote"

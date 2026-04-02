@@ -6,6 +6,7 @@ import TestimonialsSection from '../components/home/showcase/Testimonials.astro'
 import VideoTestimonials from '@/components/testimonials/VideoTestimonials.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
 import Button from '@/components/ui/Button.astro';
+import { testimonials as testimonialsHero } from '@/lib/hero-images';
 
 const videoTestimonials = [
   {
@@ -40,6 +41,7 @@ const videoTestimonials = [
     description="A few words from the people who trusted us with their most important moments — and the flavours they still talk about."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={testimonialsHero}
     quote="The best testimonial is a guest who remembers the last bite as vividly as the first."
     quoteAttribution="Elamrit"
   >

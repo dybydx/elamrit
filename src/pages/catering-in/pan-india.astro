@@ -1,0 +1,151 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { cateringPanIndia } from '@/lib/hero-images';
+---
+
+<BaseLayout
+  title="Pan India Catering — Elamrit Luxe Feast"
+  description="Elamrit Luxe Feast provides premium catering across India — Pune, Mumbai, Delhi, Bangalore, Hyderabad, Goa, Rajasthan, and beyond. One standard, every city."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Pan India Catering' },
+    ]}
+    titleHtml="PAN INDIA<br />CATERING"
+    description="Wherever your event is, we're there — with the same team, the same preparation, and the same standard that defines every Elamrit event."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={cateringPanIndia}
+    quote="Distance is a logistics problem. We've solved it. What travels with us is the quality."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href="/services/pan-india-catering" variant="outlineCream">Our Operations Model</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]">
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Pune HQ · Pan India
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">Nationwide Reach</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        One standard, <em class="italic text-dark-red">every city</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Our operational base is in Pune, but we have catered landmark events in Mumbai, Delhi, Bangalore, Hyderabad, Goa, Rajasthan, and across India. Over years of Pan India deployments, we've refined a travel-ready model that keeps quality consistent regardless of distance — advance teams, pre-vetted vendor networks, kitchen walkthroughs, and rehearsals before the event day.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "The guest should never know we travelled. That's the discipline we've built our Pan India operations around."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Every Pan India event starts weeks early — with supply chain mapping, on-site walkthroughs, and service rehearsals long before our full team departs.
+      </p>
+      <Button href="/services/pan-india-catering" variant="storyLink">Read About Our Operations</Button>
+    </div>
+  </section>
+
+  <!-- Cities we serve -->
+  <section class="bg-dark-red px-5 py-20 md:px-10 lg:px-20 lg:py-24">
+    <div class="mb-14 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <span class="mb-3 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">Cities We Serve</span>
+        <h2 class="font-serif text-[clamp(28px,3.2vw,46px)] font-light leading-tight text-cream">
+          Six cities, <em class="italic">one team</em>
+        </h2>
+      </div>
+      <p class="max-w-[400px] font-body text-[17px] leading-[1.8] text-cream/65 lg:text-right">
+        Each city has its own dedicated page with local venue knowledge and city-specific event planning.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/catering-in/pune" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Headquarters</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Pune</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Our home base — the full portfolio, maximum team depth, and home-ground advantage.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/mumbai" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Metro</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Mumbai</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Corporate galas, luxury weddings, and social events for the city's most ambitious hosts.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/delhi-ncr" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Capital</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Delhi NCR</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Grand weddings, diplomatic events, and high-profile conferences in the capital.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/bangalore" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Tech Hub</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Bangalore</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Corporate events, multicultural weddings, and cosmopolitan celebrations.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/hyderabad" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Heritage</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Hyderabad</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Royal-heritage weddings and corporate events in the city of the Nizams.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/singapore" class="block">
+        <Card variant="locationSg" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Coming Soon</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Singapore</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Elamrit is expanding to Singapore. Join our waitlist to be first to know.</p>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <!-- Also Serve section (Goa, Rajasthan, etc.) -->
+  <section class="bg-light-blush px-5 py-20 md:px-10 lg:px-20 lg:py-[90px]">
+    <div class="mb-10">
+      <SectionEyebrow class="mb-4">Beyond Our City Pages</SectionEyebrow>
+      <h2 class="font-serif text-[clamp(28px,3vw,44px)] font-light leading-tight text-dark-brown">
+        We also go <em class="italic text-dark-red">wherever you need us</em>
+      </h2>
+      <p class="mt-5 max-w-[640px] font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Our city pages cover our most frequent destinations. But Elamrit has catered in Goa, Rajasthan, Himachal Pradesh, Kerala, and other locations across India — wherever our clients bring us, we bring our standards.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-px bg-[rgba(189,148,118,0.2)] sm:grid-cols-4">
+      {['Goa', 'Rajasthan', 'Kerala', 'Himachal Pradesh'].map((place) => (
+        <div class="bg-cream px-5 py-6 text-center">
+          <span class="font-body text-[13px] leading-[1.6] tracking-[0.06em] text-[var(--text-muted-on-cream)]">{place}</span>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8">
+      <Button href="/contact/get-a-quote" variant="outlineCta">Tell Us Your Location</Button>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

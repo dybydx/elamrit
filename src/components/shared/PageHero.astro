@@ -17,6 +17,8 @@ export interface Props {
   backgroundClass?: string;
 
   imageClass?: string;
+  /** Site-root image URL for split hero right pane (e.g. `/images/gallery/...`). Sets `--ph-hero-image` on `.ph-image`. */
+  heroImageSrc?: string;
   quote?: string;
   quoteAttribution?: string;
 
@@ -34,10 +36,15 @@ const {
   description,
   backgroundClass = 'bg-dark-red',
   imageClass,
+  heroImageSrc,
   quote,
   quoteAttribution,
   descriptionClass,
 } = Astro.props;
+
+const heroPaneStyle: Record<string, string> | undefined = heroImageSrc
+  ? { '--ph-hero-image': `url('${heroImageSrc}')` }
+  : undefined;
 
 const splitDescriptionClasses = descriptionClass ?? 'max-w-[400px]';
 const centerDescriptionClasses = descriptionClass ?? 'mx-auto max-w-[620px]';
@@ -93,14 +100,14 @@ const hasRightPane = variant === 'split' && (imageClass || quote || quoteAttribu
     </div>
 
     {hasRightPane ? (
-      <div class="relative hidden overflow-hidden lg:block">
-        {imageClass ? <div class:list={[imageClass, 'absolute inset-0 min-h-[50vh] lg:min-h-full']} /> : null}
+      <div class="relative h-[52vw] max-h-[380px] overflow-hidden lg:h-auto lg:max-h-none">
+        {imageClass ? <div class:list={[imageClass, 'absolute inset-0']} style={heroPaneStyle} /> : null}
 
         {quote ? (
           <div
-            class="absolute right-[60px] bottom-[60px] z-[3] max-w-[280px] border-l-[3px] border-green bg-[color-mix(in_srgb,var(--dark-red)_92%,black)] px-8 py-7 backdrop-blur-md"
+            class="absolute right-5 bottom-5 z-[3] max-w-[260px] border-l-[3px] border-green bg-[color-mix(in_srgb,var(--dark-red)_92%,black)] px-6 py-5 backdrop-blur-md sm:right-8 sm:bottom-8 lg:right-[60px] lg:bottom-[60px] lg:max-w-[280px] lg:px-8 lg:py-7"
           >
-            <p class="mb-3 font-serif text-lg italic leading-[1.65] text-cream">"{quote}"</p>
+            <p class="mb-3 font-serif text-base italic leading-[1.65] text-cream lg:text-lg">"{quote}"</p>
             {quoteAttribution ? (
               <div class="font-body text-xs tracking-[0.18em] text-gray-orange uppercase">
                 — {quoteAttribution}

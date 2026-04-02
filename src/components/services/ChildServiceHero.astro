@@ -11,6 +11,8 @@ interface Props {
   titleHtml: string;
   description: string;
   imageClass?: string;
+  /** Site-root path for split hero background — see `src/lib/hero-images.ts`. */
+  heroImageSrc?: string;
   quote?: string;
   quoteAttribution?: string;
   primaryCtaHref: string;
@@ -25,6 +27,7 @@ const {
   titleHtml,
   description,
   imageClass = 'ph-image',
+  heroImageSrc,
   quote,
   quoteAttribution,
   primaryCtaHref,
@@ -41,6 +44,7 @@ const {
   description={description}
   descriptionClass="w-full max-w-none"
   imageClass={imageClass}
+  heroImageSrc={heroImageSrc}
   quote={quote}
   quoteAttribution={quoteAttribution}
 >

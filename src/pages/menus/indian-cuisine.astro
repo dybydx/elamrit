@@ -10,6 +10,7 @@ import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { menuIndian } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -26,6 +27,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
       { label: 'Indian Cuisine' },
     ]}
     titleHtml="INDIAN<br />CUISINE"
+    heroImageSrc={menuIndian}
     description="Centuries of regional depth, presented with quiet refinement — from Rajasthani daal baati to Mughlai kebab counters and Chettinad curries."
     primaryCtaHref="/menus/custom-menu"
     primaryCtaLabel="Build a Custom Menu"

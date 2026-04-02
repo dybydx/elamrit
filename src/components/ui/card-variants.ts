@@ -24,14 +24,14 @@ export const cardVariants = cva('', {
         'location-card border border-[rgba(181,195,141,0.55)] border-l-[3px] border-l-green bg-light-blush px-7 py-9 transition-all duration-300 hover:border-dark-red/22 hover:bg-cream',
       /** About philosophy pillars — keep the variant self-contained. */
       pillar:
-        'pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300 hover:border-[rgba(81,3,12,0.18)] hover:bg-[color-mix(in_srgb,var(--cream)_60%,var(--light-blush)_40%)]',
+        'pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-6 py-10 shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300 hover:border-[rgba(81,3,12,0.18)] hover:bg-[color-mix(in_srgb,var(--cream)_60%,var(--light-blush)_40%)] lg:px-10 lg:py-[52px]',
       /** Food Junction numbered feature rows. */
       foodJunction: foodJunctionFeature,
       /** Home experience section stat cells on dark red. */
       experienceTile: 'bg-cream/5 px-6 py-7',
       /** About stats grid cells. */
       statTile:
-        'flex flex-col gap-2 border-t-[3px] border-dark-red bg-light-blush px-10 py-[52px]',
+        'flex flex-col gap-2 border-t-[3px] border-dark-red bg-light-blush px-7 py-10 lg:px-10 lg:py-[52px]',
     },
   },
   defaultVariants: {

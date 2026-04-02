@@ -9,6 +9,7 @@ import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { menuBeverages } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
       { label: 'Beverages' },
     ]}
     titleHtml="BEVERAGES"
+    heroImageSrc={menuBeverages}
     description="From the first welcome drink to the final toast — curated non-alcoholic beverages that set the tone, complement the food, and keep your guests refreshed throughout."
     primaryCtaHref="/menus/custom-menu"
     primaryCtaLabel="Build a Custom Menu"

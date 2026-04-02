@@ -9,6 +9,7 @@ import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { menuFusion } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
       { label: 'Fusion Cuisine' },
     ]}
     titleHtml="FUSION<br />CUISINE"
+    heroImageSrc={menuFusion}
     description="Where culinary traditions meet with intention — dishes that feel both discovered and remembered, designed for guests who expect the unexpected."
     primaryCtaHref="/menus/custom-menu"
     primaryCtaLabel="Build a Custom Menu"

@@ -6,6 +6,7 @@ import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { servicesHub } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -22,6 +23,7 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
     description="Choose the occasion. We design the flow, the service style, and the menu — so your event feels effortless and elevated."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={servicesHub}
     quote="Every service is choreography — timing, temperature, and hospitality in perfect sync."
     quoteAttribution="Elamrit"
   >

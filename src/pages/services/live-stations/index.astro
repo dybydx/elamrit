@@ -6,6 +6,7 @@ import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { liveStations } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -26,6 +27,7 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
     description="High energy, high aroma, chef presence — live counters that become the focal point of your event."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={liveStations}
     quote="A live station doesn't just serve food — it creates a moment guests gather around."
     quoteAttribution="Elamrit"
   >

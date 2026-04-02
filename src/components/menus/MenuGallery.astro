@@ -33,10 +33,10 @@ const t3bg = tile3.bgStyle ?? 'background: color-mix(in srgb, var(--cream) 60%, 
   </div>
 
   <div
-    class="grid gap-2.5 overflow-hidden rounded-sm [grid-template-columns:2fr_1fr] [grid-template-rows:240px_240px] md:[grid-template-rows:280px_280px] lg:[grid-template-rows:300px_300px]"
+    class="grid gap-2.5 overflow-hidden rounded-sm grid-cols-1 md:[grid-template-columns:2fr_1fr] md:[grid-template-rows:280px_280px] lg:[grid-template-rows:300px_300px]"
   >
     <!-- Large tile -->
-    <div class="group relative row-span-2 overflow-hidden bg-dark-brown/10">
+    <div class="group relative min-h-[260px] overflow-hidden bg-dark-brown/10 md:row-span-2 md:min-h-0">
       {
         tile1.imageSrc ? (
           <img
@@ -63,7 +63,7 @@ const t3bg = tile3.bgStyle ?? 'background: color-mix(in srgb, var(--cream) 60%, 
     </div>
 
     <!-- Top-right -->
-    <div class="group relative overflow-hidden bg-dark-brown/10">
+    <div class="group relative min-h-[200px] overflow-hidden bg-dark-brown/10 md:min-h-0">
       {
         tile2.imageSrc ? (
           <img
@@ -90,7 +90,7 @@ const t3bg = tile3.bgStyle ?? 'background: color-mix(in srgb, var(--cream) 60%, 
     </div>
 
     <!-- Bottom-right -->
-    <div class="group relative overflow-hidden bg-dark-brown/10">
+    <div class="group relative min-h-[200px] overflow-hidden bg-dark-brown/10 md:min-h-0">
       {
         tile3.imageSrc ? (
           <img

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Catering in Singapore — Coming Soon · Elamrit Luxe Feast"
+  description="Elamrit Luxe Feast is expanding to Singapore. Join our waitlist to be among the first to access our premium catering services in Singapore."
+  bottomCta={false}
+>
+  <Nav variant="solid" />
+
+  <!-- Hero — full-screen, centred, brand-dark -->
+  <section class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-dark-red px-5 pt-[var(--nav-h)] text-center md:px-10">
+    <!-- Decorative background text -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+    >
+      <span
+        class="select-none font-display text-[clamp(80px,18vw,240px)] leading-none tracking-[0.18em] text-cream/[0.04] uppercase"
+      >
+        SG
+      </span>
+    </div>
+
+    <div class="relative z-10 max-w-[720px]">
+      <!-- Eyebrow -->
+      <div class="mb-8 inline-flex items-center gap-3">
+        <span class="h-px w-10 bg-gray-orange/60"></span>
+        <span class="font-body text-xs tracking-[0.32em] text-gray-orange uppercase">Coming Soon</span>
+        <span class="h-px w-10 bg-gray-orange/60"></span>
+      </div>
+
+      <h1 class="mb-6 font-display text-[clamp(38px,5.5vw,76px)] leading-[1.05] tracking-[0.28em] text-cream uppercase">
+        Singapore
+      </h1>
+
+      <p class="mx-auto mb-4 max-w-[500px] font-serif text-[clamp(18px,1.4vw,22px)] italic leading-[1.7] text-cream/70">
+        Elamrit is bringing its luxury catering experience to Singapore — the city where world cuisines meet world standards.
+      </p>
+
+      <p class="mx-auto mb-12 max-w-[480px] font-body text-[17px] leading-[1.8] text-cream/55">
+        We're preparing something extraordinary. Join our waitlist to receive early access, menu previews, and launch updates — before anyone else.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <Button href="/contact" variant="creamOnDark">Join the Waitlist</Button>
+        <Button href="/catering-in/pan-india" variant="outlineCream">Our India Operations</Button>
+      </div>
+    </div>
+
+    <!-- Scroll-down pill -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+      <a href="#singapore-details" class="flex flex-col items-center gap-2 text-cream/40 transition-colors hover:text-cream/70">
+        <span class="font-body text-[11px] tracking-[0.25em] uppercase">Learn More</span>
+        <span class="text-lg leading-none">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Details section -->
+  <section id="singapore-details" class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-[100px]">
+      <div>
+        <SectionEyebrow class="mb-5">Why Singapore</SectionEyebrow>
+        <h2 class="mb-8 font-serif text-[clamp(28px,3.2vw,44px)] font-light leading-tight text-dark-brown">
+          A city that deserves <em class="italic text-dark-red">the finest table</em>
+        </h2>
+        <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          Singapore is one of the world's most sophisticated food cities — a place where culinary excellence is genuinely understood and deeply valued. Its multicultural tapestry, global business community, and high-end event culture make it a natural home for Elamrit's philosophy.
+        </p>
+        <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          We're not just extending our reach — we're bringing a genuinely new kind of luxury Indian catering experience to Singapore's most discerning hosts: weddings, corporate events, and private dinners that honour India's culinary heritage while meeting the city's international expectations.
+        </p>
+      </div>
+
+      <div>
+        <SectionEyebrow class="mb-5">What to Expect</SectionEyebrow>
+        <h2 class="mb-8 font-serif text-[clamp(28px,3.2vw,44px)] font-light leading-tight text-dark-brown">
+          The same standard, <em class="italic text-dark-red">a new city</em>
+        </h2>
+        <div class="space-y-6">
+          {(
+            [
+              { label: 'Indian Weddings in Singapore', body: "Full-service catering for Singapore's vibrant Indian community — from intimate ceremonies to grand multicultural celebrations." },
+              { label: 'Corporate & Diplomatic Events', body: "Precision-delivered catering for Singapore's corporate and diplomatic occasions — conferences, galas, and executive dining." },
+              { label: 'Private Dining', body: "Chef-curated private experiences for Singapore's most discerning households — intimate, personal, and unforgettable." },
+            ] as { label: string; body: string }[]
+          ).map(({ label, body }) => (
+            <div class="border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+              <h3 class="mb-2 font-body text-[13px] tracking-[0.18em] text-dark-red uppercase">{label}</h3>
+              <p class="font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="grid grid-cols-1 items-center gap-10 bg-dark-brown px-5 py-20 md:px-10 lg:grid-cols-[2fr_1fr] lg:gap-16 lg:px-20 lg:py-[90px]">
+    <div>
+      <span class="mb-3 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">Get Early Access</span>
+      <h2 class="font-serif text-[clamp(26px,3vw,44px)] font-light leading-tight text-cream">
+        Be the first to know <em class="italic">when we arrive</em>
+      </h2>
+      <p class="mt-4 max-w-[520px] font-body text-[17px] leading-[1.8] text-cream/65">
+        Leave your details and we'll reach out with launch updates, early access to our Singapore menu previews, and priority booking.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 lg:items-start">
+      <Button href="/contact" variant="creamOnDark" class="w-full text-center lg:w-auto">Join the Waitlist</Button>
+      <Button href="/catering-in/pan-india" variant="outlineCream" class="w-full text-center lg:w-auto">See Our India Locations</Button>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

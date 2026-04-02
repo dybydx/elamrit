@@ -8,6 +8,7 @@ import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
 import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import { weddingHindu } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
       { label: 'Hindu Weddings' },
     ]}
     titleHtml="HINDU<br />WEDDINGS"
+    heroImageSrc={weddingHindu}
     description="Ritual timing, guest flow, and menu rhythm — planned with the quiet confidence your families will feel."
     primaryCtaHref="/contact/get-a-quote"
     primaryCtaLabel="Get a Quote"

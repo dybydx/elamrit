@@ -8,6 +8,7 @@ import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
 import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import { socialAnniversary } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -25,6 +26,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
       { label: 'Anniversary Catering' },
     ]}
     titleHtml="ANNIVERSARY<br />CATERING"
+    heroImageSrc={socialAnniversary}
     description="From intimate dinners for two families to grand anniversary evenings — food that carries the weight of the occasion."
     primaryCtaHref="/contact/get-a-quote"
     primaryCtaLabel="Get a Quote"

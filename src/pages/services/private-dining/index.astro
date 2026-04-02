@@ -9,6 +9,7 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
 import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import { privateDining } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -29,6 +30,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
     description="Bespoke in-home dining — a personal chef, a curated menu, and impeccable service within the intimacy of your space."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={privateDining}
     quote="Private dining is the most personal thing we do — and the most rewarding."
     quoteAttribution="Elamrit"
   >

@@ -9,6 +9,7 @@ import AboutStats from '../components/about/story/AboutStats.astro';
 import AboutTeam from '../components/about/company/AboutTeam.astro';
 import AboutLocations from '../components/about/company/AboutLocations.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
+import { defaultHero } from '@/lib/hero-images';
 ---
 
 <BaseLayout
@@ -24,6 +25,7 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
     description="The story behind the feast — our origins, our craft, and the people who bring it all to life."
     descriptionClass="w-full max-w-none"
     imageClass="ph-image"
+    heroImageSrc={defaultHero}
     quote="We don't just cater events. We compose experiences that become memories."
     quoteAttribution="Elamrit Philosophy"
   />

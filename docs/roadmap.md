@@ -85,14 +85,14 @@ Notes:
 
 ### 06) Location pages (Local SEO) — `/catering-in/*`
 
-- [ ] `/catering-in/pune` — HQ
-- [ ] `/catering-in/pune/wedding-catering`
-- [ ] `/catering-in/mumbai`
-- [ ] `/catering-in/delhi-ncr`
-- [ ] `/catering-in/bangalore`
-- [ ] `/catering-in/hyderabad`
-- [ ] `/catering-in/pan-india`
-- [ ] `/catering-in/singapore` — Coming soon / waitlist
+- [x] `/catering-in/pune` — HQ
+- [x] `/catering-in/pune/wedding-catering`
+- [x] `/catering-in/mumbai`
+- [x] `/catering-in/delhi-ncr`
+- [x] `/catering-in/bangalore`
+- [x] `/catering-in/hyderabad`
+- [x] `/catering-in/pan-india`
+- [x] `/catering-in/singapore` — Coming soon / waitlist
 
 ### 07) Food Junction (sub-brand) — `/food-junction/*`
 
@@ -138,9 +138,9 @@ Notes:
 - [x] Create `/menus` + category pages
 - [x] Create `/menus/custom-menu` (even if MVP is a guided form)
 
-### Phase D — Local SEO (locations)
-- [ ] Create `/catering-in/*` pages (start with Pune HQ + Pan-India)
-- [ ] Create Singapore “Coming soon” waitlist page
+### Phase D — Local SEO (locations) ✓ COMPLETE
+- [x] Create `/catering-in/*` pages (start with Pune HQ + Pan-India)
+- [x] Create Singapore “Coming soon” waitlist page
 
 ### Phase E — Brand expansion (Food Junction)
 - [ ] Create `/food-junction/*` section
@@ -152,6 +152,6 @@ Notes:
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 35 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes)
+- **Routes complete**: 43 / 50+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes, all Phase D location routes)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 

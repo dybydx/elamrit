@@ -23,7 +23,7 @@ const navLogoClasses = 'nav-logo flex items-center gap-3.5';
 const navLogoMarkClasses = 'h-[42px] w-[34px] text-cream';
 const navLogoNameClasses = 'nav-logo-name font-display text-[17px] tracking-[0.4em] text-cream';
 const navLogoTagClasses = 'nav-logo-tag font-serif text-[11px] tracking-[0.22em] text-gray-orange uppercase';
-const navLinksClasses = 'nav-links hidden items-center gap-8 min-[641px]:flex';
+const navLinksClasses = 'nav-links hidden items-center gap-8 lg:flex';
 const navItemClasses = 'nav-item relative flex items-center';
 const navLinkClasses =
   'flex items-center gap-1 font-body text-sm tracking-[0.14em] text-cream/70 uppercase transition-colors duration-200 hover:text-cream';
@@ -142,5 +142,217 @@ const navLinkClasses =
         <a href="/contact" class={navLinkClasses} aria-current={onContact ? 'page' : undefined}>Contact</a>
       </div>
     </div>
-    <Button href="/contact/get-a-quote" variant="navCta">Get a Quote</Button>
+  <button
+    id="mobileMenuOpen"
+    class="hamburger-btn text-cream lg:hidden"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="mobileMenuOverlay"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <Button href="/contact/get-a-quote" variant="navCta" class="hidden lg:inline-flex">Get a Quote</Button>
+</nav>
+
+<!-- ═══ Mobile full-screen nav overlay ═══ -->
+<div
+  id="mobileMenuOverlay"
+  class="mobile-menu-overlay lg:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Navigation menu"
+>
+  <div class="mobile-menu-header">
+    <a href="/" class="flex items-center gap-3.5" aria-label="Elamrit home">
+      <svg class="h-[36px] w-[29px] text-dark-brown" viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="30" cy="14" rx="6" ry="10" stroke="currentColor" stroke-width="1.5" />
+        <line x1="30" y1="5" x2="30" y2="23" stroke="currentColor" stroke-width="0.8" />
+        <path d="M27 16 C20 13 11 7 4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M26 20 C17 19 8 14 2 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M25 24 C18 25 10 23 5 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M33 16 C40 13 49 7 56 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M34 20 C43 19 52 14 58 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M35 24 C42 25 50 23 55 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="30" y1="23" x2="30" y2="52" stroke="currentColor" stroke-width="1.5" />
+        <path d="M30 52 C24 57 16 61 8 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M30 52 C36 57 44 61 52 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <div class="flex flex-col gap-px">
+        <span class="font-display text-[16px] tracking-[0.4em] text-dark-brown">ELAMRIT</span>
+        <span class="font-serif text-[10px] tracking-[0.22em] text-gray-orange uppercase">Luxe Feast</span>
+      </div>
+    </a>
+    <button
+      id="mobileMenuClose"
+      class="flex h-11 w-11 items-center justify-center text-dark-brown/50 transition-colors hover:text-dark-red"
+      aria-label="Close navigation menu"
+    >
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="1" y1="1" x2="17" y2="17" />
+        <line x1="17" y1="1" x2="1" y2="17" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+    <ul>
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-services')" aria-expanded="false" aria-controls="mob-services">
+          Services
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-services" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">By Occasion</span>
+          <a href="/services/wedding-catering">Wedding Catering</a>
+          <a href="/services/corporate-catering">Corporate Catering</a>
+          <a href="/services/social-celebrations">Social Celebrations</a>
+          <a href="/services/private-dining">Private Dining</a>
+          <span class="mobile-accordion-heading">Specialties</span>
+          <a href="/services/live-stations">Live Cooking Stations</a>
+          <a href="/services/pan-india-catering">Pan India Catering</a>
+          <a href="/services/destination-weddings">Destination Weddings</a>
+          <a href="/services/theme-catering">Theme &amp; Concept Catering</a>
+          <a href="/services" class="mobile-accordion-all">All Services</a>
+        </div>
+      </li>
+
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-menus')" aria-expanded="false" aria-controls="mob-menus">
+          Menus
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-menus" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">By Cuisine</span>
+          <a href="/menus">All Menus</a>
+          <a href="/menus/indian-cuisine">Indian Cuisine</a>
+          <a href="/menus/international-cuisine">International Cuisine</a>
+          <a href="/menus/fusion-cuisine">Fusion Cuisine</a>
+          <a href="/menus/desserts">Desserts</a>
+          <a href="/menus/beverages">Beverages</a>
+          <span class="mobile-accordion-heading">Customise</span>
+          <a href="/menus/custom-menu">Custom Menu Builder</a>
+        </div>
+      </li>
+
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-locations')" aria-expanded="false" aria-controls="mob-locations">
+          Locations
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-locations" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">We Cater In</span>
+          <a href="/catering-in/pune">Pune</a>
+          <a href="/catering-in/mumbai">Mumbai</a>
+          <a href="/catering-in/delhi">Delhi</a>
+          <a href="/catering-in/bangalore">Bangalore</a>
+          <a href="/catering-in/hyderabad">Hyderabad</a>
+          <a href="/catering-in/goa">Goa</a>
+          <a href="/catering-in/pan-india">Pan India</a>
+          <a href="/catering-in/singapore" class="soon">Singapore</a>
+        </div>
+      </li>
+
+      <li class="mobile-nav-item">
+        <a href="/gallery" class="mobile-nav-plain-link">Gallery</a>
+      </li>
+
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-about')" aria-expanded="false" aria-controls="mob-about">
+          About
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-about" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">Elamrit</span>
+          <a href="/about">About Elamrit</a>
+          <a href="/about#story">Our Story</a>
+          <a href="/about#philosophy">Our Philosophy</a>
+          <a href="/about#team">The Team</a>
+          <a href="/journal">The Journal</a>
+          <a href="/testimonials">Testimonials</a>
+        </div>
+      </li>
+
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-fj')" aria-expanded="false" aria-controls="mob-fj">
+          Food Junction
+          <span class="mobile-nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div id="mob-fj" class="mobile-accordion-content">
+          <span class="mobile-accordion-heading">Our Sister Brand</span>
+          <a href="/food-junction">About Food Junction</a>
+          <a href="/food-junction/corporate-tiffin">Corporate Tiffin</a>
+          <a href="/food-junction/budget-catering">Budget Event Catering</a>
+          <a href="/food-junction/get-quote">Get a Quote</a>
+        </div>
+      </li>
+
+      <li class="mobile-nav-item">
+        <a href="/contact" class="mobile-nav-plain-link">Contact</a>
+      </li>
+    </ul>
   </nav>
+
+  <div class="mobile-menu-footer">
+    <a href="/contact/get-a-quote" class="mobile-menu-cta">Get a Quote</a>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var overlay = document.getElementById('mobileMenuOverlay');
+    var openBtn = document.getElementById('mobileMenuOpen');
+    var closeBtn = document.getElementById('mobileMenuClose');
+
+    function openMenu() {
+      if (!overlay) return;
+      overlay.classList.add('open');
+      document.body.classList.add('mobile-menu-open');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      if (!overlay) return;
+      overlay.classList.remove('open');
+      document.body.classList.remove('mobile-menu-open');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closeMenu();
+    });
+
+    if (overlay) {
+      overlay.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+
+    window.toggleMobileAccordion = function (id) {
+      var content = document.getElementById(id);
+      if (!content) return;
+      var trigger = content.previousElementSibling;
+      var isOpen = content.dataset.open === 'true';
+
+      if (isOpen) {
+        content.style.maxHeight = '0px';
+        content.dataset.open = 'false';
+        if (trigger) {
+          trigger.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.dataset.open = 'true';
+        if (trigger) {
+          trigger.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      }
+    };
+  })();
+</script>

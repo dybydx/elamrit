@@ -1,0 +1,160 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { cateringBangalore } from '@/lib/hero-images';
+---
+
+<BaseLayout
+  title="Catering in Bangalore — Elamrit Luxe Feast"
+  description="Premium catering in Bangalore for corporate events, weddings, and social celebrations. Elamrit Luxe Feast brings world-class culinary standards to every Bangalore occasion."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Catering in Bangalore' },
+    ]}
+    titleHtml="CATERING<br />IN<br />BANGALORE"
+    description="India's innovation capital has a cosmopolitan palate — and the most discerning corporate hosts. We meet that standard every time."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={cateringBangalore}
+    quote="Bangalore's guests are well-travelled and well-fed. That's not a challenge — it's an invitation."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href="/services/corporate-catering" variant="outlineCream">Corporate Catering</Button>
+    </div>
+  </PageHero>
+
+  <!-- Story section -->
+  <section class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]">
+    <div class="story-image relative">
+      <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
+      <div class="story-img-float absolute -right-10 -bottom-10 hidden aspect-square w-[55%] overflow-hidden bg-dark-red md:block"></div>
+      <div class="absolute -left-5 top-7 bg-dark-red px-5 py-3 font-display text-xs tracking-[0.26em] text-cream uppercase">
+        Bangalore · Corporate Hub
+      </div>
+    </div>
+    <div>
+      <SectionEyebrow class="mb-4">Operating in Bangalore</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Cosmopolitan taste, <em class="italic text-dark-red">elevated service</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Bangalore's event culture blends the corporate with the celebratory — product launches that double as brand experiences, weddings where the guest list spans continents, and social gatherings where the food is a genuine part of the conversation. We've catered across Whitefield's tech campuses, Indiranagar's boutique venues, and Koramangala's private residences, adapting our approach to each neighbourhood's distinct character.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          "A city that blends tradition and innovation needs a caterer that does the same."
+        </p>
+      </blockquote>
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Whether it's a 50-person executive off-site or a 600-guest multicultural wedding, our Bangalore operations are built on the same preparation discipline that defines every Elamrit event.
+      </p>
+      <Button href="/contact/get-a-quote" variant="storyLink">Enquire for Bangalore</Button>
+    </div>
+  </section>
+
+  <!-- Services in Bangalore -->
+  <section class="bg-dark-red px-5 py-20 md:px-10 lg:px-20 lg:py-24">
+    <div class="mb-14 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <span class="mb-3 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">What We Offer in Bangalore</span>
+        <h2 class="font-serif text-[clamp(28px,3.2vw,46px)] font-light leading-tight text-cream">
+          Every occasion, <em class="italic">world-class food</em>
+        </h2>
+      </div>
+      <p class="max-w-[420px] font-body text-[17px] leading-[1.8] text-cream/65 lg:text-right">
+        Corporate-led or celebration-led, our full portfolio is available across Bangalore.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/services/corporate-catering" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Corporate</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Corporate Catering</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Conferences, tech summits, product launches, and executive dining in Bangalore's business districts.</p>
+        </Card>
+      </a>
+      <a href="/services/wedding-catering" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Weddings</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Wedding Catering</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Multicultural and traditional weddings at Bangalore's luxury hotel properties and gardens.</p>
+        </Card>
+      </a>
+      <a href="/services/social-celebrations" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Social</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Social Celebrations</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Birthdays, cocktail parties, and milestone events designed for Bangalore's cosmopolitan crowd.</p>
+        </Card>
+      </a>
+      <a href="/services/live-stations" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Experiential</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Live Stations</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Interactive live cooking that creates memorable food moments at every event.</p>
+        </Card>
+      </a>
+      <a href="/services/private-dining" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Intimate</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Private Dining</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Chef-led private dining in Bangalore's homes, villas, and boutique spaces.</p>
+        </Card>
+      </a>
+      <a href="/services/pan-india-catering" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Pan India</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Pan India Catering</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Bangalore-coordinated events that require travel — anywhere in India.</p>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <!-- Venues section -->
+  <section class="bg-light-blush px-5 py-20 md:px-10 lg:px-20 lg:py-[90px]">
+    <div class="mb-12 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_auto]">
+      <div>
+        <SectionEyebrow class="mb-4">Bangalore's Premier Properties</SectionEyebrow>
+        <h2 class="font-serif text-[clamp(28px,3vw,44px)] font-light leading-tight text-dark-brown">
+          Venues we know <em class="italic text-dark-red">from the inside</em>
+        </h2>
+      </div>
+      <div class="flex items-end">
+        <Button href="/contact/get-a-quote" variant="outlineCta">Book Your Event</Button>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-px bg-[rgba(189,148,118,0.2)] sm:grid-cols-3 lg:grid-cols-6">
+      {[
+        'ITC Gardenia',
+        'Taj West End',
+        'The Leela Palace',
+        'Fairmont Bangalore',
+        'The Oberoi',
+        'Shangri-La Bangalore',
+      ].map((venue) => (
+        <div class="bg-cream px-5 py-6 text-center">
+          <span class="font-body text-[13px] leading-[1.6] tracking-[0.06em] text-[var(--text-muted-on-cream)]">{venue}</span>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 font-body text-[14px] text-[var(--text-muted-on-cream-soft)]">
+      We operate across Bangalore — from CBD properties to Whitefield tech venues and Indiranagar boutique spaces.
+    </p>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
