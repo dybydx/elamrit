@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import FilterableGallery from '@/components/gallery/FilterableGallery.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import Button from '@/components/ui/Button.astro';
+import { getGalleryItems } from '@/lib/gallery-data';
+import { galleryPage } from '@/lib/hero-images';
+
+const galleryItems = getGalleryItems();
+---
+
+<BaseLayout
+  title="Gallery — Elamrit Luxe Feast"
+  description="Explore Elamrit catering photography — weddings, corporate events, celebrations, and menus. Filter by category to see the craft behind each feast."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Gallery' }]}
+    titleHtml="THE<br />GALLERY"
+    description="A visual archive of feasts we have composed — from intimate plating to thousand-guest celebrations. Use the filters to explore by occasion."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={galleryPage}
+    quote="Every frame is an invitation to imagine your own table."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/menus" variant="outlineCream">Explore Menus</Button>
+    </div>
+  </PageHero>
+
+  <FilterableGallery items={galleryItems} />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

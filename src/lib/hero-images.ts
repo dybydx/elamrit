@@ -16,6 +16,9 @@ export const destinationWeddingsHub = '/images/services/wedding-gallery-2.png';
 export const panIndiaService = '/images/services/corporate-gallery-1.png';
 export const testimonials = '/images/services/social-gallery-2.png';
 
+/** Split hero for the main gallery page */
+export const galleryPage = '/images/gallery/elamrit-gallery-live-station.png';
+
 export const cateringPune = '/images/gallery/elamrit-gallery-wedding-feast.png';
 export const cateringPuneWedding = '/images/gallery/elamrit-gallery-wedding-feast.png';
 export const cateringMumbai = '/images/gallery/elamrit-gallery-corporate-event.png';

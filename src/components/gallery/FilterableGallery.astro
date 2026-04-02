@@ -1,0 +1,147 @@
+---
+import type { GalleryItem } from '@/lib/gallery-data';
+import { galleryFilterOptions } from '@/lib/gallery-data';
+
+interface Props {
+  items: GalleryItem[];
+}
+
+const { items } = Astro.props;
+
+const filterBtnClass =
+  'inline-flex min-h-[44px] shrink-0 items-center justify-center whitespace-nowrap border border-dark-red/25 bg-transparent px-5 py-3 font-body text-[13px] leading-none tracking-[0.14em] text-dark-red uppercase transition-all duration-300 hover:border-dark-red/50 aria-pressed:border-dark-red aria-pressed:bg-dark-red aria-pressed:text-cream';
+---
+
+<section
+  class="bg-cream px-5 py-16 md:px-10 md:py-20 lg:px-20 lg:py-[88px]"
+  aria-labelledby="gallery-heading"
+>
+  <div class="mx-auto max-w-[1400px]">
+    <h2
+      id="gallery-heading"
+      class="sr-only"
+    >
+      Image gallery
+    </h2>
+
+    <div
+      id="gallery-app"
+      class="flex flex-col gap-10"
+      data-gallery-root
+    >
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <p class="max-w-xl font-serif text-[clamp(17px,1.35vw,20px)] leading-[1.65] text-dark-brown/85">
+          Browse moments from our weddings, corporate events, celebrations, and menus — filter to focus on what
+          you are planning next.
+        </p>
+        <p
+          class="font-body text-[14px] tracking-[0.12em] text-dark-brown/55 uppercase"
+          data-gallery-count
+          aria-live="polite"
+        >
+        </p>
+      </div>
+
+      <div
+        role="toolbar"
+        aria-label="Filter images by category"
+        class="flex flex-wrap gap-2.5"
+        data-gallery-toolbar
+      >
+        <button type="button" class={filterBtnClass} data-filter="all" aria-pressed="true">
+          All
+        </button>
+        {
+          galleryFilterOptions.map((opt) => (
+            <button type="button" class={filterBtnClass} data-filter={opt.id} aria-pressed="false">
+              {opt.label}
+            </button>
+          ))
+        }
+      </div>
+
+      <p
+        class="hidden rounded-sm border border-dark-red/15 bg-dark-red/[0.04] px-5 py-8 text-center font-serif text-[17px] leading-relaxed text-dark-brown/80"
+        data-gallery-empty
+        hidden
+      >
+        Nothing in this category yet. Try another filter or view all images.
+      </p>
+
+      <ul
+        class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        data-gallery-grid
+      >
+        {
+          items.map((item) => (
+            <li data-gallery-item data-categories={item.categories.join(' ')}>
+              <button
+                type="button"
+                class="group relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-[var(--bg-gallery-tile)] text-left outline-none ring-dark-red focus-visible:ring-2"
+                data-gallery-open
+                data-src={item.src}
+                data-alt={item.alt}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                />
+                <span
+                  class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(36,33,31,0.55)_0%,transparent_55%)]"
+                  aria-hidden="true"
+                />
+                <span
+                  class="pointer-events-none absolute bottom-3 left-3 max-w-[90%] font-body text-[11px] leading-snug tracking-[0.18em] text-cream/85 uppercase"
+                  aria-hidden="true"
+                >
+                  {item.alt}
+                </span>
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+
+      <dialog
+        class="gallery-lightbox max-h-[100dvh] max-w-[100dvw] border-0 bg-dark-brown/95 p-0 text-cream backdrop:bg-black/70 open:flex open:flex-col"
+        data-gallery-lightbox
+        aria-label="Enlarged image"
+      >
+        <div class="flex items-center justify-end gap-2 border-b border-cream/10 px-3 py-2">
+          <form method="dialog">
+            <button
+              type="submit"
+              class="min-h-[44px] min-w-[44px] font-body text-[13px] tracking-[0.2em] text-cream uppercase underline-offset-4 hover:underline"
+            >
+              Close
+            </button>
+          </form>
+        </div>
+        <div class="flex min-h-0 flex-1 items-center justify-center p-4">
+          <img
+            data-gallery-lightbox-img
+            alt=""
+            class="max-h-[min(85dvh,900px)] max-w-full object-contain"
+          />
+        </div>
+        <p
+          class="border-t border-cream/10 px-5 py-4 text-center font-body text-[14px] leading-snug tracking-[0.08em] text-cream/80"
+          data-gallery-lightbox-caption
+        >
+        </p>
+      </dialog>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initFilterableGallery } from '@/lib/gallery-client';
+
+  const root = document.getElementById('gallery-app');
+  if (root) initFilterableGallery(root);
+</script>

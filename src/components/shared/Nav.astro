@@ -13,6 +13,7 @@ const isSolid = variant === 'solid';
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path === '/about';
+const onGallery = path === '/gallery';
 const onContact = path === '/contact' || path.startsWith('/contact/');
 
 /* In-page anchors only work on home; from other routes, send users to home sections. */
@@ -111,8 +112,8 @@ const navLinkClasses =
         </div>
       </div>
 
-      <div class={navItemClasses}>
-        <a href="/gallery" class={navLinkClasses}>Gallery</a>
+      <div class:list={[navItemClasses, { 'nav-current': isSolid && onGallery }]}>
+        <a href="/gallery" class={navLinkClasses} aria-current={onGallery ? 'page' : undefined}>Gallery</a>
       </div>
 
       <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
@@ -255,7 +256,7 @@ const navLinkClasses =
       </li>
 
       <li class="mobile-nav-item">
-        <a href="/gallery" class="mobile-nav-plain-link">Gallery</a>
+        <a href="/gallery" class="mobile-nav-plain-link" aria-current={onGallery ? 'page' : undefined}>Gallery</a>
       </li>
 
       <li class="mobile-nav-item">
