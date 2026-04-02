@@ -1,0 +1,120 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { corporateEvents } from '@/lib/hero-images';
+---
+
+<BaseLayout
+  title="Corporate Services — Food Junction"
+  description="Food Junction corporate event services — conferences, product launches, business dining, and gala dinners. Operational catering aligned with your programme and brand."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Food Junction', href: '/food-junction' },
+      { label: 'Services' },
+    ]}
+    titleHtml="CORPORATE<br />SERVICES"
+    description="From working lunches to headline galas — we structure menus, service, and staffing around how your event actually moves through the day."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={corporateEvents}
+    quote="The right corporate service is invisible until someone compliments the coffee."
+    quoteAttribution="Food Junction"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/food-junction/menus" variant="outlineCream">Menus</Button>
+    </div>
+  </PageHero>
+
+  <section
+    id="fj-services"
+    class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
+    style="background: var(--bg-services-home)"
+  >
+    <SectionHeader class="mb-14" label="What We Cover" align="center" showDivider={true}>
+      Corporate <em>occasions</em>
+    </SectionHeader>
+
+    <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-2">
+      <a href="/services/corporate-catering/events-conferences" class="group block">
+        <Card variant="service">
+          <span class="mb-4 block font-display text-[40px] leading-none tracking-[0.12em] text-dark-red">01</span>
+          <h3 class="mb-3 font-serif text-[22px] font-normal text-dark-brown">Conferences &amp; summits</h3>
+          <p class="mb-6 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Registration beverages, working lunches, high-tea breaks, and closing receptions — timed to your session
+            grid.
+          </p>
+          <span
+            class="font-body text-[12px] tracking-[0.2em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >View format details →</span
+          >
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/product-launches" class="group block">
+        <Card variant="service">
+          <span class="mb-4 block font-display text-[40px] leading-none tracking-[0.12em] text-dark-red">02</span>
+          <h3 class="mb-3 font-serif text-[22px] font-normal text-dark-brown">Product launches</h3>
+          <p class="mb-6 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Canapés, live counters, and branded service moments that match the tone of your reveal — not generic
+            catering noise.
+          </p>
+          <span
+            class="font-body text-[12px] tracking-[0.2em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >View format details →</span
+          >
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/business-dining" class="group block">
+        <Card variant="service">
+          <span class="mb-4 block font-display text-[40px] leading-none tracking-[0.12em] text-dark-red">03</span>
+          <h3 class="mb-3 font-serif text-[22px] font-normal text-dark-brown">Business dining</h3>
+          <p class="mb-6 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Board dinners, leadership offsites, and client entertainment — plated precision and calm, confident service.
+          </p>
+          <span
+            class="font-body text-[12px] tracking-[0.2em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >View format details →</span
+          >
+        </Card>
+      </a>
+
+      <a href="/services/corporate-catering/gala-dinners" class="group block">
+        <Card variant="service">
+          <span class="mb-4 block font-display text-[40px] leading-none tracking-[0.12em] text-dark-red">04</span>
+          <h3 class="mb-3 font-serif text-[22px] font-normal text-dark-brown">Gala dinners &amp; awards</h3>
+          <p class="mb-6 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Multi-course service, dietary coverage at scale, and choreography that keeps speeches and service in sync.
+          </p>
+          <span
+            class="font-body text-[12px] tracking-[0.2em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >View format details →</span
+          >
+        </Card>
+      </a>
+    </div>
+
+    <p class="mx-auto mt-14 max-w-[640px] text-center font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+      Food Junction draws on the full Elamrit corporate playbook. The links above open the detailed Elamrit service
+      pages — use them for format inspiration, then
+      <a class="text-dark-red underline decoration-[rgba(81,3,12,0.35)] underline-offset-4" href="/food-junction/get-a-quote"
+        >request a Food Junction quote</a
+      >
+      for your programme.
+    </p>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

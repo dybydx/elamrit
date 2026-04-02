@@ -1,0 +1,151 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Get a Quote — Food Junction"
+  description="Request a corporate catering quote from Food Junction — share your programme, city, dates, and guest profile. We respond with a clear format and menu direction."
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="center"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Food Junction', href: '/food-junction' },
+      { label: 'Get a Quote' },
+    ]}
+    titleHtml="GET A<br />QUOTE"
+    description="Tell us about your corporate event — we will align menu, service style, and staffing with your run-of-show and venue."
+    descriptionClass="mx-auto max-w-[720px]"
+  >
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <Button href="/food-junction/services" variant="outlineCream">Services</Button>
+      <Button href="/contact" variant="outlineCream">Contact Elamrit</Button>
+    </div>
+  </PageHero>
+
+  <section class="px-5 py-16 md:px-10 lg:px-20 lg:py-24" style="background: var(--bg-services-home)">
+    <div class="mx-auto w-full max-w-[980px]">
+      <Card class="p-7 md:p-10">
+        <form id="fj-quote-form" class="grid grid-cols-1 gap-5 md:grid-cols-2" method="post" action="#">
+          <input type="hidden" name="source" value="food-junction" />
+          <div class="md:col-span-2">
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Event type</div>
+            <select
+              name="occasion"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              required
+            >
+              <option value="" selected disabled>Select one</option>
+              <option>Conference / summit</option>
+              <option>Product launch</option>
+              <option>Gala / awards dinner</option>
+              <option>Business dining / board</option>
+              <option>Team celebration</option>
+              <option>Other corporate</option>
+            </select>
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Full name</div>
+            <input
+              name="name"
+              autocomplete="name"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="Your name"
+              required
+            />
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Phone / WhatsApp</div>
+            <input
+              name="phone"
+              inputmode="tel"
+              autocomplete="tel"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="+91 …"
+              required
+            />
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Email</div>
+            <input
+              name="email"
+              type="email"
+              autocomplete="email"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="you@company.com"
+              required
+            />
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">City</div>
+            <input
+              name="city"
+              autocomplete="address-level2"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="Pune, Mumbai, Pan India…"
+              required
+            />
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Event date</div>
+            <input
+              name="date"
+              type="date"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              required
+            />
+          </div>
+
+          <div>
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Guest count</div>
+            <input
+              name="guests"
+              type="number"
+              min="1"
+              inputmode="numeric"
+              class="w-full rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.6] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="e.g. 150"
+              required
+            />
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="mb-2 font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Programme notes</div>
+            <textarea
+              name="notes"
+              rows={5}
+              class="w-full resize-y rounded-sm border border-[rgba(189,148,118,0.35)] bg-cream px-4 py-3 font-body text-[16px] leading-[1.7] text-dark-brown outline-none transition-[border-color,box-shadow] duration-200 focus:border-dark-red/40 focus:shadow-[0_0_0_3px_rgba(81,3,12,0.08)]"
+              placeholder="Agenda outline, venue, dietary requirements (Jain / vegan / allergens), service style (buffet / plated / live stations), branding needs…"
+            />
+            <p class="mt-3 font-body text-[14px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
+              This form is a design placeholder (static site). For now, email
+              <a class="text-dark-red underline decoration-[rgba(81,3,12,0.35)] underline-offset-4" href="mailto:hello@elamrit.example"
+                >hello@elamrit.example</a
+              >
+              with “Food Junction” in the subject line.
+            </p>
+          </div>
+
+          <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between md:col-span-2">
+            <Button type="submit" variant="navCta">Request quote</Button>
+            <a class="btn-ghost text-dark-red" href="/food-junction">Back to Food Junction</a>
+          </div>
+        </form>
+      </Card>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

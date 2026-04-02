@@ -98,11 +98,11 @@ Notes:
 
 ### 07) Food Junction (sub-brand) — `/food-junction/*`
 
-- [ ] `/food-junction`
-- [ ] `/food-junction/services`
-- [ ] `/food-junction/menus`
-- [ ] `/food-junction/testimonials`
-- [ ] `/food-junction/get-a-quote`
+- [x] `/food-junction`
+- [x] `/food-junction/services`
+- [x] `/food-junction/menus`
+- [x] `/food-junction/testimonials`
+- [x] `/food-junction/get-a-quote`
 
 ### 08) The Journal (blog) — `/journal/*`
 
@@ -145,7 +145,7 @@ Notes:
 - [x] Create Singapore “Coming soon” waitlist page
 
 ### Phase E — Brand expansion (Food Junction)
-- [ ] Create `/food-junction/*` section
+- [x] Create `/food-junction/*` section
 
 ### Phase F — Content engine (Journal)
 - [ ] Create `/journal/*` taxonomy pages (initially as category landing pages)
@@ -154,6 +154,6 @@ Notes:
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 43 / 50+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes, all Phase D location routes)
+- **Routes complete**: 48+ / 50+ (`/`, `/about`, `/gallery`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes, all Phase D location routes, `/food-junction/*`)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 

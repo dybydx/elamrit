@@ -14,10 +14,11 @@ const isSolid = variant === 'solid';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path === '/about';
 const onGallery = path === '/gallery';
+const onFoodJunction = path.startsWith('/food-junction');
 const onContact = path === '/contact' || path.startsWith('/contact/');
 
-/* In-page anchors only work on home; from other routes, send users to home sections. */
-const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
+/* Home: scroll to teaser; interior pages: dedicated Food Junction hub. */
+const foodJunctionHref = isSolid ? '/food-junction' : '#food-junction';
 const navClasses =
   'fixed top-0 right-0 left-0 z-[100] flex h-20 items-center justify-between border-b border-transparent bg-transparent px-5 transition-[background,border-color,backdrop-filter] duration-[400ms] md:px-8 lg:px-[60px]';
 const navLogoClasses = 'nav-logo flex items-center gap-3.5';
@@ -128,14 +129,21 @@ const navLinkClasses =
         </div>
       </div>
 
-      <div class:list={[navItemClasses, 'has-dropdown']}>
-        <a href={foodJunctionHref} class={navLinkClasses}>Food Junction</a>
+      <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onFoodJunction }]}>
+        <a
+          href={foodJunctionHref}
+          class={navLinkClasses}
+          aria-current={onFoodJunction ? 'page' : undefined}
+        >
+          Food Junction
+        </a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Our Sister Brand</span>
-          <a href="/food-junction">About Food Junction</a>
-          <a href="/food-junction/corporate-tiffin">Corporate Tiffin</a>
-          <a href="/food-junction/budget-catering">Budget Event Catering</a>
-          <a href="/food-junction/get-quote">Get a Quote</a>
+          <a href="/food-junction">Overview</a>
+          <a href="/food-junction/services">Corporate Services</a>
+          <a href="/food-junction/menus">Menus</a>
+          <a href="/food-junction/testimonials">Testimonials</a>
+          <a href="/food-junction/get-a-quote">Get a Quote</a>
         </div>
       </div>
 
@@ -282,10 +290,11 @@ const navLinkClasses =
         </button>
         <div id="mob-fj" class="mobile-accordion-content">
           <span class="mobile-accordion-heading">Our Sister Brand</span>
-          <a href="/food-junction">About Food Junction</a>
-          <a href="/food-junction/corporate-tiffin">Corporate Tiffin</a>
-          <a href="/food-junction/budget-catering">Budget Event Catering</a>
-          <a href="/food-junction/get-quote">Get a Quote</a>
+          <a href="/food-junction">Overview</a>
+          <a href="/food-junction/services">Corporate Services</a>
+          <a href="/food-junction/menus">Menus</a>
+          <a href="/food-junction/testimonials">Testimonials</a>
+          <a href="/food-junction/get-a-quote">Get a Quote</a>
         </div>
       </li>
 

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import TestimonialsSection from '@/components/home/showcase/Testimonials.astro';
+import VideoTestimonials from '@/components/testimonials/VideoTestimonials.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import Button from '@/components/ui/Button.astro';
+import { corporateLaunch } from '@/lib/hero-images';
+
+const videoTestimonials = [
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'Annual leadership summit — three days, zero friction',
+    meta: 'Corporate · Bangalore · 320 delegates',
+  },
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'Product launch evening with live stations',
+    meta: 'Corporate · Mumbai · 180 guests',
+    start: 12,
+  },
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'Awards night that finished on schedule',
+    meta: 'Gala · Pune · 400 seated',
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Testimonials — Food Junction"
+  description="What corporate hosts say about Food Junction — conferences, launches, and galas catered with Elamrit-level discipline."
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Food Junction', href: '/food-junction' },
+      { label: 'Testimonials' },
+    ]}
+    titleHtml="CLIENT<br />STORIES"
+    description="Food Junction is judged in the same moments as your programme — registration, the first break, the seated dinner. Here is what teams remember."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={corporateLaunch}
+    quote="The compliment we want is simple — nobody worried about the food."
+    quoteAttribution="Food Junction"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/gallery" variant="outlineCream">Gallery</Button>
+    </div>
+  </PageHero>
+
+  <TestimonialsSection />
+  <VideoTestimonials items={[...videoTestimonials]} />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

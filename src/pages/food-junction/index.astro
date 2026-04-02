@@ -1,0 +1,355 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { foodJunctionHub } from '@/lib/hero-images';
+---
+
+<BaseLayout
+  title="Food Junction — Corporate Event Catering"
+  description="Food Junction is Elamrit's sister brand for corporate events — conferences, product launches, galas, and company celebrations with reliable execution across Pune and Pan India."
+  bottomCta="home"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Food Junction' }]}
+    titleHtml="FOOD<br />JUNCTION"
+    description="Corporate event catering with the same craft and calm as Elamrit — scaled for programmes, stakeholders, and venues that do not leave room for guesswork."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={foodJunctionHub}
+    quote="Corporate programmes deserve catering that reads as competent the moment service begins."
+    quoteAttribution="Food Junction"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Request a Quote</Button>
+      <Button href="/food-junction/services" variant="outlineCream">Corporate Services</Button>
+    </div>
+  </PageHero>
+
+  <section
+    id="fj-story"
+    class="grid grid-cols-1 items-center gap-16 bg-cream px-5 py-20 md:gap-24 md:px-10 lg:grid-cols-2 lg:gap-[100px] lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <SectionEyebrow class="mb-4">Sister Brand</SectionEyebrow>
+      <h2 class="mb-8 font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown">
+        Elamrit DNA, <em class="italic text-dark-red">corporate focus</em>
+      </h2>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Food Junction exists for organisations that need flavour-forward menus, disciplined timelines, and service teams
+        who understand how a conference or launch actually runs — not just how a buffet looks on a brochure.
+      </p>
+      <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
+        <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
+          The sister brand is not a downgrade — it is a lane. Same kitchen ethics, scoped for the cadence of corporate
+          programmes.
+        </p>
+      </blockquote>
+      <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        We work alongside facilities, HR, and event agencies. Whether you are hosting two hundred people for a day-long
+        summit or a single high-stakes evening for your leadership, we build the food programme around your agenda.
+      </p>
+      <p class="mb-8 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Elamrit Luxe Feast remains the home for weddings, private dining, and landmark celebrations. Food Junction is the
+        name we use when your brief is explicitly business: NDAs in the room, run-of-show in the inbox, and success
+        measured in how little anyone had to think about the meal.
+      </p>
+      <Button href="/services/corporate-catering" variant="storyLink">See Elamrit corporate catering</Button>
+    </div>
+    <div class="grid grid-cols-1 gap-3">
+      <Card variant="foodJunction">
+        <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">01</div>
+        <div>
+          <h3 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Programme-first planning</h3>
+          <p class="font-body text-[15px] leading-relaxed text-[var(--text-muted-on-cream)]">
+            Meals and breaks mapped to your run-of-show — so guests return on time and energy stays high.
+          </p>
+        </div>
+      </Card>
+      <Card variant="foodJunction">
+        <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">02</div>
+        <div>
+          <h3 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Formats that fit the room</h3>
+          <p class="font-body text-[15px] leading-relaxed text-[var(--text-muted-on-cream)]">
+            Seated dinners, standing receptions, hybrid formats, and live stations when you want theatre without chaos.
+          </p>
+        </div>
+      </Card>
+      <Card variant="foodJunction">
+        <div class="shrink-0 pt-0.5 font-display text-[26px] leading-none tracking-wide text-dark-red/90">03</div>
+        <div>
+          <h3 class="mb-1.5 font-serif text-[19px] font-normal text-dark-brown">Pan India execution</h3>
+          <p class="font-body text-[15px] leading-relaxed text-[var(--text-muted-on-cream)]">
+            The same standards in Pune, Mumbai, Bangalore, and beyond — aligned with venue rules and your brand cues.
+          </p>
+        </div>
+      </Card>
+    </div>
+  </section>
+
+  <section
+    id="fj-expectations"
+    class="border-t border-[rgba(189,148,118,0.12)] px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
+    style="background: var(--bg-services-home)"
+  >
+    <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+      <div>
+        <SectionEyebrow class="mb-4">What you can expect</SectionEyebrow>
+        <h2 class="mb-6 font-serif text-[clamp(28px,3.2vw,40px)] font-light leading-tight text-dark-brown">
+          Built for <em class="italic text-dark-red">stakeholder scrutiny</em>
+        </h2>
+        <p class="font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          Corporate hosts carry risk — brand perception, dietary compliance, and the small detail that becomes a Slack
+          thread if it goes wrong. We front-load clarity: who owns decisions, how tastings fit your procurement cycle,
+          and how service maps to fire exits, AV, and VIP movement.
+        </p>
+      </div>
+      <ul class="flex list-none flex-col gap-6 font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+        <li class="border-l-[3px] border-dark-red/25 pl-5">
+          <span class="mb-1.5 block font-body text-[13px] tracking-[0.18em] text-dark-red uppercase">Logistics</span>
+          Load-in windows, power and water, waste handling, and venue SOPs — documented before we set a menu.
+        </li>
+        <li class="border-l-[3px] border-dark-red/25 pl-5">
+          <span class="mb-1.5 block font-body text-[13px] tracking-[0.18em] text-dark-red uppercase">Dietary</span>
+          Jain, vegan, halal-friendly, and allergen-aware lanes — labelled for comms packs and on-site staff.
+        </li>
+        <li class="border-l-[3px] border-dark-red/25 pl-5">
+          <span class="mb-1.5 block font-body text-[13px] tracking-[0.18em] text-dark-red uppercase">Cadence</span>
+          Breakfast, breaks, working lunch, cocktail hour, seated dinner — each handoff timed to your programme.
+        </li>
+        <li class="border-l-[3px] border-dark-red/25 pl-5">
+          <span class="mb-1.5 block font-body text-[13px] tracking-[0.18em] text-dark-red uppercase">Scale</span>
+          From leadership dinners to hall buffets — same service language, scaled crews, and clear escalation on the day.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <MenuGallery
+    label="Corporate moments"
+    tile1={{
+      imageSrc: '/images/services/corporate-gallery-1.png',
+      imageAlt: 'Conference lunch service at scale — Food Junction corporate catering.',
+      caption: 'Summits & multi-day programmes',
+    }}
+    tile2={{
+      imageSrc: '/images/services/corporate-gallery-2.png',
+      imageAlt: 'Cocktail and canapé service for a corporate launch.',
+      caption: 'Launches & networking',
+    }}
+    tile3={{
+      imageSrc: '/images/services/corporate-gallery-3.png',
+      imageAlt: 'Executive plated dinner — Food Junction.',
+      caption: 'Gala & executive evenings',
+    }}
+  />
+
+  <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
+    <div class="grid grid-cols-1 divide-y divide-cream/10 border-cream/10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0 lg:border-x">
+      <Card variant="bare" class="px-7 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Guest range</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">20 to 1,500+</div>
+      </Card>
+      <Card variant="bare" class="px-7 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Formats</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Buffet · plated · live</div>
+      </Card>
+      <Card variant="bare" class="px-7 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Cities</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Pune · Pan India</div>
+      </Card>
+      <Card variant="bare" class="px-7 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-[52px]">
+        <span class="mb-2.5 block font-body text-xs tracking-[0.28em] text-blush uppercase">Planning</span>
+        <div class="font-serif text-[clamp(26px,2.8vw,32px)] italic leading-none text-cream">Brief-led &amp; tastings</div>
+      </Card>
+    </div>
+  </section>
+
+  <section
+    id="fj-process"
+    class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
+    style="background: var(--bg-services-home)"
+  >
+    <SectionHeader class="mb-14" label="How we work" align="center" showDivider={true}>
+      From brief to <em>first service</em>
+    </SectionHeader>
+    <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-4 md:grid-cols-3 lg:gap-[18px]">
+      <Card variant="service">
+        <span class="mb-5 block font-display text-[clamp(40px,4vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+        <h3 class="mb-4 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">Discover &amp; align</h3>
+        <p class="font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          We start with your run-of-show, audience mix, and venue constraints. You receive a clear format recommendation
+          — not a generic package list — and a single point of contact for revisions.
+        </p>
+      </Card>
+      <Card variant="service">
+        <span class="mb-5 block font-display text-[clamp(40px,4vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+        <h3 class="mb-4 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">Menu &amp; logistics lock</h3>
+        <p class="font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          Tastings where needed, dietary matrix for your comms team, and a load-in plan shared with facilities. Brand
+          touches — from printed menus to uniform tone — are agreed before the day.
+        </p>
+      </Card>
+      <Card variant="service">
+        <span class="mb-5 block font-display text-[clamp(40px,4vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+        <h3 class="mb-4 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">Execute &amp; hand back</h3>
+        <p class="font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+          On-site captain, crew briefed on VIPs and allergens, and quiet recovery of service areas between sessions. After
+          the event, a short wrap so your next programme starts from a known baseline.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <section
+    id="fj-explore"
+    class="border-t border-[rgba(189,148,118,0.12)] bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
+    aria-label="Explore Food Junction"
+  >
+    <div class="mx-auto max-w-[1200px]">
+      <SectionHeader class="mb-6" label="Next steps" align="center" showDivider={true}>
+        Explore Food <em>Junction</em>
+      </SectionHeader>
+      <p class="mx-auto mb-14 max-w-[640px] text-center font-body text-[17px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+        Each page below goes deeper on one thread — formats, cuisine direction, or proof. When you are ready, send a
+        brief; we answer with structure and a clear next step, not a one-line estimate.
+      </p>
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-[18px]">
+        <a href="/food-junction/services" class="group block h-full">
+          <Card variant="service" class="flex h-full flex-col">
+            <span class="mb-5 block font-display text-[clamp(40px,4.5vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">01</span>
+            <svg
+              class="mb-6 h-11 w-11 text-gray-orange opacity-85"
+              viewBox="0 0 40 40"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              aria-hidden="true"
+            >
+              <rect x="6" y="10" width="28" height="22" rx="1"></rect>
+              <path d="M14 10V8M26 10V8"></path>
+              <path d="M6 16h28"></path>
+              <path d="M14 22h12M14 27h8"></path>
+            </svg>
+            <h3 class="mb-3 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">
+              Corporate services
+            </h3>
+            <p class="mb-7 flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+              Conferences, launches, business dining, and galas — with links into the full Elamrit format pages for
+              detail.
+            </p>
+            <span
+              class="service-link mt-auto inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >
+              View services
+            </span>
+          </Card>
+        </a>
+
+        <a href="/food-junction/menus" class="group block h-full">
+          <Card variant="service" class="flex h-full flex-col">
+            <span class="mb-5 block font-display text-[clamp(40px,4.5vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">02</span>
+            <svg
+              class="mb-6 h-11 w-11 text-gray-orange opacity-85"
+              viewBox="0 0 40 40"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              aria-hidden="true"
+            >
+              <path d="M8 28c0-8 6-14 12-16 6 2 12 8 12 16"></path>
+              <path d="M12 20h16M20 12v16"></path>
+              <circle cx="20" cy="20" r="3"></circle>
+            </svg>
+            <h3 class="mb-3 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">Menus</h3>
+            <p class="mb-7 flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+              Cuisine categories, dietary lanes, and the custom builder — mapped to how corporate programmes are actually
+              fed.
+            </p>
+            <span
+              class="service-link mt-auto inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >
+              Browse menus
+            </span>
+          </Card>
+        </a>
+
+        <a href="/food-junction/testimonials" class="group block h-full">
+          <Card variant="service" class="flex h-full flex-col">
+            <span class="mb-5 block font-display text-[clamp(40px,4.5vw,52px)] leading-[0.95] font-normal tracking-[0.14em] text-dark-red">03</span>
+            <svg
+              class="mb-6 h-11 w-11 text-gray-orange opacity-85"
+              viewBox="0 0 40 40"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              aria-hidden="true"
+            >
+              <path d="M8 32V12l6 4 6-4 6 4 6-4v20H8z"></path>
+              <path d="M14 18v8M20 16v10M26 19v7"></path>
+            </svg>
+            <h3 class="mb-3 font-serif text-[clamp(20px,2vw,24px)] font-normal leading-snug text-dark-brown">
+              Testimonials
+            </h3>
+            <p class="mb-7 flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+              What hosts recall after the programme — pacing, dietary handling, and service that stayed out of the
+              spotlight.
+            </p>
+            <span
+              class="service-link mt-auto inline-flex items-center gap-2 font-body text-[12px] tracking-[0.22em] text-dark-red uppercase transition-colors group-hover:text-gray-orange"
+            >
+              Read stories
+            </span>
+          </Card>
+        </a>
+      </div>
+
+      <div
+        class="mt-14 grid grid-cols-1 gap-0 overflow-hidden rounded-sm border border-[rgba(189,148,118,0.28)] border-l-[3px] border-l-green bg-[color-mix(in_srgb,var(--cream)_92%,var(--green)_8%)] shadow-[0_10px_40px_rgba(36,33,31,0.06)] lg:grid-cols-2"
+      >
+        <div class="flex flex-col p-8 md:p-10 lg:min-h-[280px] lg:border-r lg:border-[rgba(189,148,118,0.2)] lg:pr-10">
+          <span class="mb-2 block font-body text-[12px] tracking-[0.26em] text-dark-red uppercase">Brief us</span>
+          <h3 class="mb-3 font-serif text-[clamp(22px,2.5vw,28px)] font-light text-dark-brown">
+            Ready for a structured quote?
+          </h3>
+          <p class="flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Share your dates, city, headcount, and programme outline. We come back with format options and a realistic
+            timeline — usually faster when the run-of-show is attached.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="/food-junction/get-a-quote" variant="navCta">Get a quote</Button>
+          </div>
+        </div>
+        <div class="flex flex-col border-t border-[rgba(189,148,118,0.2)] bg-[color-mix(in_srgb,var(--cream)_88%,var(--white)_12%)] p-8 md:p-10 lg:min-h-[280px] lg:border-t-0 lg:pl-10">
+          <span class="mb-2 block font-body text-[12px] tracking-[0.26em] text-dark-red uppercase">Parent brand</span>
+          <h3 class="mb-3 font-serif text-[clamp(22px,2.5vw,28px)] font-light text-dark-brown">
+            Weddings &amp; private dining
+          </h3>
+          <p class="flex-1 font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
+            Planning a <strong class="font-medium text-dark-brown">wedding</strong>,
+            <strong class="font-medium text-dark-brown">private dinner</strong>, or
+            <strong class="font-medium text-dark-brown">family celebration</strong>? Elamrit Luxe Feast carries the full
+            narrative — ritual-aware menus, bespoke service, and the craft guests expect when the occasion is personal,
+            not corporate.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="/" variant="outlineCta">Elamrit Luxe Feast</Button>
+            <Button href="/services/wedding-catering" variant="outlineCta">Wedding catering</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

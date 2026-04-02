@@ -19,6 +19,10 @@ export const testimonials = '/images/services/social-gallery-2.png';
 /** Split hero for the main gallery page */
 export const galleryPage = '/images/gallery/elamrit-gallery-live-station.png';
 
+/** Food Junction (sister brand — corporate events) */
+export const foodJunctionHub = '/images/services/corporate-gallery-2.png';
+export const foodJunctionMenusHero = '/images/menus/menu-card-fusion.png';
+
 export const cateringPune = '/images/gallery/elamrit-gallery-wedding-feast.png';
 export const cateringPuneWedding = '/images/gallery/elamrit-gallery-wedding-feast.png';
 export const cateringMumbai = '/images/gallery/elamrit-gallery-corporate-event.png';
