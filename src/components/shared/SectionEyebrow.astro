@@ -1,0 +1,18 @@
+---
+interface Props {
+  class?: string;
+  tag?: 'div' | 'span';
+}
+
+const { class: className, tag = 'div' } = Astro.props as Props;
+const Tag = tag;
+---
+
+<Tag
+  class:list={[
+    'section-eyebrow flex items-center gap-3 font-body text-[10px] tracking-[0.35em] text-gray-orange uppercase',
+    className,
+  ]}
+>
+  <slot />
+</Tag>

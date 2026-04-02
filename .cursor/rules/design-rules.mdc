@@ -1,0 +1,48 @@
+---
+description: Design system rules (typography, hierarchy, nav/footer)
+globs:
+  - "src/**/*.{astro,ts,tsx,css}"
+alwaysApply: true
+---
+
+You are working on the Elamrit marketing site (Astro + Tailwind).
+
+## Goal
+- Keep the site **premium and effortless to read**.
+- Prefer clarity + touch-target usability without losing the elegant, letterspaced brand voice.
+
+## Typography baseline
+- **Body copy SHOULD** land around **16–18px** equivalent baseline.
+- **Paragraph leading SHOULD** be ~**1.6–1.8** for long-form readability.
+- **Avoid “pretty but tiny” type**: anything below ~**12–13px** is allowed only for decorative micro-labels and must remain legible.
+
+## Navigation & footer
+- **Nav link text MUST NOT** be smaller than typical UI body text.
+- **Dropdown menus MUST** be comfortably readable (avoid app-like tiny sizes).
+- **Footer fine print SHOULD** use muted color/weight, not tiny text; it must remain readable at a glance.
+
+## Hierarchy (preferred knobs)
+When you need hierarchy, use these tools in this order:
+1) **Color/opacity**
+2) **Weight**
+3) **Spacing**
+4) **Size** (last — don’t shrink below readability thresholds)
+
+## Letterspacing & uppercase
+- Uppercase + tracking is part of the brand voice, but:
+  - If tracking is high, **increase font-size slightly** (or reduce tracking).
+  - When raising size, **reduce tracking** to avoid a “shouty” look.
+
+## Buttons & CTAs
+- **CTA text MUST** be readable without zooming; don’t rely on tracking alone.
+- **CTA hit targets SHOULD** be comfortably tappable (aim ~40px+ effective height where possible).
+
+## Components vs one-off styling
+- Repeated patterns **SHOULD** become variants in:
+  - `src/components/ui/button-variants.ts`
+  - `src/components/ui/card-variants.ts`
+- Avoid pasting long one-off Tailwind class strings across many components; prefer shared variants + `src/styles/app.css` patterns.
+
+## Accessibility quick checks
+- Muted text is fine, but **contrast MUST** stay legible against the background.
+- Primary interactive elements **SHOULD** be usable with touch and mouse (comfortable spacing and target size).

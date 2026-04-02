@@ -1,5 +1,28 @@
 ---
 import Button from '@/components/ui/Button.astro';
+
+const heroContentClasses =
+  'relative z-[2] mx-auto max-w-[880px] px-12 text-center max-[1024px]:max-w-[680px] max-[1024px]:px-8';
+const heroEyebrowClasses =
+  'mb-8 font-body text-xs tracking-[0.45em] text-cream/90 uppercase opacity-0 [animation:fade-up_1s_0.1s_ease_forwards] [text-shadow:0_1px_18px_rgba(0,0,0,0.7)]';
+const heroBrandNameClasses =
+  'mb-0 font-display leading-none text-cream opacity-0 text-[clamp(70px,12vw,168px)] tracking-[0.08em] [animation:fade-up_1s_0.35s_ease_forwards] [text-shadow:0_2px_40px_rgba(0,0,0,0.5)] max-[1024px]:text-[clamp(60px,14vw,120px)] max-[640px]:text-[clamp(52px,16vw,90px)]';
+const heroOrnamentClasses =
+  'mx-auto mb-5 mt-[18px] flex items-center justify-center gap-[18px] opacity-0 [animation:fade-up_1s_0.55s_ease_forwards]';
+const heroOrnamentLineClasses =
+  'h-px max-w-20 flex-1 opacity-75 max-[640px]:max-w-10';
+const heroTaglineClasses =
+  'font-display text-[clamp(12px,1.6vw,18px)] tracking-[0.6em] text-blush uppercase [text-shadow:0_1px_16px_rgba(0,0,0,0.65)]';
+const heroDescriptionClasses =
+  'mx-auto mb-11 mt-7 max-w-[620px] font-serif text-[clamp(19px,2.1vw,24px)] leading-[1.65] font-light italic text-cream/80 opacity-0 [animation:fade-up_1s_0.72s_ease_forwards] max-[640px]:text-lg';
+const heroActionsClasses =
+  'flex flex-wrap items-center justify-center gap-[22px] opacity-0 [animation:fade-up_1s_0.92s_ease_forwards] max-md:flex-col max-md:gap-3.5';
+const heroScrollHintClasses =
+  'absolute bottom-11 left-1/2 z-[3] flex -translate-x-1/2 flex-col items-center gap-2.5 font-body text-[9px] tracking-[0.3em] text-gray-orange/55 uppercase opacity-0 [animation:fade-in_1.5s_1.6s_ease_forwards]';
+const scrollLineClasses =
+  'block h-11 w-px [background:linear-gradient(to_bottom,var(--gray-orange),transparent)] [animation:scroll-pulse_2s_1.6s_ease-in-out_infinite]';
+const muteButtonClasses =
+  'video-mute-btn absolute right-5 bottom-10 z-[4] flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-gray-orange/30 bg-dark-brown/55 text-cream opacity-0 backdrop-blur-md transition-all duration-300 [animation:fade-in_1s_1.8s_ease_forwards] hover:border-gray-orange hover:bg-[rgba(81,3,12,0.8)] md:right-8 lg:right-[60px] max-[640px]:bottom-[100px] max-[640px]:right-5';
 ---
   <!-- ═══ HERO — FULL-SCREEN VIDEO ══════════════════════════════ -->
   <section
@@ -26,13 +49,13 @@ import Button from '@/components/ui/Button.astro';
 
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="hero-content">
-      <div class="hero-eyebrow">Pune &nbsp;&middot;&nbsp; Mumbai &nbsp;&middot;&nbsp; Pan India</div>
+    <div class={heroContentClasses}>
+      <div class={heroEyebrowClasses}>Pune &nbsp;&middot;&nbsp; Mumbai &nbsp;&middot;&nbsp; Pan India</div>
 
-      <h1 class="hero-brand-name">ELAMRIT</h1>
+      <h1 class={heroBrandNameClasses}>ELAMRIT</h1>
 
-      <div class="hero-ornament">
-        <span class="hero-ornament-line"></span>
+      <div class={heroOrnamentClasses}>
+        <span class={heroOrnamentLineClasses} style="background: linear-gradient(to right, transparent, var(--blush));"></span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 2C12 2 7.5 7.5 7.5 12C7.5 16.5 12 22 12 22C12 22 16.5 16.5 16.5 12C16.5 7.5 12 2 12 2Z"
@@ -43,7 +66,7 @@ import Button from '@/components/ui/Button.astro';
             stroke="#d6b9ab"
             stroke-width="0.9"></path>
         </svg>
-        <span class="hero-tagline">L U X E &nbsp;&nbsp; F E A S T</span>
+        <span class={heroTaglineClasses}>L U X E &nbsp;&nbsp; F E A S T</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 2C12 2 7.5 7.5 7.5 12C7.5 16.5 12 22 12 22C12 22 16.5 16.5 16.5 12C16.5 7.5 12 2 12 2Z"
@@ -54,27 +77,27 @@ import Button from '@/components/ui/Button.astro';
             stroke="#d6b9ab"
             stroke-width="0.9"></path>
         </svg>
-        <span class="hero-ornament-line right"></span>
+        <span class={heroOrnamentLineClasses} style="background: linear-gradient(to left, transparent, var(--blush));"></span>
       </div>
 
-      <p class="hero-description">
+      <p class={heroDescriptionClasses}>
         Crafting unforgettable culinary experiences for weddings,<br />
         corporate milestones &amp; intimate celebrations across India.
       </p>
 
-      <div class="hero-actions max-md:flex-col max-md:gap-3.5">
+      <div class={heroActionsClasses}>
         <Button href="#">Begin Your Journey</Button>
         <Button variant="ghost" href="#services">Explore Services</Button>
       </div>
     </div>
 
-    <div class="hero-scroll-hint">
-      <span class="scroll-line"></span>
+    <div class={heroScrollHintClasses}>
+      <span class={scrollLineClasses}></span>
       <span>Scroll</span>
     </div>
 
     <button
-      class="video-mute-btn"
+      class={muteButtonClasses}
       id="muteBtn"
       onclick="toggleMute()"
       title="Toggle sound"

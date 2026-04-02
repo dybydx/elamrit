@@ -1,4 +1,7 @@
 ---
+const clientsWrapperClasses = 'clients-track-wrapper relative overflow-hidden';
+const clientsTrackClasses =
+  'flex w-max items-center gap-0 [animation:logo-scroll_32s_linear_infinite] hover:[animation-play-state:paused]';
 ---
   <section
     id="clients"
@@ -9,8 +12,8 @@
     >
       Trusted by India's Leading Corporates
     </p>
-    <div class="clients-track-wrapper">
-      <div class="clients-track">
+    <div class={clientsWrapperClasses}>
+      <div class={clientsTrackClasses}>
         <!-- Set A -->
         <div class="client-logo flex shrink-0 items-center justify-center px-[52px]">
           <div

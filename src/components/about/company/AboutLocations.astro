@@ -1,17 +1,20 @@
 ---
 import Card from '@/components/ui/Card.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
 ---
   <section
     id="locations"
     class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
     style="background: var(--bg-locations)"
   >
-    <div class="mb-0 text-left">
-      <span class="section-header-label mb-3.5">Where We Serve</span>
-      <h2 class="section-header-title text-[clamp(28px,3vw,42px)]">
+    <SectionHeader
+      class="mb-0"
+      label="Where We Serve"
+      labelClass="mb-3.5"
+      titleClass="text-[clamp(28px,3vw,42px)]"
+    >
         From Pune to Pan India — <em class="italic text-dark-red">and Beyond</em>
-      </h2>
-    </div>
+    </SectionHeader>
     <div class="mt-14 grid grid-cols-1 gap-0.5 sm:grid-cols-2 lg:grid-cols-4">
       <Card variant="location">
         <span class="loc-flag mb-3 block font-body text-[10px] tracking-[0.3em] text-dark-red uppercase"

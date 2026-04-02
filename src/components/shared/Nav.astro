@@ -16,15 +16,25 @@ const onAbout = path === '/about';
 
 /* In-page anchors only work on home; from other routes, send users to home sections. */
 const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
+const navClasses =
+  'fixed top-0 right-0 left-0 z-[100] flex h-20 items-center justify-between border-b border-transparent bg-transparent px-5 transition-[background,border-color,backdrop-filter] duration-[400ms] md:px-8 lg:px-[60px]';
+const navLogoClasses = 'nav-logo flex items-center gap-3.5';
+const navLogoMarkClasses = 'h-[42px] w-[34px] text-cream';
+const navLogoNameClasses = 'nav-logo-name font-display text-[17px] tracking-[0.4em] text-cream';
+const navLogoTagClasses = 'nav-logo-tag font-serif text-[11px] tracking-[0.22em] text-gray-orange uppercase';
+const navLinksClasses = 'nav-links hidden items-center gap-8 min-[641px]:flex';
+const navItemClasses = 'nav-item relative flex items-center';
+const navLinkClasses =
+  'flex items-center gap-1 font-body text-sm tracking-[0.14em] text-cream/70 uppercase transition-colors duration-200 hover:text-cream';
 ---
 
   <nav
     id="mainNav"
-    class:list={[{ 'nav-solid': isSolid }]}
+    class:list={[navClasses, { 'nav-solid': isSolid }]}
     data-nav-variant={variant}
   >
-    <a href="/" class="nav-logo">
-      <svg viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="/" class={navLogoClasses}>
+      <svg class={navLogoMarkClasses} viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="30" cy="14" rx="6" ry="10" stroke="currentColor" stroke-width="1.5" />
         <line x1="30" y1="5" x2="30" y2="23" stroke="currentColor" stroke-width="0.8" />
         <path d="M27 16 C20 13 11 7 4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -38,13 +48,13 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         <path d="M30 52 C36 57 44 61 52 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
       <div class="nav-logo-text flex flex-col gap-px">
-        <span class="nav-logo-name">ELAMRIT</span>
-        <span class="nav-logo-tag">Luxe Feast</span>
+        <span class={navLogoNameClasses}>ELAMRIT</span>
+        <span class={navLogoTagClasses}>Luxe Feast</span>
       </div>
     </a>
-    <div class="nav-links">
-      <div class="nav-item has-dropdown">
-        <a href="/services">Services</a>
+    <div class={navLinksClasses}>
+      <div class:list={[navItemClasses, 'has-dropdown']}>
+        <a href="/services" class={navLinkClasses}>Services</a>
         <div class="dropdown-menu dropdown-mega">
           <div class="dropdown-col">
             <span class="dropdown-heading">By Occasion</span>
@@ -63,8 +73,8 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         </div>
       </div>
 
-      <div class="nav-item has-dropdown">
-        <a href="/menus">Menus</a>
+      <div class:list={[navItemClasses, 'has-dropdown']}>
+        <a href="/menus" class={navLinkClasses}>Menus</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Browse Menus</span>
           <a href="/menus/wedding">Wedding Menus</a>
@@ -77,8 +87,8 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         </div>
       </div>
 
-      <div class="nav-item has-dropdown">
-        <a href="/catering-in">Locations</a>
+      <div class:list={[navItemClasses, 'has-dropdown']}>
+        <a href="/catering-in" class={navLinkClasses}>Locations</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">We Cater In</span>
           <a href="/catering-in/pune">Pune</a>
@@ -92,12 +102,12 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         </div>
       </div>
 
-      <div class="nav-item">
-        <a href="/gallery">Gallery</a>
+      <div class={navItemClasses}>
+        <a href="/gallery" class={navLinkClasses}>Gallery</a>
       </div>
 
-      <div class:list={['nav-item', 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
-        <a href="/about" aria-current={onAbout ? 'page' : undefined}>About</a>
+      <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
+        <a href="/about" class={navLinkClasses} aria-current={onAbout ? 'page' : undefined}>About</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Elamrit</span>
           <a href="/about#story">Our Story</a>
@@ -108,8 +118,8 @@ const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
         </div>
       </div>
 
-      <div class="nav-item has-dropdown">
-        <a href={foodJunctionHref}>Food Junction</a>
+      <div class:list={[navItemClasses, 'has-dropdown']}>
+        <a href={foodJunctionHref} class={navLinkClasses}>Food Junction</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">Our Sister Brand</span>
           <a href="/food-junction">About Food Junction</a>

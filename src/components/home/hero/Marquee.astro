@@ -1,24 +1,28 @@
 ---
+const marqueeTrackClasses = 'inline-flex items-center gap-0 [animation:marquee-slide_28s_linear_infinite]';
+const marqueeItemClasses =
+  'px-8 py-0 font-body text-[11px] leading-tight tracking-[0.35em] uppercase text-[color-mix(in_srgb,var(--dark-brown)_78%,var(--dark-red)_22%)]';
+const marqueeDotClasses = 'dot shrink-0 px-7 text-[10px] leading-none text-dark-red';
 ---
   <div
     class="overflow-hidden whitespace-nowrap py-3.5"
     style="background: var(--bg-marquee)"
     aria-hidden="true"
   >
-    <div class="marquee-inner">
-      <span>Luxury Wedding Catering</span><span class="dot">◆</span>
-      <span>Pan India Catering</span><span class="dot">◆</span>
-      <span>Corporate Events</span><span class="dot">◆</span>
-      <span>Live Cooking Stations</span><span class="dot">◆</span>
-      <span>Private Dining</span><span class="dot">◆</span>
-      <span>Destination Weddings</span><span class="dot">◆</span>
-      <span>Singapore — Coming Soon</span><span class="dot">◆</span>
-      <span>Luxury Wedding Catering</span><span class="dot">◆</span>
-      <span>Pan India Catering</span><span class="dot">◆</span>
-      <span>Corporate Events</span><span class="dot">◆</span>
-      <span>Live Cooking Stations</span><span class="dot">◆</span>
-      <span>Private Dining</span><span class="dot">◆</span>
-      <span>Destination Weddings</span><span class="dot">◆</span>
-      <span>Singapore — Coming Soon</span><span class="dot">◆</span>
+    <div class={marqueeTrackClasses}>
+      <span class={marqueeItemClasses}>Luxury Wedding Catering</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Pan India Catering</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Corporate Events</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Live Cooking Stations</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Private Dining</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Destination Weddings</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Singapore — Coming Soon</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Luxury Wedding Catering</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Pan India Catering</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Corporate Events</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Live Cooking Stations</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Private Dining</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Destination Weddings</span><span class={marqueeDotClasses}>◆</span>
+      <span class={marqueeItemClasses}>Singapore — Coming Soon</span><span class={marqueeDotClasses}>◆</span>
     </div>
   </div>

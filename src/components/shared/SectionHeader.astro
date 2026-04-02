@@ -1,0 +1,48 @@
+---
+interface Props {
+  label?: string;
+  class?: string;
+  labelClass?: string;
+  titleClass?: string;
+  dividerClass?: string;
+  align?: 'left' | 'center';
+  labelTone?: 'default' | 'muted';
+  showDivider?: boolean;
+}
+
+const {
+  label,
+  class: className,
+  labelClass,
+  titleClass,
+  dividerClass,
+  align = 'left',
+  labelTone = 'default',
+  showDivider = false,
+} = Astro.props as Props;
+
+const labelToneClass = labelTone === 'muted' ? 'text-gray-orange' : 'text-dark-red';
+const dividerAlignClass = align === 'center' ? 'mx-auto' : '';
+---
+
+<div class:list={[className, align === 'center' ? 'text-center' : 'text-left']}>
+  {
+    label && (
+      <span
+        class:list={['section-header-label', labelToneClass, labelClass]}
+      >
+        {label}
+      </span>
+    )
+  }
+  <h2 class:list={['section-header-title', titleClass]}>
+    <slot />
+  </h2>
+  {
+    showDivider && (
+      <div
+        class:list={['section-header-divider', dividerAlignClass, dividerClass]}
+      />
+    )
+  }
+</div>

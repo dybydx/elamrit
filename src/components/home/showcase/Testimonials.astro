@@ -1,12 +1,18 @@
 ---
 import Card from '@/components/ui/Card.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
 ---
   <section id="testimonials" class="bg-light-blush px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
-    <div class="mb-14 text-left">
-      <span class="mb-4 block font-body text-[10px] tracking-[0.4em] text-gray-orange uppercase">Client Stories</span>
-      <h2 class="section-header-title text-dark-brown">What Our Guests <em>Remember</em></h2>
-      <div class="mt-6 h-px w-12 bg-dark-red"></div>
-    </div>
+    <SectionHeader
+      class="mb-14"
+      label="Client Stories"
+      labelTone="muted"
+      showDivider={true}
+      dividerClass="mx-0"
+      titleClass="text-dark-brown"
+    >
+      What Our Guests <em>Remember</em>
+    </SectionHeader>
     <div class="mt-14 grid grid-cols-1 gap-7 lg:grid-cols-3 lg:gap-7">
       <Card variant="testimonial">
         <p class="testi-quote relative z-[1] mb-7 font-body text-[17px] italic leading-[1.8] text-[var(--text-muted-on-cream)]">

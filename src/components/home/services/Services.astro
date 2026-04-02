@@ -1,18 +1,15 @@
 ---
 import Card from '@/components/ui/Card.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
 ---
   <section
     id="services"
     class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]"
     style="background: var(--bg-services-home)"
   >
-    <div class="mb-16 text-center">
-      <span class="section-header-label">What We Do</span>
-      <h2 class="section-header-title">
-        Curated Services for <em>Every Occasion</em>
-      </h2>
-      <div class="section-header-divider"></div>
-    </div>
+    <SectionHeader class="mb-16" label="What We Do" align="center" showDivider={true}>
+      Curated Services for <em>Every Occasion</em>
+    </SectionHeader>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-[18px]">
       <Card variant="service">
         <span

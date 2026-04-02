@@ -1,15 +1,20 @@
 ---
 import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
 ---
   <section
     id="cta-section"
     class="px-5 py-20 text-center md:px-10 lg:px-20 lg:py-[110px]"
     style="background: var(--bg-cta)"
   >
-    <span class="section-header-label">Begin Your Journey</span>
-    <h2 class="section-header-title mx-auto mb-4 max-w-[700px] text-[clamp(32px,4vw,58px)]">
+    <SectionHeader
+      label="Begin Your Journey"
+      align="center"
+      class="mb-4"
+      titleClass="mx-auto max-w-[700px] text-[clamp(32px,4vw,58px)]"
+    >
       Let Us Craft Your<br /><em>Most Memorable Feast</em>
-    </h2>
+    </SectionHeader>
     <p
       class="mx-auto mb-12 max-w-[500px] font-body text-xl leading-[1.8] text-[var(--text-muted-on-cream)]"
     >

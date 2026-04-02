@@ -20,10 +20,10 @@ export const cardVariants = cva('', {
       location:
         'location-card border border-[rgba(189,148,118,0.28)] bg-[rgba(255,248,240,0.94)] px-7 py-9 transition-all duration-300 hover:border-dark-red/22 hover:bg-cream',
       locationSg:
-        'location-card sg border border-[rgba(181,195,141,0.35)] px-7 py-9 transition-all duration-300 hover:border-dark-red/22 hover:bg-cream',
-      /** About philosophy pillars — `.pillar:hover` in `app.css`. */
+        'location-card border border-[rgba(181,195,141,0.35)] bg-[color-mix(in_srgb,var(--cream)_75%,var(--green)_25%)] px-7 py-9 transition-all duration-300 hover:border-dark-red/22 hover:bg-cream',
+      /** About philosophy pillars — keep the variant self-contained. */
       pillar:
-        'pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300',
+        'pillar relative border border-[rgba(189,148,118,0.28)] bg-cream px-10 py-[52px] shadow-[0_8px_28px_rgba(36,33,31,0.05)] transition-[background,border-color] duration-300 hover:border-[rgba(81,3,12,0.18)] hover:bg-[color-mix(in_srgb,var(--cream)_60%,var(--light-blush)_40%)]',
       /** Food Junction numbered feature rows. */
       foodJunction: foodJunctionFeature,
       /** Home experience section stat cells on dark red. */
