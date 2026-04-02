@@ -396,7 +396,7 @@ footer.site-footer .footer-col li a:hover::before {
 .ph-image::before {
   content: '';
   @apply absolute inset-0 bg-cover bg-center opacity-40;
-  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80');
+  background-image: url('/images/about/elamrit-about-hero.png');
   filter: saturate(0.3);
 }
 
@@ -410,14 +410,14 @@ footer.site-footer .footer-col li a:hover::before {
 .story-img-main::before {
   content: '';
   @apply absolute inset-0 bg-cover bg-center;
-  background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80');
+  background-image: url('/images/about/elamrit-about-story-main.png');
   filter: saturate(0.5) brightness(0.85);
 }
 
 .story-img-float::before {
   content: '';
   @apply absolute inset-0 bg-cover bg-center mix-blend-multiply;
-  background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80');
+  background-image: url('/images/about/elamrit-about-story-float.png');
   filter: saturate(0.4) brightness(0.7);
 }
 

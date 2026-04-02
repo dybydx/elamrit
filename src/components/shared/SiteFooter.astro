@@ -1,0 +1,124 @@
+---
+export interface Props {
+  showMark?: boolean;
+}
+
+const { showMark = true } = Astro.props;
+---
+
+<footer class="site-footer border-t-[3px] border-green bg-dark-red pb-8 text-blush">
+  <div class="px-5 pt-[72px] md:px-10 lg:px-20">
+    <div
+      class="grid grid-cols-1 gap-10 border-b border-[rgba(189,148,118,0.15)] pb-14 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-[60px]"
+    >
+      <div class="footer-brand">
+        <div class="mb-4 flex items-center gap-3.5">
+          {showMark ? (
+            <svg class="h-[34px] w-7 shrink-0 text-cream/50" viewBox="0 0 60 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="30" cy="14" rx="6" ry="10" stroke="currentColor" stroke-width="1.5"></ellipse>
+              <line x1="30" y1="5" x2="30" y2="23" stroke="currentColor" stroke-width="0.8"></line>
+              <path d="M27 16 C20 13 11 7 4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M26 20 C17 19 8 14 2 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M25 24 C18 25 10 23 5 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M33 16 C40 13 49 7 56 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M34 20 C43 19 52 14 58 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M35 24 C42 25 50 23 55 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <line x1="30" y1="23" x2="30" y2="52" stroke="currentColor" stroke-width="1.5"></line>
+              <path d="M30 52 C24 57 16 61 8 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M30 52 C36 57 44 61 52 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            </svg>
+          ) : null}
+          <div class="flex flex-col gap-0.5">
+            <div class="logo-name font-display text-xl leading-none tracking-[0.45em] text-cream">ELAMRIT</div>
+            <div class="logo-tag font-serif text-[11px] tracking-[0.26em] text-gray-orange uppercase">Luxe Feast</div>
+          </div>
+        </div>
+        <p class="mb-7 max-w-[280px] font-body text-[16px] leading-[1.85] text-[rgba(214,185,171,0.78)]">
+          Premium catering crafted for life's most significant moments. Pune-based. Pan India. Singapore — coming soon.
+        </p>
+        <div class="flex gap-3">
+          <a
+            class="flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] font-body text-[10px] tracking-normal text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
+            href="#"
+            title="Instagram">IG</a
+          >
+          <a
+            class="flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] font-body text-[10px] tracking-normal text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
+            href="#"
+            title="Facebook">FB</a
+          >
+          <a
+            class="flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] font-body text-[10px] tracking-normal text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
+            href="#"
+            title="LinkedIn">LI</a
+          >
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4
+          class="mb-6 border-b border-[rgba(189,148,118,0.12)] pb-3 font-body text-[12px] tracking-[0.26em] text-cream uppercase"
+        >
+          Services
+        </h4>
+        <ul class="flex list-none flex-col gap-2.5">
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Wedding Catering</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Corporate Events</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Social Celebrations</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Private Dining</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Live Stations</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Pan India Catering</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4
+          class="mb-6 border-b border-[rgba(189,148,118,0.12)] pb-3 font-body text-[12px] tracking-[0.26em] text-cream uppercase"
+        >
+          Explore
+        </h4>
+        <ul class="flex list-none flex-col gap-2.5">
+          <li><a href="/about" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">About Elamrit</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Menus</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Gallery</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">The Journal</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Food Junction</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4
+          class="mb-6 border-b border-[rgba(189,148,118,0.12)] pb-3 font-body text-[12px] tracking-[0.26em] text-cream uppercase"
+        >
+          Get in Touch
+        </h4>
+        <ul class="flex list-none flex-col gap-2.5">
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Get a Quote</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">Contact Us</a></li>
+          <li><a href="#" class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream">WhatsApp Us</a></li>
+        </ul>
+        <div class="mt-7 border-t border-[rgba(189,148,118,0.1)] pt-5">
+          <div class="font-body text-[12px] leading-8 tracking-[0.22em] text-[rgba(214,185,171,0.55)] uppercase">
+            Pune &nbsp;·&nbsp; Mumbai &nbsp;·&nbsp; Delhi<br />
+            Bangalore &nbsp;·&nbsp; Hyderabad<br />
+            Pan India
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap items-center justify-between gap-4 px-5 pt-7 md:px-10 lg:px-20">
+    <p class="font-body text-sm tracking-wide text-[rgba(214,185,171,0.55)]">
+      © 2025 Elamrit Luxe Feast. All rights reserved.
+    </p>
+    <p class="font-body text-sm tracking-wide text-[rgba(214,185,171,0.55)]">
+      Privacy Policy &nbsp;·&nbsp; Terms &amp; Conditions
+    </p>
+    <div class="footer-agency flex items-center gap-1.5 font-body text-sm text-[rgba(214,185,171,0.55)]">
+      Designed &amp; developed by&nbsp;<a class="text-gray-orange transition-colors hover:text-cream" href="https://webweaverlabs.com" target="_blank">WebWeaver Labs</a>
+    </div>
+  </div>
+</footer>
+

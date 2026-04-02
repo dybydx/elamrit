@@ -11,13 +11,13 @@ import SectionBreak from '../components/home/brand/SectionBreak.astro';
 import FoodJunction from '../components/home/services/FoodJunction.astro';
 import Clients from '../components/home/showcase/Clients.astro';
 import Testimonials from '../components/home/showcase/Testimonials.astro';
-import CtaSection from '../components/home/cta/CtaSection.astro';
-import Footer from '../components/home/cta/Footer.astro';
+import SiteFooter from '../components/shared/SiteFooter.astro';
 ---
 
 <BaseLayout
   title="Elamrit — Luxe Feast | Premium Catering Pune & Pan India"
   description="Elamrit crafts unforgettable culinary experiences for weddings, corporate events, and social celebrations. Premium luxury catering across Pune and Pan India."
+  bottomCta="home"
 >
   <Nav />
   <Hero />
@@ -30,8 +30,7 @@ import Footer from '../components/home/cta/Footer.astro';
   <FoodJunction />
   <Clients />
   <Testimonials />
-  <CtaSection />
-  <Footer />
+  <SiteFooter slot="footer" />
 </BaseLayout>
 
 <script is:inline>

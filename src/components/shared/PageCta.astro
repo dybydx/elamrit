@@ -1,0 +1,56 @@
+---
+import Button from '@/components/ui/Button.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+
+export type PageCtaVariant = 'home' | 'about';
+
+export interface Props {
+  variant?: PageCtaVariant;
+}
+
+const { variant = 'home' } = Astro.props;
+---
+
+{variant === 'home' ? (
+  <section
+    id="cta-section"
+    class="px-5 py-20 text-center md:px-10 lg:px-20 lg:py-[110px]"
+    style="background: var(--bg-cta)"
+  >
+    <SectionHeader
+      label="Begin Your Journey"
+      align="center"
+      class="mb-4"
+      titleClass="mx-auto max-w-[700px] text-[clamp(32px,4vw,58px)]"
+    >
+      Let Us Craft Your<br /><em>Most Memorable Feast</em>
+    </SectionHeader>
+    <p class="mx-auto mb-12 max-w-[500px] font-body text-xl leading-[1.8] text-[var(--text-muted-on-cream)]">
+      Tell us about your occasion. Our team will curate a bespoke culinary experience designed exclusively for you.
+    </p>
+    <div class="flex flex-wrap justify-center gap-5">
+      <Button href="#">Get a Quote</Button>
+      <Button href="#" variant="outlineCta">View Menus</Button>
+    </div>
+  </section>
+) : (
+  <section
+    id="about-cta"
+    class="grid grid-cols-1 items-center gap-10 bg-dark-red px-5 py-20 md:gap-20 md:px-10 lg:grid-cols-[2fr_1fr] lg:gap-20 lg:px-20 lg:py-[110px]"
+  >
+    <div>
+      <h2 class="font-serif text-[clamp(28px,3.5vw,48px)] font-light leading-tight text-cream">
+        Ready to Create<br /><em class="italic">Your Unforgettable Feast?</em>
+      </h2>
+      <p class="mt-4 max-w-xl font-body text-lg leading-[1.8] text-cream/65">
+        Speak to our event specialists. We'll listen to your vision, understand your occasion, and craft a bespoke
+        culinary experience that exceeds every expectation.
+      </p>
+    </div>
+    <div class="flex flex-col items-start gap-3.5">
+      <Button href="#">Get a Quote</Button>
+      <Button href="#" variant="outlineCream">View Menus</Button>
+    </div>
+  </section>
+)}
+

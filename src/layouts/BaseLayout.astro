@@ -1,12 +1,14 @@
 ---
 import '../styles/app.css';
+import PageCta from '@/components/shared/PageCta.astro';
 
 interface Props {
   title: string;
   description: string;
+  bottomCta?: false | 'home' | 'about';
 }
 
-const { title, description } = Astro.props;
+const { title, description, bottomCta = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,5 +28,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <slot />
+    {bottomCta ? <PageCta variant={bottomCta} /> : null}
+    <slot name="footer" />
   </body>
 </html>
