@@ -1,0 +1,98 @@
+---
+export interface Props {
+  /** YouTube video id (the `v=` value). */
+  videoId: string;
+  title: string;
+  class?: string;
+  /** Start time in seconds. */
+  start?: number;
+}
+
+const { videoId, title, class: className, start } = Astro.props;
+
+const params = new URLSearchParams({
+  autoplay: '1',
+  rel: '0',
+  modestbranding: '1',
+  playsinline: '1',
+});
+if (start && start > 0) params.set('start', String(start));
+
+const embedSrc = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+const poster = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+---
+
+<div
+  class:list={[
+    'yt-embed group relative aspect-video w-full overflow-hidden rounded-sm border border-[rgba(189,148,118,0.28)] bg-dark-brown/10 shadow-[0_10px_34px_rgba(36,33,31,0.08)]',
+    className,
+  ]}
+  data-yt-embed
+  data-yt-src={embedSrc}
+>
+  <button
+    type="button"
+    class="absolute inset-0 grid place-items-center bg-cover bg-center text-left"
+    style={`background-image:url(${poster})`}
+    aria-label={`Play video: ${title}`}
+    data-yt-play
+  >
+    <span class="absolute inset-0 bg-[linear-gradient(to_top,rgba(36,33,31,0.68),rgba(36,33,31,0.18),rgba(36,33,31,0.05))]"></span>
+    <span class="relative z-[1] grid place-items-center">
+      <span
+        class="grid h-14 w-14 place-items-center rounded-full border border-cream/35 bg-[rgba(255,248,240,0.16)] shadow-[0_18px_44px_rgba(0,0,0,0.35)] backdrop-blur transition-all duration-300 group-hover:scale-[1.03] group-hover:border-cream/60 group-hover:bg-[rgba(255,248,240,0.22)]"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="text-cream">
+          <path d="M7.2 4.8 L15.6 10 L7.2 15.2 Z" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="mt-4 max-w-[34ch] px-5 text-center font-body text-[12px] tracking-[0.2em] text-cream/85 uppercase">
+        {title}
+      </span>
+    </span>
+  </button>
+</div>
+
+<script is:inline>
+  (function () {
+    const w = window;
+    if (w.__elamritYtEmbedsInit) return;
+    w.__elamritYtEmbedsInit = true;
+
+    function mount(root) {
+      if (!root || root.dataset.ytMounted === 'true') return;
+      const btn = root.querySelector('[data-yt-play]');
+      const src = root.getAttribute('data-yt-src');
+      if (!btn || !src) return;
+
+      root.dataset.ytMounted = 'true';
+      btn.addEventListener('click', function () {
+        if (root.querySelector('iframe')) return;
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = 'YouTube video player';
+        iframe.loading = 'lazy';
+        iframe.allow =
+          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.className = 'absolute inset-0 h-full w-full';
+        root.appendChild(iframe);
+        btn.remove();
+      });
+    }
+
+    function initAll() {
+      document.querySelectorAll('[data-yt-embed]').forEach(function (el) {
+        mount(el);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+      initAll();
+    }
+  })();
+</script>
+

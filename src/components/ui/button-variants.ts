@@ -13,6 +13,9 @@ export const buttonVariants = cva('', {
       ghost: 'btn-ghost',
       cream:
         'inline-flex items-center justify-center whitespace-nowrap bg-cream px-9 py-3.5 font-body text-[13px] leading-none tracking-[0.18em] text-dark-red uppercase transition-all duration-300 hover:bg-dark-red hover:text-cream',
+      /** Cream-filled CTA intended for dark sections (avoid blending on hover). */
+      creamOnDark:
+        'inline-flex items-center justify-center whitespace-nowrap bg-cream px-9 py-3.5 font-body text-[13px] leading-none tracking-[0.18em] text-dark-red uppercase transition-all duration-300 hover:bg-cream/92 hover:text-dark-red hover:shadow-[0_14px_34px_rgba(0,0,0,0.22)]',
       green:
         'inline-flex w-fit items-center justify-center whitespace-nowrap bg-green px-9 py-3.5 font-body text-[13px] leading-none font-semibold tracking-[0.18em] text-dark-brown uppercase transition-all duration-300 hover:bg-cream',
       outlineCream:

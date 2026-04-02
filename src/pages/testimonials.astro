@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/shared/Nav.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import TestimonialsSection from '../components/home/showcase/Testimonials.astro';
+import VideoTestimonials from '@/components/testimonials/VideoTestimonials.astro';
+import SiteFooter from '../components/shared/SiteFooter.astro';
+import Button from '@/components/ui/Button.astro';
+
+const videoTestimonials = [
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'A wedding feast guests still talk about',
+    meta: 'Wedding · Pune · 400 Guests',
+  },
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'Corporate gala with live stations',
+    meta: 'Corporate · Mumbai · 250 Guests',
+    start: 12,
+  },
+  {
+    videoId: 'dQw4w9WgXcQ',
+    title: 'An intimate private dining experience',
+    meta: 'Private Dining · Pune · Intimate',
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Testimonials — Elamrit Luxe Feast"
+  description="Read what our hosts and guests remember most — premium wedding, corporate, and social catering by Elamrit across Pune and Pan India."
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]}
+    titleHtml="CLIENT<br />STORIES"
+    description="A few words from the people who trusted us with their most important moments — and the flavours they still talk about."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    quote="The best testimonial is a guest who remembers the last bite as vividly as the first."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/gallery" variant="outlineCream">View Gallery</Button>
+    </div>
+  </PageHero>
+
+  <TestimonialsSection />
+  <VideoTestimonials items={[...videoTestimonials]} />
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
+

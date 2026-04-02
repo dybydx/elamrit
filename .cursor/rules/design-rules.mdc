@@ -36,6 +36,9 @@ When you need hierarchy, use these tools in this order:
 ## Buttons & CTAs
 - **CTA text MUST** be readable without zooming; don’t rely on tracking alone.
 - **CTA hit targets SHOULD** be comfortably tappable (aim ~40px+ effective height where possible).
+- **Contrast MUST be obvious**: avoid cream/white buttons on cream/white sections. If a section background is light, use a dark-filled or dark-outline variant (e.g. `navCta` or `outlineCta`) instead of the default light-filled button.
+- **Vertical centering**: button labels should be visually centered; prefer `inline-flex items-center justify-center` + tight line-height (no baseline “sag”).
+- **Hover clarity (no contrast regressions)**: hover should show a clear affordance (lift / invert / outline shift), but must never become “white text on white background”. Avoid nav-specific CSS that overrides `.nav-cta` hover; hover behavior should live in `button-variants.ts`.
 
 ## Components vs one-off styling
 - Repeated patterns **SHOULD** become variants in:

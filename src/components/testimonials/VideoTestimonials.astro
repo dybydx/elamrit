@@ -1,0 +1,50 @@
+---
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import Card from '@/components/ui/Card.astro';
+import YouTubeEmbed from '@/components/shared/YouTubeEmbed.astro';
+
+export type VideoTestimonial = {
+  videoId: string;
+  title: string;
+  meta?: string;
+  start?: number;
+};
+
+export interface Props {
+  items: VideoTestimonial[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[110px]">
+  <div class="mx-auto w-full max-w-[1200px]">
+    <SectionHeader
+      class="mb-14"
+      label="Video Testimonials"
+      labelTone="muted"
+      showDivider={true}
+      dividerClass="mx-0"
+      titleClass="text-dark-brown"
+    >
+      Hear It In Their <em>Own Words</em>
+    </SectionHeader>
+
+    <div class="grid grid-cols-1 gap-7 lg:grid-cols-3">
+      {items.map((item) => (
+        <Card class="p-6 md:p-7">
+          <YouTubeEmbed videoId={item.videoId} title={item.title} start={item.start} />
+          <div class="mt-5">
+            <div class="font-serif text-[20px] leading-snug text-dark-brown">{item.title}</div>
+            {item.meta ? (
+              <div class="mt-2 font-body text-[14px] tracking-wide text-[var(--text-muted-on-cream-soft)]">
+                {item.meta}
+              </div>
+            ) : null}
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
