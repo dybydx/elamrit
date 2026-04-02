@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/shared/Nav.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import SiteFooter from '../components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Terms & Conditions — Elamrit Luxe Feast"
+  description="Elamrit Luxe Feast terms and conditions for website use and enquiries."
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="center"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Terms' }]}
+    titleHtml="TERMS &amp;<br />CONDITIONS"
+    description="Simple, fair terms for using our website and contacting our team."
+    descriptionClass="mx-auto max-w-[760px]"
+  />
+
+  <main class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-24">
+    <div class="mx-auto w-full max-w-[920px]">
+      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        This page is a placeholder and will be replaced with Elamrit’s official terms. For now, please treat all content
+        and proposals as subject to confirmation in writing.
+      </p>
+
+      <section class="mt-10">
+        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Website use</h2>
+        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          You may browse and share site content for informational purposes. You agree not to misuse the site or attempt
+          to disrupt its operation.
+        </p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Enquiries & availability</h2>
+        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          Submitting an enquiry does not guarantee availability. Dates, pricing, and service scope are confirmed only
+          through a written agreement.
+        </p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Changes</h2>
+        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+          We may update these terms over time. The latest version will be posted on this page.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
+

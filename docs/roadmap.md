@@ -37,7 +37,7 @@ Legend:
 - [ ] `/gallery/food`
 - [ ] `/gallery/setup-decor`
 
-- [ ] `/testimonials` — Testimonials Index
+- [x] `/testimonials` — Testimonials Index
 
 Notes:
 - The `/about` route already contains story/philosophy/team/locations as sections; the sitemap asks for separate dedicated routes too.
@@ -110,10 +110,10 @@ Notes:
 
 ### 09) Conversion + utility pages
 
-- [ ] `/contact`
-- [ ] `/contact/get-a-quote`
-- [ ] `/privacy-policy`
-- [ ] `/terms`
+- [x] `/contact`
+- [x] `/contact/get-a-quote`
+- [x] `/privacy-policy`
+- [x] `/terms`
 - [ ] `/sitemap.xml`
 
 ---
@@ -121,9 +121,9 @@ Notes:
 ## Suggested implementation phases (practical order)
 
 ### Phase A — Conversion baseline (high ROI, low dependency)
-- [ ] Create `/contact` + `/contact/get-a-quote`
-- [ ] Create `/privacy-policy` + `/terms`
-- [ ] Create `/testimonials` (can re-use homepage testimonials content)
+- [x] Create `/contact` + `/contact/get-a-quote`
+- [x] Create `/privacy-policy` + `/terms`
+- [x] Create `/testimonials` (can re-use homepage testimonials content)
 
 ### Phase B — Services core (primary SEO landing pages)
 - [ ] Create `/services/wedding-catering` + children
@@ -149,6 +149,6 @@ Notes:
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 2 / 40+ (only `/` and `/about` exist as routes today)
+- **Routes complete**: 7 / 40+ (`/`, `/about`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 
