@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/shared/Nav.astro';
+import PageHero from '../components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SiteFooter from '../components/shared/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Contact Elamrit — Premium Catering Enquiries"
+  description="Reach Elamrit Luxe Feast for weddings, corporate events, and social celebrations. Share your date, city, and guest count — we’ll respond with a tailored approach."
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="center"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
+    titleHtml="CONTACT"
+    description="Tell us what you’re planning — we’ll guide the format, flow, and menu with the calm precision your event deserves."
+  />
+
+  <section class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-24">
+    <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <div>
+        <h2 class="font-serif text-[clamp(26px,3vw,40px)] font-light leading-tight text-dark-brown">
+          A direct line to your<br /><em class="italic text-dark-red">event specialists</em>
+        </h2>
+        <p class="mt-4 max-w-[60ch] font-body text-[18px] leading-[1.8] text-[var(--text-muted-on-cream)]">
+          The fastest way is to request a quote. If you prefer, reach us directly and include your date, city, guest
+          count, and occasion type.
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-4">
+          <Button href="/contact/get-a-quote" variant="navCta">Get a Quote</Button>
+          <Button href="/about#locations" variant="outlineCta">Our Locations</Button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+        <Card class="p-7">
+          <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Email</div>
+          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">hello@elamrit.example</div>
+          <p class="mt-2 font-body text-[16px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
+            Best for detailed briefs and multi-day itineraries.
+          </p>
+          <div class="mt-5">
+            <a
+              class="btn-ghost text-dark-red"
+              href="mailto:hello@elamrit.example?subject=Elamrit%20Catering%20Enquiry"
+            >
+              Email us
+            </a>
+          </div>
+        </Card>
+
+        <Card class="p-7">
+          <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Phone</div>
+          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">+91 00000 00000</div>
+          <p class="mt-2 font-body text-[16px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
+            Quick alignment on timelines, service style, and scale.
+          </p>
+          <div class="mt-5">
+            <a class="btn-ghost text-dark-red" href="tel:+910000000000">Call now</a>
+          </div>
+        </Card>
+
+        <Card class="p-7 sm:col-span-2 lg:col-span-1">
+          <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">WhatsApp</div>
+          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">Share a brief in minutes</div>
+          <p class="mt-2 font-body text-[16px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
+            Send your date, city, guest count, and venue type. We’ll reply with the next steps.
+          </p>
+          <div class="mt-5">
+            <a class="btn-ghost text-dark-red" href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+              Message on WhatsApp
+            </a>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>
+

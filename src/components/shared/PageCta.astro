@@ -29,8 +29,8 @@ const { variant = 'home' } = Astro.props;
       Tell us about your occasion. Our team will curate a bespoke culinary experience designed exclusively for you.
     </p>
     <div class="flex flex-wrap justify-center gap-5">
-      <Button href="#">Get a Quote</Button>
-      <Button href="#" variant="outlineCta">View Menus</Button>
+      <Button href="/contact/get-a-quote">Get a Quote</Button>
+      <Button href="/menus" variant="outlineCta">View Menus</Button>
     </div>
   </section>
 ) : (
@@ -49,7 +49,7 @@ const { variant = 'home' } = Astro.props;
     </div>
     <div class="flex w-full flex-col items-stretch gap-3.5 lg:items-start">
       <Button
-        href="#"
+        href="/contact/get-a-quote"
         class="w-full border border-cream/35 text-center text-[13px] tracking-[0.16em] hover:border-cream/70 hover:bg-cream/90 hover:text-dark-red lg:w-[240px]"
       >
         Get a Quote

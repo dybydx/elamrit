@@ -13,6 +13,7 @@ const isSolid = variant === 'solid';
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path === '/about';
+const onContact = path === '/contact' || path.startsWith('/contact/');
 
 /* In-page anchors only work on home; from other routes, send users to home sections. */
 const foodJunctionHref = isSolid ? '/#food-junction' : '#food-junction';
@@ -128,6 +129,10 @@ const navLinkClasses =
           <a href="/food-junction/get-quote">Get a Quote</a>
         </div>
       </div>
+
+      <div class:list={[navItemClasses, { 'nav-current': isSolid && onContact }]}>
+        <a href="/contact" class={navLinkClasses} aria-current={onContact ? 'page' : undefined}>Contact</a>
+      </div>
     </div>
-    <Button href="#" variant="navCta">Get a Quote</Button>
+    <Button href="/contact/get-a-quote" variant="navCta">Get a Quote</Button>
   </nav>

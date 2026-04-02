@@ -18,11 +18,11 @@ const classes = cn(buttonVariants({ variant }), className);
 
 {
   href ? (
-    <a href={href} class={classes} data-slot="button" {...rest}>
+    <a href={href} class={classes} data-slot="button" data-variant={variant} {...rest}>
       <slot />
     </a>
   ) : (
-    <button type={type} class={classes} data-slot="button" {...rest}>
+    <button type={type} class={classes} data-slot="button" data-variant={variant} {...rest}>
       <slot />
     </button>
   )

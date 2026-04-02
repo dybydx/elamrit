@@ -124,7 +124,7 @@
 
 @layer components {
   .btn-ghost {
-    @apply flex items-center gap-2.5 font-body text-[11px] tracking-[0.2em] text-blush uppercase transition-colors duration-200;
+    @apply flex items-center gap-2.5 font-body text-[13px] tracking-[0.18em] text-blush uppercase transition-colors duration-200;
   }
   .btn-ghost::after {
     content: '→';
@@ -185,11 +185,6 @@
   @apply text-dark-red;
 }
 
-#mainNav.scrolled .nav-cta:hover,
-#mainNav.nav-solid .nav-cta:hover {
-  @apply border-dark-red text-dark-red;
-}
-
 #mainNav.nav-solid .nav-item.nav-current > a {
   @apply text-dark-red;
 }
@@ -199,10 +194,7 @@
   @apply border-dark-red bg-dark-red text-cream;
 }
 
-#mainNav.scrolled .nav-cta:hover,
-#mainNav.nav-solid .nav-cta:hover {
-  @apply border-cream bg-transparent text-cream;
-}
+/* `navCta` hover is defined in the button variant to stay legible on light nav. */
 
 /* Chevron: rotate order + translate keeps the “up” state optically aligned with label (not sitting high). */
 .nav-item.has-dropdown > a::after {
