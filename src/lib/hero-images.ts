@@ -22,6 +22,7 @@ export const cateringMumbai = '/images/gallery/elamrit-gallery-corporate-event.p
 export const cateringDelhiNcr = '/images/gallery/elamrit-gallery-corporate-event.png';
 export const cateringBangalore = '/images/services/corporate-gallery-2.png';
 export const cateringHyderabad = '/images/services/wedding-gallery-1.png';
+export const cateringGoa = '/images/services/wedding-gallery-3.png';
 export const cateringPanIndia = '/images/services/wedding-gallery-3.png';
 
 export const menuIndian = '/images/menus/menu-card-indian.png';

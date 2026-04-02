@@ -20,6 +20,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
     variant="split"
     breadcrumb={[
       { label: 'Home', href: '/' },
+      { label: 'Locations', href: '/catering-in' },
       { label: 'Pan India Catering' },
     ]}
     titleHtml="PAN INDIA<br />CATERING"
@@ -71,7 +72,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
       <div>
         <span class="mb-3 block font-body text-xs tracking-[0.28em] text-gray-orange uppercase">Cities We Serve</span>
         <h2 class="font-serif text-[clamp(28px,3.2vw,46px)] font-light leading-tight text-cream">
-          Six cities, <em class="italic">one team</em>
+          Key destinations, <em class="italic">one team</em>
         </h2>
       </div>
       <p class="max-w-[400px] font-body text-[17px] leading-[1.8] text-cream/65 lg:text-right">
@@ -93,10 +94,10 @@ import { cateringPanIndia } from '@/lib/hero-images';
           <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Corporate galas, luxury weddings, and social events for the city's most ambitious hosts.</p>
         </Card>
       </a>
-      <a href="/catering-in/delhi-ncr" class="block">
+      <a href="/catering-in/delhi" class="block">
         <Card variant="location" class="h-full">
           <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Capital</span>
-          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Delhi NCR</h3>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Delhi &amp; NCR</h3>
           <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Grand weddings, diplomatic events, and high-profile conferences in the capital.</p>
         </Card>
       </a>
@@ -112,6 +113,13 @@ import { cateringPanIndia } from '@/lib/hero-images';
           <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Heritage</span>
           <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Hyderabad</h3>
           <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Royal-heritage weddings and corporate events in the city of the Nizams.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/goa" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Coast</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Goa</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Destination weddings, resorts, and beachfront events on India's favourite coast.</p>
         </Card>
       </a>
       <a href="/catering-in/singapore" class="block">
@@ -132,11 +140,11 @@ import { cateringPanIndia } from '@/lib/hero-images';
         We also go <em class="italic text-dark-red">wherever you need us</em>
       </h2>
       <p class="mt-5 max-w-[640px] font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-        Our city pages cover our most frequent destinations. But Elamrit has catered in Goa, Rajasthan, Himachal Pradesh, Kerala, and other locations across India — wherever our clients bring us, we bring our standards.
+        Our city pages cover our most frequent destinations — including <a class="text-dark-red underline decoration-dark-red/30 underline-offset-2 hover:decoration-dark-red" href="/catering-in/goa">Goa</a>. We also deploy to Rajasthan, Himachal Pradesh, Kerala, and other regions wherever our clients need us.
       </p>
     </div>
     <div class="grid grid-cols-2 gap-px bg-[rgba(189,148,118,0.2)] sm:grid-cols-4">
-      {['Goa', 'Rajasthan', 'Kerala', 'Himachal Pradesh'].map((place) => (
+      {['Rajasthan', 'Kerala', 'Himachal Pradesh', 'Other regions'].map((place) => (
         <div class="bg-cream px-5 py-6 text-center">
           <span class="font-body text-[13px] leading-[1.6] tracking-[0.06em] text-[var(--text-muted-on-cream)]">{place}</span>
         </div>

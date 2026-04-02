@@ -87,10 +87,12 @@ Notes:
 
 - [x] `/catering-in/pune` — HQ
 - [x] `/catering-in/pune/wedding-catering`
+- [x] `/catering-in` — Locations hub
 - [x] `/catering-in/mumbai`
-- [x] `/catering-in/delhi-ncr`
+- [x] `/catering-in/delhi` (redirect from `/catering-in/delhi-ncr`)
 - [x] `/catering-in/bangalore`
 - [x] `/catering-in/hyderabad`
+- [x] `/catering-in/goa`
 - [x] `/catering-in/pan-india`
 - [x] `/catering-in/singapore` — Coming soon / waitlist
 

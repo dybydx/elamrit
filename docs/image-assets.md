@@ -19,6 +19,9 @@
 | 9–14 | `/images/menus/menu-card-*.png` (6 files) | done |
 | 15–32 | `/images/menus/gallery-*.png` (18 files) | done |
 | 33–41 | `/images/services/*-gallery-*.png` (9 files) | done |
+| 42–77 | `/images/services/child/*.png` (36 files, 12 child routes × 3 tiles) | done |
+
+**Child service galleries:** Tile data lives in [`src/lib/service-child-galleries.ts`](../src/lib/service-child-galleries.ts); each child route under wedding / corporate / social catering imports `MenuGallery` with its own three images (except the three category index pages, which already used hub galleries).
 
 **Not in this raster list:** `/videos/hero-reel.mp4` (video). Team section: prefer real founder photography over stock/AI faces.
 
@@ -82,6 +85,10 @@
 **Corporate:** `corporate-gallery-1.png` … `3` — conference lunch; launch canapés; gala dinner.
 
 **Social:** `social-gallery-1.png` … `3` — milestone; cocktail; anniversary-style.
+
+## `/images/services/child/` — child route galleries (3 tiles each)
+
+Filenames map to service pages: e.g. `hindu-wedding-1.png` … `3` → Hindu Weddings; `events-conference-1.png` … `3` → Events & Conferences; `house-warming-1.png` … `3` → House-warming & Puja. See `service-child-galleries.ts` for labels, alt text, and captions.
 
 ---
 

@@ -5,6 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://elamrit.com',
   trailingSlash: 'never',
+  redirects: {
+    '/catering-in/delhi-ncr': '/catering-in/delhi',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

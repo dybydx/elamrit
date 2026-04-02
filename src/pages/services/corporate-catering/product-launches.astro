@@ -8,7 +8,9 @@ import ChildServiceHero from '@/components/services/ChildServiceHero.astro';
 import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { corporateLaunch } from '@/lib/hero-images';
+import { productLaunchGallery } from '@/lib/service-child-galleries';
 ---
 
 <BaseLayout
@@ -111,6 +113,13 @@ import { corporateLaunch } from '@/lib/hero-images';
       </Card>
     </div>
   </section>
+
+  <MenuGallery
+    label={productLaunchGallery.label}
+    tile1={productLaunchGallery.tile1}
+    tile2={productLaunchGallery.tile2}
+    tile3={productLaunchGallery.tile3}
+  />
 
   <ServiceStatsStrip
     items={[

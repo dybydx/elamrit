@@ -1,0 +1,108 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Card from '@/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { cateringPanIndia } from '@/lib/hero-images';
+---
+
+<BaseLayout
+  title="Locations — Where We Cater — Elamrit Luxe Feast"
+  description="Elamrit Luxe Feast caters in Pune, Mumbai, Delhi NCR, Bangalore, Hyderabad, Goa, and Pan India — with Singapore coming soon. Explore each city."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Locations' }]}
+    titleHtml="WHERE WE<br />CATER"
+    description="Pune is our home — but our teams and kitchens travel. Choose a city to see how we operate on the ground, or explore Pan India for nationwide events."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={cateringPanIndia}
+    quote="The address changes. The standard never does."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/services/pan-india-catering" variant="outlineCream">Operations Model</Button>
+    </div>
+  </PageHero>
+
+  <section class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-20">
+    <div class="mb-12 max-w-[640px]">
+      <SectionEyebrow class="mb-4">India &amp; Beyond</SectionEyebrow>
+      <h2 class="font-serif text-[clamp(28px,3.2vw,44px)] font-light leading-tight text-dark-brown">
+        Cities &amp; <em class="italic text-dark-red">regions</em>
+      </h2>
+      <p class="mt-4 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        Each page covers local venues, services we deploy there, and how to start a conversation with our team.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/catering-in/pune" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Headquarters</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Pune</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Our operational base — full portfolio and dedicated wedding catering in Pune.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/mumbai" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Metro</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Mumbai</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Corporate galas, luxury weddings, and high-profile social events.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/delhi" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Capital</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Delhi &amp; NCR</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Grand weddings, conferences, and diplomatic-calibre hospitality.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/bangalore" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Tech Hub</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Bangalore</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Corporate events, multicultural weddings, and private dining.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/hyderabad" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Heritage</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Hyderabad</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Royal-scale weddings and corporate events in the city of pearls.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/goa" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Coast</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Goa</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Destination weddings, resorts, and beachfront celebrations.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/pan-india" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Nationwide</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Pan India</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Logistics, travel-ready teams, and one standard across cities.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/singapore" class="block">
+        <Card variant="locationSg" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Coming Soon</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Singapore</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Join the waitlist for our launch in Singapore.</p>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

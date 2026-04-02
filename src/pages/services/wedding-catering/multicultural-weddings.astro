@@ -8,6 +8,8 @@ import ChildServiceHero from "@/components/services/ChildServiceHero.astro";
 import ServiceStatsStrip from "@/components/services/ServiceStatsStrip.astro";
 import ServiceWhatYouGet from "@/components/services/ServiceWhatYouGet.astro";
 import Testimonials from "@/components/home/showcase/Testimonials.astro";
+import MenuGallery from "@/components/menus/MenuGallery.astro";
+import { multiculturalWeddingGallery } from "@/lib/service-child-galleries";
 ---
 
 <BaseLayout
@@ -205,6 +207,13 @@ import Testimonials from "@/components/home/showcase/Testimonials.astro";
       </Card>
     </div>
   </section>
+
+  <MenuGallery
+    label={multiculturalWeddingGallery.label}
+    tile1={multiculturalWeddingGallery.tile1}
+    tile2={multiculturalWeddingGallery.tile2}
+    tile3={multiculturalWeddingGallery.tile3}
+  />
 
   <ServiceStatsStrip
     items={[
