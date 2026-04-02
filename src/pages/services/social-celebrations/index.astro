@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
 ---
 
 <BaseLayout
@@ -119,6 +120,25 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
       </Card>
     </div>
   </section>
+
+  <MenuGallery
+    label="Social celebrations"
+    tile1={{
+      imageSrc: '/images/services/social-gallery-1.png',
+      imageAlt: 'Milestone birthday or celebration table with cake, florals, and warm lighting — Elamrit social catering.',
+      caption: 'Milestone moments',
+    }}
+    tile2={{
+      imageSrc: '/images/services/social-gallery-2.png',
+      imageAlt: 'Overhead view of cocktail canapés and mocktail glasses on cream linen — Indian luxury catering presentation, food-forward framing.',
+      caption: 'Cocktail evenings',
+    }}
+    tile3={{
+      imageSrc: '/images/services/social-gallery-3.png',
+      imageAlt: 'Intimate anniversary dinner place settings with candles and roses.',
+      caption: 'Intimate gatherings',
+    }}
+  />
 
   <!-- Formats grid -->
   <section id="social-formats" class="px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]" style="background: var(--bg-services-home)">

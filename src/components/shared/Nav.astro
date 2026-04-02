@@ -76,15 +76,23 @@ const navLinkClasses =
 
       <div class:list={[navItemClasses, 'has-dropdown']}>
         <a href="/menus" class={navLinkClasses}>Menus</a>
-        <div class="dropdown-menu">
-          <span class="dropdown-heading">Browse Menus</span>
-          <a href="/menus/wedding">Wedding Menus</a>
-          <a href="/menus/corporate">Corporate Menus</a>
-          <a href="/menus/social">Social &amp; Celebrations</a>
-          <a href="/menus/veg">Pure Vegetarian</a>
-          <a href="/menus/non-veg">Non-Vegetarian</a>
-          <a href="/menus/jain">Jain Menu</a>
-          <a href="/menus/custom">Custom Menu</a>
+        <div class="dropdown-menu dropdown-mega">
+          <div class="dropdown-col">
+            <span class="dropdown-heading">By cuisine</span>
+            <a href="/menus">All menus</a>
+            <a href="/menus/indian-cuisine">Indian Cuisine</a>
+            <a href="/menus/international-cuisine">International Cuisine</a>
+            <a href="/menus/fusion-cuisine">Fusion Cuisine</a>
+            <a href="/menus/desserts">Desserts</a>
+            <a href="/menus/beverages">Beverages</a>
+          </div>
+          <div class="dropdown-col">
+            <span class="dropdown-heading">Customise &amp; occasions</span>
+            <a href="/menus/custom-menu">Custom Menu Builder</a>
+            <a href="/services/wedding-catering">Wedding Catering</a>
+            <a href="/services/corporate-catering">Corporate Catering</a>
+            <a href="/services/social-celebrations">Social Celebrations</a>
+          </div>
         </div>
       </div>
 

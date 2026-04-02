@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
+import MenuGallery from '@/components/menus/MenuGallery.astro';
 ---
 
 <BaseLayout
@@ -121,6 +122,25 @@ import SiteFooter from '@/components/shared/SiteFooter.astro';
       </Card>
     </div>
   </section>
+
+  <MenuGallery
+    label="Corporate catering"
+    tile1={{
+      imageSrc: '/images/services/corporate-gallery-1.png',
+      imageAlt: 'Professional conference lunch buffet with modern presentation — Elamrit corporate catering.',
+      caption: 'Conferences & scale',
+    }}
+    tile2={{
+      imageSrc: '/images/services/corporate-gallery-2.png',
+      imageAlt: 'Elegant canapés and cocktail bites for a corporate launch or networking event.',
+      caption: 'Launches & cocktails',
+    }}
+    tile3={{
+      imageSrc: '/images/services/corporate-gallery-3.png',
+      imageAlt: 'Executive plated dinner with refined table styling for business dining.',
+      caption: 'Executive dining',
+    }}
+  />
 
   <!-- Dark strip -->
   <section class="overflow-hidden bg-dark-red px-5 md:px-10 lg:px-20">
