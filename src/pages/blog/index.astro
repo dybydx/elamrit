@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import BlogPostGrid from '@/components/blog/BlogPostGrid.astro';
+import BlogPagination from '@/components/blog/BlogPagination.astro';
+import {
+  BLOG_PAGE_SIZE,
+  blogHubHero,
+  sliceBlogPage,
+  sortBlogEntries,
+  totalBlogPages,
+} from '@/lib/blog';
+
+const all = await getCollection('blog');
+const sorted = sortBlogEntries(all);
+const page = 1;
+const posts = sliceBlogPage(sorted, page, BLOG_PAGE_SIZE);
+const totalPages = totalBlogPages(sorted.length);
+---
+
+<BaseLayout
+  title="Blog — Elamrit Luxe Feast"
+  description="Articles on wedding feasts, corporate programmes, and memorable catering — from the Elamrit team. Pune, Pan India, and editorial notes for hosts and planners."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    class="!min-h-[48vh] lg:!min-h-[54vh]"
+    breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
+    titleHtml="THE<br />BLOG"
+    description="Longer reads on timing, generosity, and execution — written for anyone planning a feast that has to work in the real world, not only in a mood board."
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={blogHubHero}
+    quote="We publish slowly, on purpose — each piece should earn the time you spend with it."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/about" variant="outlineCream">About Elamrit</Button>
+    </div>
+  </PageHero>
+
+  <section class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
+    <div class="mx-auto mb-14 max-w-[680px] text-center">
+      <div class="mb-4 flex justify-center">
+        <SectionEyebrow>Articles</SectionEyebrow>
+      </div>
+      <p class="font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">
+        The blog is where dated pieces live — newest first. We add articles when they are ready to be useful, not to fill a
+        calendar; bookmark the hub or start with a conversation about your own programme.
+      </p>
+    </div>
+
+    <SectionHeader class="mb-4" label="Latest" align="center" showDivider={true}>
+      From the <em>kitchen &amp; floor</em>
+    </SectionHeader>
+    <p class="mx-auto mb-12 max-w-[1100px] text-center font-body text-[15px] leading-relaxed text-[var(--text-muted-on-cream)]">
+      {sorted.length} article{sorted.length === 1 ? '' : 's'}
+      {
+        totalPages > 1 ? (
+          <>
+            {' '}
+            · {posts.length} on this page ·{' '}
+            <a
+              href="/blog/page/2"
+              class="text-dark-red underline decoration-dark-red/30 underline-offset-4 transition-colors hover:text-gray-orange hover:decoration-gray-orange/50"
+            >
+              Older posts →
+            </a>
+          </>
+        ) : null
+      }
+    </p>
+    <BlogPostGrid posts={posts} startIndex={0} />
+    <BlogPagination currentPage={page} totalPages={totalPages} />
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

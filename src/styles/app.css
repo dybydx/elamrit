@@ -624,6 +624,21 @@ footer.site-footer .footer-col li a:hover::before {
   background: linear-gradient(to right, var(--dark-red) 0%, transparent 40%);
 }
 
+/* Blog / long-form article hero — slightly brighter image, softer left blend */
+.ph-image.ph-image-article::before {
+  @apply opacity-55;
+  filter: saturate(0.42) brightness(1.02);
+}
+
+.ph-image.ph-image-article::after {
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--dark-red) 88%, black) 0%,
+    color-mix(in srgb, var(--dark-red) 35%, transparent) 48%,
+    transparent 72%
+  );
+}
+
 /* ═══ About story — layered photos ═══ */
 .story-img-main::before {
   content: '';
@@ -673,6 +688,27 @@ footer.site-footer .footer-col li a:hover::before {
 
 .story-link:hover {
   gap: 16px;
+}
+
+/* ═══ Blog / MDX article body ═══ */
+.blog-prose :where(h2) {
+  @apply mb-5 font-serif text-[clamp(24px,2.8vw,32px)] font-light leading-tight text-dark-brown;
+}
+
+.blog-prose :where(h2:not(:first-child)) {
+  @apply mt-14;
+}
+
+.blog-prose :where(p) {
+  @apply mb-5 font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)] last:mb-0;
+}
+
+.blog-prose :where(ul, ol) {
+  @apply mb-5 list-disc space-y-2 pl-6 font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)];
+}
+
+.blog-prose :where(a) {
+  @apply text-dark-red underline decoration-dark-red/30 underline-offset-4 transition-colors hover:text-gray-orange hover:decoration-gray-orange/50;
 }
 
 /* Legacy include hosts */

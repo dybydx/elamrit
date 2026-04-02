@@ -1,0 +1,66 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Button from '@/components/ui/Button.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { formatBlogDate } from '@/lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const breadcrumb = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  {
+    label: post.data.breadcrumbTitle,
+    title: post.data.title,
+  },
+];
+
+const title = `${post.data.title} — Elamrit Blog`;
+const description = post.data.excerpt;
+---
+
+<BaseLayout {title} {description} bottomCta="about">
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="article"
+    breadcrumb={breadcrumb}
+    title={post.data.title}
+    description={`${formatBlogDate(post.data.publishedAt)} · ${post.data.tag}`}
+    imageClass="ph-image"
+    heroImageSrc={post.data.heroImageSrc}
+    quote={post.data.quote}
+    quoteAttribution={post.data.quoteAttribution}
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href="/blog" variant="outlineCream">All posts</Button>
+    </div>
+  </PageHero>
+
+  <article class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
+    <div class="blog-prose mx-auto max-w-[720px]">
+      <p class="mb-12 font-body text-[17px] leading-[1.85] text-[var(--text-muted-on-cream)]">{post.data.excerpt}</p>
+      <Content />
+    </div>
+
+    <div class="mx-auto mt-16 flex max-w-[720px] flex-wrap justify-between gap-4 border-t border-[rgba(189,148,118,0.28)] pt-10">
+      <Button href="/blog" variant="outlineCta">← Back to blog</Button>
+      <Button href="/about" variant="outlineCta">About Elamrit</Button>
+    </div>
+  </article>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import PageHero from '@/components/shared/PageHero.astro';
+import Button from '@/components/ui/Button.astro';
+import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
+import SectionHeader from '@/components/shared/SectionHeader.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import BlogPostGrid from '@/components/blog/BlogPostGrid.astro';
+import BlogPagination from '@/components/blog/BlogPagination.astro';
+import {
+  BLOG_PAGE_SIZE,
+  blogHubHero,
+  sliceBlogPage,
+  sortBlogEntries,
+  totalBlogPages,
+} from '@/lib/blog';
+
+export async function getStaticPaths() {
+  const all = await getCollection('blog');
+  const sorted = sortBlogEntries(all);
+  const pages = totalBlogPages(sorted.length);
+  if (pages <= 1) return [];
+  return Array.from({ length: pages - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const pageParam = Astro.params.page;
+const pageNum = pageParam ? Number.parseInt(pageParam, 10) : NaN;
+if (!Number.isFinite(pageNum) || pageNum < 2) {
+  return Astro.redirect('/blog');
+}
+
+const all = await getCollection('blog');
+const sorted = sortBlogEntries(all);
+const totalPages = totalBlogPages(sorted.length);
+if (pageNum > totalPages) {
+  return Astro.redirect('/blog');
+}
+
+const posts = sliceBlogPage(sorted, pageNum, BLOG_PAGE_SIZE);
+const startIndex = (pageNum - 1) * BLOG_PAGE_SIZE;
+---
+
+<BaseLayout
+  title={`Blog — page ${pageNum} — Elamrit Luxe Feast`}
+  description="Articles on wedding feasts, corporate programmes, and memorable catering — from the Elamrit team."
+  bottomCta="about"
+>
+  <Nav variant="solid" />
+
+  <PageHero
+    variant="split"
+    breadcrumb={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog', href: '/blog' },
+      { label: `Page ${pageNum}` },
+    ]}
+    titleHtml="THE<br />BLOG"
+    description={`Archive — page ${pageNum} of ${totalPages}. Newest articles are on the main blog hub.`}
+    descriptionClass="w-full max-w-none"
+    imageClass="ph-image"
+    heroImageSrc={blogHubHero}
+    quote="We publish slowly, on purpose — each piece should earn the time you spend with it."
+    quoteAttribution="Elamrit"
+  >
+    <div class="mt-8 flex flex-wrap gap-4">
+      <Button href="/blog" variant="creamOnDark">Latest posts</Button>
+      <Button href="/about" variant="outlineCream">About Elamrit</Button>
+    </div>
+  </PageHero>
+
+  <section class="bg-cream px-5 py-20 md:px-10 lg:px-20 lg:py-[100px]">
+    <div class="mx-auto mb-14 max-w-[680px] text-center">
+      <div class="mb-4 flex justify-center">
+        <SectionEyebrow>Articles</SectionEyebrow>
+      </div>
+    </div>
+
+    <SectionHeader class="mb-12" label={`Page ${pageNum}`} align="center" showDivider={true}>
+      Older <em>posts</em>
+    </SectionHeader>
+
+    <BlogPostGrid posts={posts} startIndex={startIndex} />
+    <BlogPagination currentPage={pageNum} totalPages={totalPages} />
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

@@ -147,13 +147,10 @@ Notes:
 ### Phase E — Brand expansion (Food Junction)
 - [x] Create `/food-junction/*` section
 
-### Phase F — Content engine (Journal)
-- [ ] Create `/journal/*` taxonomy pages (initially as category landing pages)
-
 ---
 
 ## Completion checklist (quick view)
 
-- **Routes complete**: 48+ / 50+ (`/`, `/about`, `/gallery`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes, all Phase D location routes, `/food-junction/*`)
+- **Routes complete**: 50+ (`/`, `/about`, `/gallery`, `/contact`, `/contact/get-a-quote`, `/testimonials`, `/privacy-policy`, `/terms`, `/services`, all Phase B service routes, all Phase C menu routes, all Phase D location routes, `/food-junction/*`)
 - **Core sections present (partial)**: Gallery, Testimonials, Food Junction teaser (homepage sections exist, not standalone routes)
 

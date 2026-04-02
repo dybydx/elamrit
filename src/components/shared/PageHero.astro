@@ -1,7 +1,14 @@
 ---
-export type PageHeroVariant = 'split' | 'center';
+export type PageHeroVariant = 'split' | 'center' | 'article';
 
-type BreadcrumbItem = { label: string; href?: string };
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
+  /** Native tooltip (e.g. full title when label is a short crumb) */
+  title?: string;
+  /** Article hero: ellipsis the last crumb when true (fallback when no short label) */
+  truncateTail?: boolean;
+};
 
 export interface Props {
   variant?: PageHeroVariant;
@@ -51,30 +58,65 @@ const centerDescriptionClasses = descriptionClass ?? 'mx-auto max-w-[620px]';
 const descriptionBase =
   'font-serif text-[clamp(17px,1.35vw,21px)] italic leading-[1.7] text-cream/75';
 
-const hasRightPane = variant === 'split' && (imageClass || quote || quoteAttribution);
+const isArticleHero = variant === 'article';
+const isSplit = variant === 'split' || isArticleHero;
+
+const hasRightPane = isSplit && (imageClass || quote || quoteAttribution);
+
+const splitSectionMinH = isArticleHero
+  ? 'min-h-[52vh] lg:min-h-[58vh]'
+  : 'min-h-[70vh]';
+
+const splitTextColClasses = isArticleHero
+  ? 'relative z-[2] flex flex-col justify-center px-5 pb-16 pt-14 md:px-10 md:pb-16 md:pl-16 lg:min-h-0 lg:py-20 lg:pl-20 lg:pr-12'
+  : 'relative z-[2] flex flex-col justify-end px-5 pb-20 pt-12 md:px-10 md:pb-20 md:pl-20 lg:py-20 lg:pl-20 lg:pr-[60px]';
+
+const splitTitleClasses = isArticleHero
+  ? 'mb-5 max-w-none font-display text-[clamp(26px,3.4vw,44px)] leading-[1.15] tracking-[0.14em] text-cream uppercase sm:tracking-[0.18em] lg:max-w-[min(100%,42rem)]'
+  : 'mb-4 font-display text-[clamp(38px,5vw,72px)] leading-[1.05] tracking-[0.32em] text-cream uppercase';
+
+const articleMetaBase =
+  'font-body text-[15px] leading-[1.65] tracking-[0.12em] text-cream/85 uppercase';
 ---
 
-{variant === 'split' ? (
+{isSplit ? (
   <section
     id={id}
     class:list={[
-      'relative grid min-h-[70vh] w-full grid-cols-1 overflow-hidden pt-[var(--nav-h)] lg:grid-cols-2',
+      'relative grid w-full grid-cols-1 overflow-hidden pt-[var(--nav-h)] lg:grid-cols-2',
+      splitSectionMinH,
       backgroundClass,
       className,
     ]}
   >
-    <div class="relative z-[2] flex flex-col justify-end px-5 pb-20 pt-12 md:px-10 md:pb-20 md:pl-20 lg:py-20 lg:pl-20 lg:pr-[60px]">
+    <div class:list={[splitTextColClasses]}>
       {breadcrumb?.length ? (
-        <div class="mb-7 flex items-center gap-2.5 font-body text-xs tracking-[0.26em] text-blush uppercase">
+        <div class="mb-7 flex min-w-0 max-w-full items-center gap-2.5 font-body text-xs tracking-[0.26em] text-blush uppercase">
           {breadcrumb.map((item, idx) => (
             <>
-              {idx > 0 ? <span class="opacity-40">/</span> : null}
+              {idx > 0 ? <span class="shrink-0 opacity-40">/</span> : null}
               {item.href ? (
-                <a class="text-gray-orange transition-colors hover:text-cream" href={item.href}>
+                <a
+                  class="shrink-0 text-gray-orange transition-colors hover:text-cream"
+                  href={item.href}
+                  title={item.title}
+                >
                   {item.label}
                 </a>
               ) : (
-                <span class="text-cream">{item.label}</span>
+                <span
+                  class:list={[
+                    'text-cream',
+                    isArticleHero &&
+                    idx === breadcrumb.length - 1 &&
+                    item.truncateTail === true
+                      ? 'min-w-0 shrink truncate text-left max-w-[min(100%,9rem)] sm:max-w-[12rem] md:max-w-[14rem] lg:max-w-[16rem]'
+                      : '',
+                  ]}
+                  title={item.title}
+                >
+                  {item.label}
+                </span>
               )}
             </>
           ))}
@@ -82,32 +124,56 @@ const hasRightPane = variant === 'split' && (imageClass || quote || quoteAttribu
       ) : null}
 
       {titleHtml ? (
-        <h1
-          class="mb-4 font-display text-[clamp(38px,5vw,72px)] leading-[1.05] tracking-[0.32em] text-cream uppercase"
-          set:html={titleHtml}
-        />
+        <h1 class:list={[splitTitleClasses]} set:html={titleHtml} />
       ) : title ? (
-        <h1 class="mb-4 font-display text-[clamp(38px,5vw,72px)] leading-[1.05] tracking-[0.32em] text-cream uppercase">
-          {title}
-        </h1>
+        <h1 class:list={[splitTitleClasses]}>{title}</h1>
       ) : null}
 
       {description ? (
-        <p class:list={[descriptionBase, splitDescriptionClasses]}>{description}</p>
+        <p
+          class:list={[
+            isArticleHero ? articleMetaBase : descriptionBase,
+            isArticleHero ? (descriptionClass ?? 'max-w-xl') : splitDescriptionClasses,
+          ]}
+        >
+          {description}
+        </p>
       ) : null}
 
       <slot />
     </div>
 
     {hasRightPane ? (
-      <div class="relative h-[52vw] max-h-[380px] overflow-hidden lg:h-auto lg:max-h-none">
-        {imageClass ? <div class:list={[imageClass, 'absolute inset-0']} style={heroPaneStyle} /> : null}
+      <div
+        class:list={[
+          'relative overflow-hidden',
+          isArticleHero
+            ? 'h-[48vw] max-h-[320px] min-h-[220px] lg:h-auto lg:max-h-none lg:min-h-[min(100%,520px)]'
+            : 'h-[52vw] max-h-[380px] lg:h-auto lg:max-h-none',
+        ]}
+      >
+        {imageClass ? (
+          <div
+            class:list={[imageClass, 'absolute inset-0', isArticleHero ? 'ph-image-article' : null]}
+            style={heroPaneStyle}
+          />
+        ) : null}
 
         {quote ? (
           <div
-            class="absolute right-5 bottom-5 z-[3] max-w-[260px] border-l-[3px] border-green bg-[color-mix(in_srgb,var(--dark-red)_92%,black)] px-6 py-5 backdrop-blur-md sm:right-8 sm:bottom-8 lg:right-[60px] lg:bottom-[60px] lg:max-w-[280px] lg:px-8 lg:py-7"
+            class:list={[
+              'absolute right-5 bottom-5 z-[3] border-l-[3px] border-green bg-[color-mix(in_srgb,var(--dark-red)_92%,black)] px-6 py-5 backdrop-blur-md sm:right-8 sm:bottom-8 lg:right-[60px] lg:bottom-[60px] lg:px-8 lg:py-7',
+              isArticleHero ? 'max-w-[220px] sm:max-w-[240px]' : 'max-w-[260px] lg:max-w-[280px]',
+            ]}
           >
-            <p class="mb-3 font-serif text-base italic leading-[1.65] text-cream lg:text-lg">"{quote}"</p>
+            <p
+              class:list={[
+                'mb-3 font-serif italic leading-[1.65] text-cream',
+                isArticleHero ? 'text-sm lg:text-base' : 'text-base lg:text-lg',
+              ]}
+            >
+              "{quote}"
+            </p>
             {quoteAttribution ? (
               <div class="font-body text-xs tracking-[0.18em] text-gray-orange uppercase">
                 — {quoteAttribution}

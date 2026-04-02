@@ -14,6 +14,7 @@ const isSolid = variant === 'solid';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const onAbout = path === '/about';
 const onGallery = path === '/gallery';
+const onBlog = path.startsWith('/blog');
 const onFoodJunction = path.startsWith('/food-junction');
 const onContact = path === '/contact' || path.startsWith('/contact/');
 
@@ -117,6 +118,10 @@ const navLinkClasses =
         <a href="/gallery" class={navLinkClasses} aria-current={onGallery ? 'page' : undefined}>Gallery</a>
       </div>
 
+      <div class:list={[navItemClasses, { 'nav-current': isSolid && onBlog }]}>
+        <a href="/blog" class={navLinkClasses} aria-current={onBlog ? 'page' : undefined}>Blog</a>
+      </div>
+
       <div class:list={[navItemClasses, 'has-dropdown', { 'nav-current': isSolid && onAbout }]}>
         <a href="/about" class={navLinkClasses} aria-current={onAbout ? 'page' : undefined}>About</a>
         <div class="dropdown-menu">
@@ -124,7 +129,6 @@ const navLinkClasses =
           <a href="/about#story">Our Story</a>
           <a href="/about#philosophy">Our Philosophy</a>
           <a href="/about#team">The Team</a>
-          <a href="/journal">The Journal</a>
           <a href="/testimonials">Testimonials</a>
         </div>
       </div>
@@ -268,6 +272,10 @@ const navLinkClasses =
       </li>
 
       <li class="mobile-nav-item">
+        <a href="/blog" class="mobile-nav-plain-link" aria-current={onBlog ? 'page' : undefined}>Blog</a>
+      </li>
+
+      <li class="mobile-nav-item">
         <button class="mobile-nav-trigger" onclick="toggleMobileAccordion('mob-about')" aria-expanded="false" aria-controls="mob-about">
           About
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
@@ -278,7 +286,6 @@ const navLinkClasses =
           <a href="/about#story">Our Story</a>
           <a href="/about#philosophy">Our Philosophy</a>
           <a href="/about#team">The Team</a>
-          <a href="/journal">The Journal</a>
           <a href="/testimonials">Testimonials</a>
         </div>
       </li>
