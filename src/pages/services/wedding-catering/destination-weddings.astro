@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { weddingDestination } from '@/lib/hero-images';
 import { weddingDestinationChildGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { weddingDestinationChildGallery } from '@/lib/service-child-galleries';
     titleHtml="DESTINATION<br />WEDDINGS"
     heroImageSrc={weddingDestination}
     description="New city, new venue, same standard — composed execution that travels beautifully."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/pan-india-catering"
     secondaryCtaLabel="Pan India Catering"
@@ -146,7 +147,7 @@ import { weddingDestinationChildGallery } from '@/lib/service-child-galleries';
       'Consistency checks across multiple functions',
       'Live stations and plated formats that travel well',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Plan Your Wedding"
   />
 

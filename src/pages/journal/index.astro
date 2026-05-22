@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button.astro';
 import Card from '@/components/ui/Card.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { journalHubHero } from '@/lib/journal';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -28,7 +29,7 @@ import { journalHubHero } from '@/lib/journal';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/about" variant="outlineCream">About Elamrit</Button>
     </div>
   </PageHero>

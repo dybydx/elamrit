@@ -22,6 +22,7 @@ const sorted = sortBlogEntries(all);
 const page = 1;
 const posts = sliceBlogPage(sorted, page, BLOG_PAGE_SIZE);
 const totalPages = totalBlogPages(sorted.length);
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -48,7 +49,7 @@ const totalPages = totalBlogPages(sorted.length);
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/journal" variant="outlineCream">Journal hub</Button>
     </div>
   </PageHero>

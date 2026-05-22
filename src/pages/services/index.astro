@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { servicesHub } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -28,7 +29,7 @@ import { servicesHub } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
     </div>
   </PageHero>
@@ -124,7 +125,7 @@ import { servicesHub } from '@/lib/hero-images';
         Some occasions demand more than great food — they need theatre, scale, and craft that travels. Our specialty formats are built for exactly that.
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-5">
-        <Button href="/contact/get-a-quote" variant="cream">Get a Quote</Button>
+        <Button href={WHATSAPP_QUOTE_URL} variant="cream">Get a Quote</Button>
         <Button href="/about" variant="ghost" class="text-blush">Our Philosophy</Button>
       </div>
     </div>

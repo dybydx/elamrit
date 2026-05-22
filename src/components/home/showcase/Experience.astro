@@ -17,7 +17,7 @@ import Card from '@/components/ui/Card.astro';
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-7">
         <Button href="/about" variant="cream">Our Philosophy</Button>
-        <Button variant="ghost" href="#" class="text-blush">How We Work</Button>
+        <Button type="button" variant="outlineCream" data-how-we-work-open>How We Work</Button>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-0.5 sm:grid-cols-2">
@@ -46,4 +46,64 @@ import Card from '@/components/ui/Card.astro';
         >
       </Card>
     </div>
+
+    <dialog
+      class="how-we-work-modal m-auto max-h-[100dvh] w-[min(100dvw-2rem,56rem)] border-0 bg-dark-brown/98 p-0 text-cream shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop:bg-black/75 open:flex open:flex-col"
+      data-how-we-work-dialog
+      aria-labelledby="how-we-work-title"
+    >
+      <div class="flex items-center justify-between gap-4 border-b border-cream/10 px-4 py-3 sm:px-5">
+        <h3
+          id="how-we-work-title"
+          class="font-body text-[13px] tracking-[0.22em] text-cream/90 uppercase sm:text-sm"
+        >
+          How We Work
+        </h3>
+        <form method="dialog">
+          <button
+            type="submit"
+            class="min-h-[44px] min-w-[44px] font-body text-[13px] tracking-[0.2em] text-cream uppercase underline-offset-4 hover:underline"
+          >
+            Close
+          </button>
+        </form>
+      </div>
+      <div class="p-4 sm:p-5">
+        <!-- Replace `src` when the final process reel is ready -->
+        <video
+          class="aspect-video w-full rounded-sm bg-black object-contain"
+          controls
+          playsinline
+          preload="metadata"
+          poster="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1280&q=85"
+          src="/videos/hero-reel.mp4"
+        ></video>
+      </div>
+    </dialog>
   </section>
+
+  <script>
+    function initHowWeWorkModal(root: HTMLElement): void {
+      const openBtn = root.querySelector<HTMLButtonElement>('[data-how-we-work-open]');
+      const dialog = root.querySelector<HTMLDialogElement>('[data-how-we-work-dialog]');
+      const video = dialog?.querySelector('video');
+      if (!openBtn || !dialog) return;
+
+      openBtn.addEventListener('click', () => {
+        dialog.showModal();
+      });
+
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+
+      dialog.addEventListener('close', () => {
+        if (!video) return;
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+
+    const experience = document.getElementById('experience');
+    if (experience) initHowWeWorkModal(experience);
+  </script>

@@ -40,6 +40,7 @@ const breadcrumb = [
 
 const title = `${post.data.title} — Elamrit Blog`;
 const description = post.data.excerpt;
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -67,7 +68,7 @@ const description = post.data.excerpt;
     quoteAttribution={post.data.quoteAttribution}
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/blog" variant="outlineCream">All posts</Button>
     </div>
   </PageHero>

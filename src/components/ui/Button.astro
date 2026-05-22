@@ -14,11 +14,19 @@ interface Props {
 const props = Astro.props as Props & Record<string, unknown>;
 const { variant = 'primary', class: className, href, type = 'button', ...rest } = props;
 const classes = cn(buttonVariants({ variant }), className);
+const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
 ---
 
 {
   href ? (
-    <a href={href} class={classes} data-slot="button" data-variant={variant} {...rest}>
+    <a
+      href={href}
+      class={classes}
+      data-slot="button"
+      data-variant={variant}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...rest}
+    >
       <slot />
     </a>
   ) : (

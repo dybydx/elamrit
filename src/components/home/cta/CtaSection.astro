@@ -1,6 +1,7 @@
 ---
 import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
   <section
     id="cta-section"
@@ -21,7 +22,7 @@ import SectionHeader from '@/components/shared/SectionHeader.astro';
       Tell us about your occasion. Our team will curate a bespoke culinary experience designed exclusively for you.
     </p>
     <div class="flex flex-wrap justify-center gap-5">
-      <Button href="#">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL}>Get a Quote</Button>
       <Button href="#" variant="outlineCta">View Menus</Button>
     </div>
   </section>

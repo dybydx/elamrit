@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { cateringHyderabad } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -31,7 +32,7 @@ import { cateringHyderabad } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Plan Your Event</Button>
       <Button href="/services/wedding-catering" variant="outlineCream">Wedding Catering</Button>
     </div>
   </PageHero>
@@ -61,7 +62,7 @@ import { cateringHyderabad } from '@/lib/hero-images';
       <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         From palace wedding receptions to landmark corporate gatherings in HITEC City, we bring the same meticulous planning and culinary craft that has made us trusted across India.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Enquire for Hyderabad</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Enquire for Hyderabad</Button>
     </div>
   </section>
 
@@ -134,7 +135,7 @@ import { cateringHyderabad } from '@/lib/hero-images';
         </h2>
       </div>
       <div class="flex items-end">
-        <Button href="/contact/get-a-quote" variant="outlineCta">Book Your Event</Button>
+        <Button href={WHATSAPP_QUOTE_URL} variant="outlineCta">Book Your Event</Button>
       </div>
     </div>
     <div class="grid grid-cols-2 gap-px bg-[rgba(189,148,118,0.2)] sm:grid-cols-3 lg:grid-cols-6">

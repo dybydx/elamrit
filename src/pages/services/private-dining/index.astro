@@ -10,6 +10,7 @@ import ServiceStatsStrip from '@/components/services/ServiceStatsStrip.astro';
 import ServiceWhatYouGet from '@/components/services/ServiceWhatYouGet.astro';
 import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import { privateDining } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -35,7 +36,7 @@ import { privateDining } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Request Private Dining</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Request Private Dining</Button>
       <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
     </div>
   </PageHero>
@@ -61,7 +62,7 @@ import { privateDining } from '@/lib/hero-images';
       <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         We handle everything from the tasting consultation to the final toast — arriving set-up ready and leaving without a trace.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Request Private Dining</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Request Private Dining</Button>
     </div>
     <div class="story-image relative">
       <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
@@ -144,7 +145,7 @@ import { privateDining } from '@/lib/hero-images';
       'Dietary handling with individual-level attention',
       'Setup, cleanup, and reset — leaving without a trace',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request Private Dining"
   />
 

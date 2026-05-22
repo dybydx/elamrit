@@ -9,6 +9,7 @@ import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import MenuPhotoCard from '@/components/menus/MenuPhotoCard.astro';
 import { menusHub } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -34,7 +35,7 @@ import { menusHub } from '@/lib/hero-images';
   >
     <div class="mt-8 flex flex-wrap gap-4">
       <Button href="/menus/custom-menu" variant="creamOnDark">Build a Custom Menu</Button>
-      <Button href="/contact/get-a-quote" variant="outlineCream">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="outlineCream">Get a Quote</Button>
     </div>
   </PageHero>
 

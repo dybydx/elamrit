@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { panIndiaService } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -32,7 +33,7 @@ import { panIndiaService } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Plan Your Event</Button>
       <Button href="/about#locations" variant="outlineCream">Our Locations</Button>
     </div>
   </PageHero>
@@ -61,7 +62,7 @@ import { panIndiaService } from '@/lib/hero-images';
       <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         Every Pan India event starts weeks early — vendor briefings, kitchen walkthroughs, supply chain mapping, and service rehearsals before our team departs.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Plan Your Event</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Plan Your Event</Button>
     </div>
   </section>
 
@@ -76,7 +77,7 @@ import { panIndiaService } from '@/lib/hero-images';
         We have catered major events in each of these cities — with the same backstage discipline that defines every Elamrit event, wherever it happens.
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-5">
-        <Button href="/contact/get-a-quote" variant="cream">Get a Quote</Button>
+        <Button href={WHATSAPP_QUOTE_URL} variant="cream">Get a Quote</Button>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-0.5 sm:grid-cols-2">

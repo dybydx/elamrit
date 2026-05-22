@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { weddingHindu } from '@/lib/hero-images';
 import { hinduWeddingGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { hinduWeddingGallery } from '@/lib/service-child-galleries';
     titleHtml="HINDU<br />WEDDINGS"
     heroImageSrc={weddingHindu}
     description="Ritual timing, guest flow, and menu rhythm — planned with the quiet confidence your families will feel."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/wedding-catering"
     secondaryCtaLabel="All Wedding Services"
@@ -142,7 +143,7 @@ import { hinduWeddingGallery } from '@/lib/service-child-galleries';
       'Staffing, counters, and replenishment choreography',
       'Optional live stations for sangeet / reception energy',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

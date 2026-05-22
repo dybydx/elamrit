@@ -10,6 +10,7 @@ import ServiceWhatYouGet from "@/components/services/ServiceWhatYouGet.astro";
 import Testimonials from "@/components/home/showcase/Testimonials.astro";
 import MenuGallery from "@/components/menus/MenuGallery.astro";
 import { multiculturalWeddingGallery } from "@/lib/service-child-galleries";
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -29,7 +30,7 @@ import { multiculturalWeddingGallery } from "@/lib/service-child-galleries";
     ]}
     titleHtml="MULTICULTURAL<br />WEDDINGS"
     description="Different traditions, one table — curated menus and composed hospitality across every guest."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/wedding-catering"
     secondaryCtaLabel="All Wedding Services"
@@ -234,7 +235,7 @@ import { multiculturalWeddingGallery } from "@/lib/service-child-galleries";
       "Service pacing aligned to rituals and programme moments",
       "Tasting-led refinement before finalising the menu",
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

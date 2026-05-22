@@ -7,11 +7,12 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { cateringPanIndia } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
   title="Pan India Catering — Elamrit Luxe Feast"
-  description="Elamrit Luxe Feast provides premium catering across India — Pune, Mumbai, Delhi, Bangalore, Hyderabad, Goa, Rajasthan, and beyond. One standard, every city."
+  description="Elamrit Luxe Feast provides premium catering across India — Pune, Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Goa, Rajasthan, and beyond. One standard, every city."
   bottomCta="about"
 >
   <Nav variant="solid" />
@@ -32,7 +33,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Plan Your Event</Button>
       <Button href="/services/pan-india-catering" variant="outlineCream">Our Operations Model</Button>
     </div>
   </PageHero>
@@ -52,7 +53,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
         One standard, <em class="italic text-dark-red">every city</em>
       </h2>
       <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-        Our operational base is in Pune, but we have catered landmark events in Mumbai, Delhi, Bangalore, Hyderabad, Goa, Rajasthan, and across India. Over years of Pan India deployments, we've refined a travel-ready model that keeps quality consistent regardless of distance — advance teams, pre-vetted vendor networks, kitchen walkthroughs, and rehearsals before the event day.
+        Our operational base is in Pune, but we have catered landmark events in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Goa, Rajasthan, and across India. Over years of Pan India deployments, we've refined a travel-ready model that keeps quality consistent regardless of distance — advance teams, pre-vetted vendor networks, kitchen walkthroughs, and rehearsals before the event day.
       </p>
       <blockquote class="my-9 border-l-[3px] border-dark-red bg-light-blush py-4 pr-7 pl-7">
         <p class="m-0 font-serif text-[clamp(19px,2vw,22px)] italic leading-[1.65] text-dark-brown">
@@ -115,6 +116,13 @@ import { cateringPanIndia } from '@/lib/hero-images';
           <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Royal-heritage weddings and corporate events in the city of the Nizams.</p>
         </Card>
       </a>
+      <a href="/catering-in/chennai" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Gateway South</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Chennai</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Weddings and corporate events with Chettinad depth and coastal refinement.</p>
+        </Card>
+      </a>
       <a href="/catering-in/goa" class="block">
         <Card variant="location" class="h-full">
           <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Coast</span>
@@ -151,7 +159,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
       ))}
     </div>
     <div class="mt-8">
-      <Button href="/contact/get-a-quote" variant="outlineCta">Tell Us Your Location</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="outlineCta">Tell Us Your Location</Button>
     </div>
   </section>
 

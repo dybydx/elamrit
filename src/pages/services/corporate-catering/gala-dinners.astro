@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { corporateGala } from '@/lib/hero-images';
 import { galaDinnerGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { galaDinnerGallery } from '@/lib/service-child-galleries';
     titleHtml="GALA<br />DINNERS"
     heroImageSrc={corporateGala}
     description="Annual celebrations, award evenings, charity galas — a full sensory experience from arrival drinks to the final dessert."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/corporate-catering"
     secondaryCtaLabel="All Corporate Services"
@@ -140,7 +141,7 @@ import { galaDinnerGallery } from '@/lib/service-child-galleries';
       'Dessert theatre and finale planning',
       'VIP dietary handling with discreet service',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

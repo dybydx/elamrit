@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { cateringPune } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -31,7 +32,7 @@ import { cateringPune } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Event</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Plan Your Event</Button>
       <Button href="/catering-in/pune/wedding-catering" variant="outlineCream">Wedding Catering Pune</Button>
     </div>
   </PageHero>
@@ -61,7 +62,7 @@ import { cateringPune } from '@/lib/hero-images';
       <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         From intimate private dinners in Koregaon Park to grand wedding receptions at five-star properties and high-stakes corporate galas in Baner and Hinjewadi, we bring the same standards to every table.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Enquire for Pune</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Enquire for Pune</Button>
     </div>
   </section>
 
@@ -134,7 +135,7 @@ import { cateringPune } from '@/lib/hero-images';
         </h2>
       </div>
       <div class="flex items-end">
-        <Button href="/contact/get-a-quote" variant="outlineCta">Book Your Venue</Button>
+        <Button href={WHATSAPP_QUOTE_URL} variant="outlineCta">Book Your Venue</Button>
       </div>
     </div>
     <div class="grid grid-cols-2 gap-px bg-[rgba(189,148,118,0.2)] sm:grid-cols-3 lg:grid-cols-6">

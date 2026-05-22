@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { corporateEvents } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -32,7 +33,7 @@ import { corporateEvents } from '@/lib/hero-images';
     quoteAttribution="Food Junction"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/food-junction/menus" variant="outlineCream">Menus</Button>
     </div>
   </PageHero>
@@ -109,7 +110,11 @@ import { corporateEvents } from '@/lib/hero-images';
     <p class="mx-auto mt-14 max-w-[640px] text-center font-body text-[16px] leading-[1.75] text-[var(--text-muted-on-cream)]">
       Food Junction draws on the full Elamrit corporate playbook. The links above open the detailed Elamrit service
       pages — use them for format inspiration, then
-      <a class="text-dark-red underline decoration-[rgba(81,3,12,0.35)] underline-offset-4" href="/food-junction/get-a-quote"
+      <a
+        class="text-dark-red underline decoration-[rgba(81,3,12,0.35)] underline-offset-4"
+        href={WHATSAPP_QUOTE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         >request a Food Junction quote</a
       >
       for your programme.

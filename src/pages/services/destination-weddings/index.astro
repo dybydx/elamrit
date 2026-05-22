@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { destinationWeddingsHub } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -32,7 +33,7 @@ import { destinationWeddingsHub } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Plan Your Wedding</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Plan Your Wedding</Button>
       <Button href="/services/wedding-catering" variant="outlineCream">All Wedding Services</Button>
     </div>
   </PageHero>
@@ -54,7 +55,7 @@ import { destinationWeddingsHub } from '@/lib/hero-images';
       <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         We begin weeks before the date — walkthroughs, vendor briefings, supply chain mapping, and service rehearsals — so by the time we arrive on-site, every variable is already resolved.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Plan Your Wedding</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Plan Your Wedding</Button>
     </div>
     <div class="story-image relative">
       <div class="story-img-main relative aspect-[3/4] w-full overflow-hidden bg-[color-mix(in_srgb,var(--cream)_72%,var(--gray-orange)_28%)]"></div>
@@ -75,7 +76,7 @@ import { destinationWeddingsHub } from '@/lib/hero-images';
         A destination wedding is a project — not just an event. The planning starts weeks ahead, and every detail is locked before the team departs.
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-5">
-        <Button href="/contact/get-a-quote" variant="cream">Get a Quote</Button>
+        <Button href={WHATSAPP_QUOTE_URL} variant="cream">Get a Quote</Button>
         <Button href="/services/pan-india-catering" variant="ghost" class="text-blush">Pan India Catering</Button>
       </div>
     </div>

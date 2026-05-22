@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { corporateEvents } from '@/lib/hero-images';
 import { eventsConferenceGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { eventsConferenceGallery } from '@/lib/service-child-galleries';
     titleHtml="EVENTS &amp;<br />CONFERENCES"
     heroImageSrc={corporateEvents}
     description="Multi-day schedules, diverse attendee lists, and zero margin for timing errors — we run it seamlessly."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/corporate-catering"
     secondaryCtaLabel="All Corporate Services"
@@ -137,7 +138,7 @@ import { eventsConferenceGallery } from '@/lib/service-child-galleries';
       'Backstage coordination with venue + event teams',
       'Optional day-end cocktail reception formats',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

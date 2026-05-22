@@ -9,6 +9,7 @@ import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { wedding as weddingHero } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -34,7 +35,7 @@ import { wedding as weddingHero } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/testimonials" variant="outlineCream">Client Stories</Button>
     </div>
   </PageHero>
@@ -67,7 +68,7 @@ import { wedding as weddingHero } from '@/lib/hero-images';
       <p class="mb-5 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
         From meticulous sourcing to live counter choreography and tablescapes — every element is briefed, rehearsed, and executed with the quiet confidence that lets your family be fully present.
       </p>
-      <Button href="/contact/get-a-quote" variant="storyLink">Request a Wedding Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="storyLink">Request a Wedding Quote</Button>
     </div>
   </section>
 

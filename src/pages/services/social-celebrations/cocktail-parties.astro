@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { socialCocktail } from '@/lib/hero-images';
 import { cocktailPartyGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { cocktailPartyGallery } from '@/lib/service-child-galleries';
     titleHtml="COCKTAIL<br />PARTIES"
     heroImageSrc={socialCocktail}
     description="Roaming bites, live counters, and artful canapés — formats designed for movement, conversation, and lasting impressions."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/social-celebrations"
     secondaryCtaLabel="All Social Services"
@@ -137,7 +138,7 @@ import { cocktailPartyGallery } from '@/lib/service-child-galleries';
       'Thoughtful labelling and dietary coverage',
       'End-of-evening sweet finale planning',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

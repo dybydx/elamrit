@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { socialAnniversary } from '@/lib/hero-images';
 import { anniversaryGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { anniversaryGallery } from '@/lib/service-child-galleries';
     titleHtml="ANNIVERSARY<br />CATERING"
     heroImageSrc={socialAnniversary}
     description="From intimate dinners for two families to grand anniversary evenings — food that carries the weight of the occasion."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/social-celebrations"
     secondaryCtaLabel="All Social Services"
@@ -140,7 +141,7 @@ import { anniversaryGallery } from '@/lib/service-child-galleries';
       'Warm service that suits multi-generation gatherings',
       'Dessert finale planning for a memorable close',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

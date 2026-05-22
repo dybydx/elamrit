@@ -7,11 +7,12 @@ import Button from '@/components/ui/Button.astro';
 import SectionEyebrow from '@/components/shared/SectionEyebrow.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { cateringPanIndia } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
   title="Locations — Where We Cater — Elamrit Luxe Feast"
-  description="Elamrit Luxe Feast caters in Pune, Mumbai, Delhi NCR, Bangalore, Hyderabad, Goa, and Pan India — with Singapore coming soon. Explore each city."
+  description="Elamrit Luxe Feast caters in Pune, Mumbai, Delhi NCR, Bangalore, Hyderabad, Chennai, Goa, and Pan India — with Singapore coming soon. Explore each city."
   bottomCta="about"
 >
   <Nav variant="solid" />
@@ -28,7 +29,7 @@ import { cateringPanIndia } from '@/lib/hero-images';
     quoteAttribution="Elamrit"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/services/pan-india-catering" variant="outlineCream">Operations Model</Button>
     </div>
   </PageHero>
@@ -78,6 +79,13 @@ import { cateringPanIndia } from '@/lib/hero-images';
           <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Heritage</span>
           <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Hyderabad</h3>
           <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Royal-scale weddings and corporate events in the city of pearls.</p>
+        </Card>
+      </a>
+      <a href="/catering-in/chennai" class="block">
+        <Card variant="location" class="h-full">
+          <span class="mb-2 block font-body text-[10px] tracking-[0.25em] text-gray-orange uppercase">Gateway South</span>
+          <h3 class="mb-3 font-serif text-xl font-light leading-snug text-dark-brown">Chennai</h3>
+          <p class="font-body text-[15px] leading-[1.7] text-[var(--text-muted-on-cream)]">Weddings, corporate events, and celebrations rooted in Tamil culinary tradition.</p>
         </Card>
       </a>
       <a href="/catering-in/goa" class="block">

@@ -9,6 +9,7 @@ import SectionHeader from '@/components/shared/SectionHeader.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import { foodJunctionHub } from '@/lib/hero-images';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { foodJunctionHub } from '@/lib/hero-images';
     quoteAttribution="Food Junction"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Request a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Request a Quote</Button>
       <Button href="/food-junction/services" variant="outlineCream">Corporate Services</Button>
     </div>
   </PageHero>
@@ -327,7 +328,7 @@ import { foodJunctionHub } from '@/lib/hero-images';
             timeline — usually faster when the run-of-show is attached.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <Button href="/food-junction/get-a-quote" variant="navCta">Get a quote</Button>
+            <Button href={WHATSAPP_QUOTE_URL} variant="navCta">Get a quote</Button>
           </div>
         </div>
         <div class="flex flex-col border-t border-[rgba(189,148,118,0.2)] bg-[color-mix(in_srgb,var(--cream)_88%,var(--white)_12%)] p-8 md:p-10 lg:min-h-[280px] lg:border-t-0 lg:pl-10">

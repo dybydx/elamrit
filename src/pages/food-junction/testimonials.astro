@@ -26,6 +26,7 @@ const videoTestimonials = [
     meta: 'Gala · Pune · 400 seated',
   },
 ] as const;
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -50,7 +51,7 @@ const videoTestimonials = [
     quoteAttribution="Food Junction"
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/food-junction/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/gallery" variant="outlineCream">Gallery</Button>
     </div>
   </PageHero>

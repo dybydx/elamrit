@@ -1,4 +1,6 @@
 ---
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
+
 export interface Props {
   showMark?: boolean;
 }
@@ -98,7 +100,9 @@ const { showMark = true } = Astro.props;
         <ul class="flex list-none flex-col gap-2.5">
           <li>
             <a
-              href="/contact/get-a-quote"
+              href={WHATSAPP_QUOTE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream"
               >Get a Quote</a
             >
@@ -110,7 +114,7 @@ const { showMark = true } = Astro.props;
           </li>
           <li>
             <a
-              href="https://wa.me/"
+              href={WHATSAPP_QUOTE_URL}
               target="_blank"
               rel="noopener noreferrer"
               class="font-body text-[16px] text-[rgba(214,185,171,0.72)] transition-colors hover:text-cream"
@@ -121,7 +125,7 @@ const { showMark = true } = Astro.props;
         <div class="mt-7 border-t border-[rgba(189,148,118,0.1)] pt-5">
           <div class="font-body text-[12px] leading-8 tracking-[0.22em] text-[rgba(214,185,171,0.55)] uppercase">
             Pune &nbsp;·&nbsp; Mumbai &nbsp;·&nbsp; Delhi<br />
-            Bangalore &nbsp;·&nbsp; Hyderabad<br />
+            Bangalore &nbsp;·&nbsp; Hyderabad &nbsp;·&nbsp; Chennai<br />
             Pan India
           </div>
         </div>

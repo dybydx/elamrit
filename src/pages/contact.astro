@@ -5,6 +5,12 @@ import PageHero from '../components/shared/PageHero.astro';
 import Card from '@/components/ui/Card.astro';
 import Button from '@/components/ui/Button.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  WHATSAPP_QUOTE_URL,
+} from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -32,7 +38,7 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
         </p>
 
         <div class="mt-9 flex flex-wrap gap-4">
-          <Button href="/contact/get-a-quote" variant="navCta">Get a Quote</Button>
+          <Button href={WHATSAPP_QUOTE_URL} variant="navCta">Get a Quote</Button>
           <Button href="/about#locations" variant="outlineCta">Our Locations</Button>
         </div>
       </div>
@@ -40,14 +46,14 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
         <Card class="p-7">
           <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Email</div>
-          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">hello@elamrit.example</div>
+          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">{CONTACT_EMAIL}</div>
           <p class="mt-2 font-body text-[16px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
             Best for detailed briefs and multi-day itineraries.
           </p>
           <div class="mt-5">
             <a
               class="btn-ghost text-dark-red"
-              href="mailto:hello@elamrit.example?subject=Elamrit%20Catering%20Enquiry"
+              href={`mailto:${CONTACT_EMAIL}?subject=Elamrit%20Catering%20Enquiry`}
             >
               Email us
             </a>
@@ -56,12 +62,12 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
 
         <Card class="p-7">
           <div class="font-body text-[11px] tracking-[0.26em] text-gray-orange uppercase">Phone</div>
-          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">+91 00000 00000</div>
+          <div class="mt-2 font-serif text-[20px] leading-snug text-dark-brown">{CONTACT_PHONE_DISPLAY}</div>
           <p class="mt-2 font-body text-[16px] leading-[1.7] text-[var(--text-muted-on-cream-soft)]">
             Quick alignment on timelines, service style, and scale.
           </p>
           <div class="mt-5">
-            <a class="btn-ghost text-dark-red" href="tel:+910000000000">Call now</a>
+            <a class="btn-ghost text-dark-red" href={CONTACT_PHONE_TEL}>Call now</a>
           </div>
         </Card>
 
@@ -72,7 +78,7 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
             Send your date, city, guest count, and venue type. We’ll reply with the next steps.
           </p>
           <div class="mt-5">
-            <a class="btn-ghost text-dark-red" href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+            <a class="btn-ghost text-dark-red" href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">
               Message on WhatsApp
             </a>
           </div>

@@ -1,5 +1,7 @@
 ---
 import Button from '@/components/ui/Button.astro';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
+import { NAV_LOCATIONS } from '@/lib/locations';
 /**
  * `hero` — over full-bleed hero (e.g. video): transparent until scroll adds `.scrolled`.
  * `solid` — interior pages: same mega-menu as home, bar always “scrolled” (cream/blush).
@@ -106,14 +108,9 @@ const navLinkClasses =
         <a href="/catering-in" class={navLinkClasses}>Locations</a>
         <div class="dropdown-menu">
           <span class="dropdown-heading">We Cater In</span>
-          <a href="/catering-in/pune">Pune</a>
-          <a href="/catering-in/mumbai">Mumbai</a>
-          <a href="/catering-in/delhi">Delhi</a>
-          <a href="/catering-in/bangalore">Bangalore</a>
-          <a href="/catering-in/hyderabad">Hyderabad</a>
-          <a href="/catering-in/goa">Goa</a>
-          <a href="/catering-in/pan-india">Pan India</a>
-          <a href="/catering-in/singapore" class="soon">Singapore</a>
+          {NAV_LOCATIONS.map((loc) => (
+            <a href={loc.href} class:list={[{ soon: loc.soon }]}>{loc.label}</a>
+          ))}
         </div>
       </div>
 
@@ -156,7 +153,7 @@ const navLinkClasses =
           <a href="/food-junction/services">Corporate Services</a>
           <a href="/food-junction/menus">Menus</a>
           <a href="/food-junction/testimonials">Testimonials</a>
-          <a href="/food-junction/get-a-quote">Get a Quote</a>
+          <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">Get a Quote</a>
         </div>
       </div>
 
@@ -175,7 +172,7 @@ const navLinkClasses =
     <span></span>
     <span></span>
   </button>
-  <Button href="/contact/get-a-quote" variant="navCta" class="hidden lg:inline-flex">Get a Quote</Button>
+  <Button href={WHATSAPP_QUOTE_URL} variant="navCta" class="hidden lg:inline-flex">Get a Quote</Button>
 </nav>
 
 <!-- ═══ Mobile full-screen nav overlay ═══ -->
@@ -265,14 +262,9 @@ const navLinkClasses =
         </button>
         <div id="mob-locations" class="mobile-accordion-content">
           <span class="mobile-accordion-heading">We Cater In</span>
-          <a href="/catering-in/pune">Pune</a>
-          <a href="/catering-in/mumbai">Mumbai</a>
-          <a href="/catering-in/delhi">Delhi</a>
-          <a href="/catering-in/bangalore">Bangalore</a>
-          <a href="/catering-in/hyderabad">Hyderabad</a>
-          <a href="/catering-in/goa">Goa</a>
-          <a href="/catering-in/pan-india">Pan India</a>
-          <a href="/catering-in/singapore" class="soon">Singapore</a>
+          {NAV_LOCATIONS.map((loc) => (
+            <a href={loc.href} class:list={[{ soon: loc.soon }]}>{loc.label}</a>
+          ))}
         </div>
       </li>
 
@@ -319,7 +311,7 @@ const navLinkClasses =
           <a href="/food-junction/services">Corporate Services</a>
           <a href="/food-junction/menus">Menus</a>
           <a href="/food-junction/testimonials">Testimonials</a>
-          <a href="/food-junction/get-a-quote">Get a Quote</a>
+          <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer">Get a Quote</a>
         </div>
       </li>
 
@@ -330,7 +322,7 @@ const navLinkClasses =
   </nav>
 
   <div class="mobile-menu-footer">
-    <a href="/contact/get-a-quote" class="mobile-menu-cta">Get a Quote</a>
+    <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer" class="mobile-menu-cta">Get a Quote</a>
   </div>
 </div>
 

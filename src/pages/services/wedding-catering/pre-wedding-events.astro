@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { weddingPreEvent } from '@/lib/hero-images';
 import { preWeddingGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { preWeddingGallery } from '@/lib/service-child-galleries';
     titleHtml="PRE-WEDDING<br />EVENTS"
     heroImageSrc={weddingPreEvent}
     description="Different moments. Different moods. One composed standard of hospitality — across every celebration."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/wedding-catering"
     secondaryCtaLabel="All Wedding Services"
@@ -145,7 +146,7 @@ import { preWeddingGallery } from '@/lib/service-child-galleries';
       'Performance-aware pacing and pause points',
       'Dietary variety and clear guest-facing labelling',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

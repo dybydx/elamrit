@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button.astro';
 import SectionHeader from '@/components/shared/SectionHeader.astro';
 import SiteFooter from '@/components/shared/SiteFooter.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -28,7 +29,7 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
   >
     <div class="mt-8 flex flex-wrap justify-center gap-4">
       <Button href="/menus" variant="outlineCream">Browse Menu Categories</Button>
-      <Button href="/contact/get-a-quote" variant="outlineCream">Get a Full Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="outlineCream">Get a Full Quote</Button>
     </div>
   </PageHero>
 
@@ -302,7 +303,12 @@ import MenuGallery from '@/components/menus/MenuGallery.astro';
 
           <div class="md:col-span-2 mt-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <Button type="submit" variant="navCta">Submit Menu Brief</Button>
-            <a class="btn-ghost text-dark-red" href="/contact/get-a-quote">Want a full quote instead?</a>
+            <a
+              class="btn-ghost text-dark-red"
+              href={WHATSAPP_QUOTE_URL}
+              target="_blank"
+              rel="noopener noreferrer">Want a full quote instead?</a
+            >
           </div>
 
         </form>

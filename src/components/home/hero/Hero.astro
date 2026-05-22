@@ -1,10 +1,11 @@
 ---
 import Button from '@/components/ui/Button.astro';
+import { heroLocationsEyebrow } from '@/lib/locations';
 
 const heroContentClasses =
   'relative z-[2] mx-auto max-w-[880px] px-12 text-center max-[1024px]:max-w-[680px] max-[1024px]:px-8';
 const heroEyebrowClasses =
-  'mb-8 font-body text-xs tracking-[0.45em] text-cream/90 uppercase opacity-0 [animation:fade-up_1s_0.1s_ease_forwards] [text-shadow:0_1px_18px_rgba(0,0,0,0.7)]';
+  'mx-auto mb-8 max-w-[min(100%,52rem)] font-body text-xs leading-[1.85] tracking-[0.45em] text-cream/90 uppercase opacity-0 [animation:fade-up_1s_0.1s_ease_forwards] [text-shadow:0_1px_18px_rgba(0,0,0,0.7)] max-[640px]:text-[10px] max-[640px]:tracking-[0.32em]';
 const heroBrandNameClasses =
   'mb-0 font-display leading-none text-cream opacity-0 text-[clamp(70px,12vw,168px)] tracking-[0.08em] [animation:fade-up_1s_0.35s_ease_forwards] [text-shadow:0_2px_40px_rgba(0,0,0,0.5)] max-[1024px]:text-[clamp(60px,14vw,120px)] max-[640px]:text-[clamp(52px,16vw,90px)]';
 const heroOrnamentClasses =
@@ -50,7 +51,7 @@ const muteButtonClasses =
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class={heroContentClasses}>
-      <div class={heroEyebrowClasses}>Pune &nbsp;&middot;&nbsp; Mumbai &nbsp;&middot;&nbsp; Pan India</div>
+      <div class={heroEyebrowClasses}>{heroLocationsEyebrow()}</div>
 
       <h1 class={heroBrandNameClasses}>ELAMRIT</h1>
 
@@ -86,7 +87,7 @@ const muteButtonClasses =
       </p>
 
       <div class={heroActionsClasses}>
-        <Button href="#">Begin Your Journey</Button>
+        <Button href="/contact">Begin Your Journey</Button>
         <Button variant="ghost" href="#services">Explore Services</Button>
       </div>
     </div>

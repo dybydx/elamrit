@@ -11,6 +11,7 @@ import Testimonials from '@/components/home/showcase/Testimonials.astro';
 import MenuGallery from '@/components/menus/MenuGallery.astro';
 import { corporateBusiness } from '@/lib/hero-images';
 import { businessDiningGallery } from '@/lib/service-child-galleries';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -30,7 +31,7 @@ import { businessDiningGallery } from '@/lib/service-child-galleries';
     titleHtml="BUSINESS<br />DINING"
     heroImageSrc={corporateBusiness}
     description="Plated, discreet, and precisely timed — boardroom lunches and executive dinners that reflect your organisation's standard."
-    primaryCtaHref="/contact/get-a-quote"
+    primaryCtaHref={WHATSAPP_QUOTE_URL}
     primaryCtaLabel="Get a Quote"
     secondaryCtaHref="/services/corporate-catering"
     secondaryCtaLabel="All Corporate Services"
@@ -137,7 +138,7 @@ import { businessDiningGallery } from '@/lib/service-child-galleries';
       'Dietary handling with individual-level care',
       'Cleanup and reset so the venue stays pristine',
     ]}
-    ctaHref="/contact/get-a-quote"
+    ctaHref={WHATSAPP_QUOTE_URL}
     ctaLabel="Request a Quote"
   />
 

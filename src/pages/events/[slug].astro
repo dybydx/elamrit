@@ -48,6 +48,7 @@ const breadcrumb = [
 
 const title = `${entry.data.title} — Elamrit Events`;
 const description = entry.data.excerpt;
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
 ---
 
 <BaseLayout
@@ -75,7 +76,7 @@ const description = entry.data.excerpt;
     quoteAttribution={entry.data.quoteAttribution}
   >
     <div class="mt-8 flex flex-wrap gap-4">
-      <Button href="/contact/get-a-quote" variant="creamOnDark">Get a Quote</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="creamOnDark">Get a Quote</Button>
       <Button href="/events" variant="outlineCream">All events</Button>
     </div>
   </PageHero>
