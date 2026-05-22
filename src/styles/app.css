@@ -47,6 +47,13 @@
   --bg-gallery-tile: color-mix(in srgb, var(--cream) 76%, var(--gray-orange) 24%);
   --text-muted-on-cream: color-mix(in srgb, var(--dark-brown) 72%, var(--gray-orange) 28%);
   --text-muted-on-cream-soft: color-mix(in srgb, var(--dark-brown) 58%, var(--gray-orange) 42%);
+  /* WCAG AA on cream / light-blush (section labels, nav taglines) */
+  --text-accent-on-cream: color-mix(in srgb, var(--gray-orange) 58%, var(--dark-brown) 42%);
+  --text-label-on-cream: color-mix(in srgb, var(--dark-red) 70%, var(--dark-brown) 30%);
+  --text-accent-on-light: color-mix(in srgb, var(--gray-orange) 55%, var(--dark-brown) 45%);
+  /* WCAG AA on dark-red footer */
+  --text-on-dark-red-muted: color-mix(in srgb, var(--blush) 82%, var(--cream) 18%);
+  --text-on-dark-red-subtle: color-mix(in srgb, var(--blush) 74%, var(--cream) 26%);
 
   --bg-philosophy: color-mix(in srgb, var(--light-blush) 55%, var(--blush) 45%);
   --bg-locations: color-mix(in srgb, var(--cream) 62%, var(--green) 38%);
@@ -153,6 +160,26 @@
     @apply mb-4 block font-body text-[10px] tracking-[0.4em] text-dark-red uppercase;
   }
 
+  .text-accent-on-cream {
+    color: var(--text-accent-on-cream);
+  }
+
+  .text-label-on-cream {
+    color: var(--text-label-on-cream);
+  }
+
+  .text-accent-on-light {
+    color: var(--text-accent-on-light);
+  }
+
+  .text-on-dark-red-muted {
+    color: var(--text-on-dark-red-muted);
+  }
+
+  .text-on-dark-red-subtle {
+    color: var(--text-on-dark-red-subtle);
+  }
+
   .section-header-title {
     @apply font-serif text-[clamp(30px,3.5vw,46px)] font-light leading-tight text-dark-brown;
   }
@@ -184,7 +211,7 @@
 
 #mainNav.scrolled .nav-logo-tag,
 #mainNav.nav-solid .nav-logo-tag {
-  @apply text-gray-orange;
+  color: var(--text-accent-on-cream);
 }
 
 #mainNav.scrolled .nav-item > a,
