@@ -1,6 +1,9 @@
 ---
 import Button from '@/components/ui/Button.astro';
 import { heroLocationsEyebrow } from '@/lib/locations';
+import { responsiveWebpAt } from '@/lib/images';
+
+const heroPosterSrc = responsiveWebpAt('/images/hero-poster.webp', 1280);
 
 const heroContentClasses =
   'relative z-[2] mx-auto max-w-[880px] px-12 text-center max-[1024px]:max-w-[680px] max-[1024px]:px-8';
@@ -42,7 +45,7 @@ const muteButtonClasses =
         loop
         muted
         playsinline
-        poster="/images/hero-poster.webp"
+        poster={heroPosterSrc}
         src="/videos/hero-reel.mp4"
       >
       </video>

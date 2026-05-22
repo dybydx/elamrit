@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { heroPosterPreloadSrcset, responsiveWebpAt } from '@/lib/images';
 import Nav from '../components/shared/Nav.astro';
 import Hero from '../components/home/hero/Hero.astro';
 import Marquee from '../components/home/hero/Marquee.astro';
@@ -19,7 +20,15 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
   description="Elamrit crafts unforgettable culinary experiences for weddings, corporate events, and social celebrations. Premium luxury catering across Pune and Pan India."
   bottomCta="home"
 >
-  <link slot="head" rel="preload" as="image" href="/images/hero-poster.webp" type="image/webp" />
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href={responsiveWebpAt('/images/hero-poster.webp', 1280)}
+    imagesrcset={heroPosterPreloadSrcset()}
+    imagesizes="100vw"
+    type="image/webp"
+  />
   <Nav />
   <Hero />
   <Marquee />

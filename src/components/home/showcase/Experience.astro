@@ -1,6 +1,9 @@
 ---
 import Button from '@/components/ui/Button.astro';
 import Card from '@/components/ui/Card.astro';
+import { responsiveWebpAt } from '@/lib/images';
+
+const experiencePosterSrc = responsiveWebpAt('/images/hero-poster.webp', 1280);
 ---
   <section
     id="experience"
@@ -75,7 +78,7 @@ import Card from '@/components/ui/Card.astro';
           controls
           playsinline
           preload="metadata"
-          poster="/images/hero-poster.webp"
+          poster={experiencePosterSrc}
           src="/videos/hero-reel.mp4"
         ></video>
       </div>

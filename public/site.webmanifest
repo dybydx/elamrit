@@ -1,0 +1,15 @@
+{
+  "name": "Elamrit",
+  "short_name": "Elamrit",
+  "description": "Premium luxury catering — Luxe Feast",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#24211f",
+  "background_color": "#24211f",
+  "display": "standalone"
+}

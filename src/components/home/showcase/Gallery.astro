@@ -1,6 +1,17 @@
 ---
 import Button from '@/components/ui/Button.astro';
-import { preferWebp } from '@/lib/images';
+import {
+  GALLERY_SRC_WIDTHS,
+  galleryDimensions,
+  responsiveWebpSrc,
+  responsiveWebpSrcset,
+} from '@/lib/images';
+
+const galleryDefault = galleryDimensions(1040);
+const galleryTileSizesLarge =
+  '(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw';
+const galleryTileSizesDefault =
+  '(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw';
 
 const galleryTiles = [
   {
@@ -44,13 +55,19 @@ const galleryTiles = [
         galleryTiles.map((tile, index) => (
           <div class:list={['group', tile.tileClass]}>
             <picture class="block h-full w-full">
-              <source srcset={preferWebp(tile.imageUrl)} type="image/webp" />
+              <source
+                type="image/webp"
+                srcset={responsiveWebpSrcset(tile.imageUrl, GALLERY_SRC_WIDTHS)}
+                sizes={index === 0 ? galleryTileSizesLarge : galleryTileSizesDefault}
+              />
               <img
-                src={tile.imageUrl}
+                src={responsiveWebpSrc(tile.imageUrl, GALLERY_SRC_WIDTHS)}
+                srcset={responsiveWebpSrcset(tile.imageUrl, GALLERY_SRC_WIDTHS)}
+                sizes={index === 0 ? galleryTileSizesLarge : galleryTileSizesDefault}
                 alt=""
-                width="1376"
-                height="768"
-                loading={index === 0 ? 'eager' : 'lazy'}
+                width={galleryDefault.width}
+                height={galleryDefault.height}
+                loading="lazy"
                 decoding="async"
                 class="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] [filter:saturate(0.7)_brightness(0.8)]"
               />

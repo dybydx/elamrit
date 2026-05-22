@@ -1,7 +1,16 @@
 ---
 import type { GalleryItem } from '@/lib/gallery-data';
 import { galleryFilterOptions } from '@/lib/gallery-data';
-import { preferWebp } from '@/lib/images';
+import {
+  GALLERY_SRC_WIDTHS,
+  galleryDimensions,
+  responsiveWebpSrc,
+  responsiveWebpSrcset,
+} from '@/lib/images';
+
+const galleryThumb = galleryDimensions(768);
+const galleryGridSizes =
+  '(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw';
 
 interface Props {
   items: GalleryItem[];
@@ -80,16 +89,22 @@ const filterBtnClass =
                 type="button"
                 class="group relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-[var(--bg-gallery-tile)] text-left outline-none ring-dark-red focus-visible:ring-2"
                 data-gallery-open
-                data-src={item.src}
+                data-src={responsiveWebpSrc(item.src, GALLERY_SRC_WIDTHS)}
                 data-alt={item.alt}
               >
                 <picture class="block h-full w-full">
-                  <source srcset={preferWebp(item.src)} type="image/webp" />
+                  <source
+                    type="image/webp"
+                    srcset={responsiveWebpSrcset(item.src, GALLERY_SRC_WIDTHS)}
+                    sizes={galleryGridSizes}
+                  />
                   <img
-                    src={item.src}
+                    src={responsiveWebpSrc(item.src, GALLERY_SRC_WIDTHS)}
+                    srcset={responsiveWebpSrcset(item.src, GALLERY_SRC_WIDTHS)}
+                    sizes={galleryGridSizes}
                     alt={item.alt}
-                    width="800"
-                    height="600"
+                    width={galleryThumb.width}
+                    height={galleryThumb.height}
                     loading="lazy"
                     decoding="async"
                     class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
