@@ -10,7 +10,12 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always',
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes('/catering-in/singapore'),
+    }),
+  ],
   redirects: {
     '/catering-in/delhi-ncr': '/catering-in/delhi',
   },

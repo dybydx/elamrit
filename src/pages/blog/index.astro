@@ -23,6 +23,9 @@ const page = 1;
 const posts = sliceBlogPage(sorted, page, BLOG_PAGE_SIZE);
 const totalPages = totalBlogPages(sorted.length);
 import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
+
+const siteOrigin = (Astro.site ?? new URL('https://elamrit.com')).origin;
+const blogNextHref = totalPages > 1 ? `${siteOrigin}/blog/page/2` : null;
 ---
 
 <BaseLayout
@@ -30,6 +33,7 @@ import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
   description="Articles on wedding feasts, corporate programmes, and memorable catering — from the Elamrit team. Pune, Pan India, and editorial notes for hosts and planners."
   bottomCta="about"
 >
+  {blogNextHref ? <link slot="head" rel="next" href={blogNextHref} /> : null}
   <Nav variant="solid" />
 
   <PageHero

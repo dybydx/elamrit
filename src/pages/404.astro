@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/shared/Nav.astro';
+import Button from '@/components/ui/Button.astro';
+import SiteFooter from '@/components/shared/SiteFooter.astro';
+import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
+---
+
+<BaseLayout
+  title="Page Not Found — Elamrit Luxe Feast"
+  description="This page could not be found. Explore Elamrit catering services, menus, gallery, and contact options."
+  robots="noindex, follow"
+>
+  <Nav variant="solid" />
+
+  <section class="flex min-h-[60vh] flex-col items-center justify-center bg-cream px-5 py-24 text-center md:px-10">
+    <p class="mb-4 font-body text-[12px] tracking-[0.28em] text-gray-orange uppercase">404</p>
+    <h1 class="mb-5 font-display text-[clamp(32px,5vw,56px)] tracking-[0.2em] text-dark-brown uppercase">
+      Page not found
+    </h1>
+    <p class="mx-auto mb-10 max-w-[480px] font-body text-[18px] leading-[1.8] text-[var(--text-muted-on-cream)]">
+      The link may be outdated or mistyped. Head home or reach out — we can help you plan your next feast.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <Button href="/">Home</Button>
+      <Button href="/services" variant="outlineCta">Services</Button>
+      <Button href="/menus" variant="outlineCta">Menus</Button>
+      <Button href={WHATSAPP_QUOTE_URL} variant="outlineCta">Get a Quote</Button>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" />
+</BaseLayout>

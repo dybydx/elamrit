@@ -1,11 +1,18 @@
 ---
 import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
+import { SOCIAL_URLS } from '@/lib/site-seo';
 
 export interface Props {
   showMark?: boolean;
 }
 
 const { showMark = true } = Astro.props;
+
+const socialLinks = [
+  { href: SOCIAL_URLS.instagram, label: 'Instagram' },
+  { href: SOCIAL_URLS.facebook, label: 'Facebook' },
+  { href: SOCIAL_URLS.linkedin, label: 'LinkedIn' },
+].filter((item) => item.href.length > 0);
 ---
 
 <footer class="site-footer border-t-[3px] border-green bg-dark-red pb-8 text-blush">
@@ -38,39 +45,39 @@ const { showMark = true } = Astro.props;
         <p class="mb-7 max-w-[280px] font-body text-[16px] leading-[1.85] text-on-dark-red-muted">
           Premium catering crafted for life's most significant moments. Pune-based. Pan India. Singapore — coming soon.
         </p>
-        <nav class="flex gap-3" aria-label="Social media">
-          <a
-            class="footer-social-link flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
-            href="#"
-            aria-label="Instagram"
-          >
-            <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"></circle>
-            </svg>
-          </a>
-          <a
-            class="footer-social-link flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
-            href="#"
-            aria-label="Facebook"
-          >
-            <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke-linejoin="round"></path>
-            </svg>
-          </a>
-          <a
-            class="footer-social-link flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
-            href="#"
-            aria-label="LinkedIn"
-          >
-            <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <rect x="2" y="9" width="4" height="12" rx="0.5"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-        </nav>
+        {
+          socialLinks.length > 0 ? (
+            <nav class="flex gap-3" aria-label="Social media">
+              {socialLinks.map((item) => (
+                <a
+                  class="footer-social-link flex h-[34px] w-[34px] items-center justify-center border border-[rgba(189,148,118,0.25)] text-gray-orange transition-all duration-200 hover:border-gray-orange hover:bg-[rgba(189,148,118,0.08)] hover:text-cream"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                >
+                  {item.label === 'Instagram' ? (
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
+                    </svg>
+                  ) : item.label === 'Facebook' ? (
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke-linejoin="round" />
+                    </svg>
+                  ) : (
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2" stroke-linecap="round" stroke-linejoin="round" />
+                      <rect x="2" y="9" width="4" height="12" rx="0.5" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  )}
+                </a>
+              ))}
+            </nav>
+          ) : null
+        }
       </div>
 
       <div class="footer-col">
@@ -97,13 +104,13 @@ const { showMark = true } = Astro.props;
         </h3>
         <ul class="flex list-none flex-col gap-2.5">
           <li><a href="/about" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">About Elamrit</a></li>
-          <li><a href="#" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Menus</a></li>
+          <li><a href="/menus" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Menus</a></li>
           <li><a href="/gallery" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Gallery</a></li>
           <li><a href="/journal" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Journal</a></li>
           <li><a href="/blog" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Blog</a></li>
           <li><a href="/events" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Events</a></li>
           <li><a href="/food-junction" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Food Junction</a></li>
-          <li><a href="#" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Testimonials</a></li>
+          <li><a href="/testimonials" class="font-body text-[16px] text-on-dark-red-muted transition-colors hover:text-cream">Testimonials</a></li>
         </ul>
       </div>
 

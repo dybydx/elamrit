@@ -57,10 +57,10 @@ import { WHATSAPP_QUOTE_URL } from '@/lib/contact';
   bottomCta="about"
   ogType="article"
   image={entry.data.heroImageSrc}
-  article={{
-    headline: entry.data.title,
-    datePublished: entry.data.eventAt,
-    section: entry.data.tag,
+  event={{
+    name: entry.data.title,
+    startDate: entry.data.eventAt,
+    location: entry.data.location,
   }}
 >
   <Nav variant="solid" />

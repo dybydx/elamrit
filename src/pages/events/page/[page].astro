@@ -42,13 +42,21 @@ if (pageNum > totalPages) {
 
 const events = sliceEventPage(sorted, pageNum, EVENT_PAGE_SIZE);
 const startIndex = (pageNum - 1) * EVENT_PAGE_SIZE;
+
+const siteOrigin = (Astro.site ?? new URL('https://elamrit.com')).origin;
+const prevHref =
+  pageNum === 2 ? `${siteOrigin}/events` : `${siteOrigin}/events/page/${pageNum - 1}`;
+const nextHref = pageNum < totalPages ? `${siteOrigin}/events/page/${pageNum + 1}` : null;
+const pageDescription = `Older Elamrit event showcases — page ${pageNum} of ${totalPages}. Dated programme notes on pacing, format, and menu.`;
 ---
 
 <BaseLayout
   title={`Events — page ${pageNum} — Elamrit Luxe Feast`}
-  description="Archive of catered programmes and celebrations — pacing, format, and how the menu supported the room."
+  description={pageDescription}
   bottomCta="about"
 >
+  <link slot="head" rel="prev" href={prevHref} />
+  {nextHref ? <link slot="head" rel="next" href={nextHref} /> : null}
   <Nav variant="solid" />
 
   <PageHero

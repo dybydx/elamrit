@@ -42,13 +42,21 @@ if (pageNum > totalPages) {
 
 const posts = sliceBlogPage(sorted, pageNum, BLOG_PAGE_SIZE);
 const startIndex = (pageNum - 1) * BLOG_PAGE_SIZE;
+
+const siteOrigin = (Astro.site ?? new URL('https://elamrit.com')).origin;
+const prevHref =
+  pageNum === 2 ? `${siteOrigin}/blog` : `${siteOrigin}/blog/page/${pageNum - 1}`;
+const nextHref = pageNum < totalPages ? `${siteOrigin}/blog/page/${pageNum + 1}` : null;
+const pageDescription = `Older Elamrit blog articles — page ${pageNum} of ${totalPages}. Wedding feasts, corporate programmes, and catering notes for hosts and planners.`;
 ---
 
 <BaseLayout
   title={`Blog — page ${pageNum} — Elamrit Luxe Feast`}
-  description="Articles on wedding feasts, corporate programmes, and memorable catering — from the Elamrit team."
+  description={pageDescription}
   bottomCta="about"
 >
+  <link slot="head" rel="prev" href={prevHref} />
+  {nextHref ? <link slot="head" rel="next" href={nextHref} /> : null}
   <Nav variant="solid" />
 
   <PageHero
