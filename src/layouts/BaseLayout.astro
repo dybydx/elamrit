@@ -2,7 +2,7 @@
 import '../styles/app.css';
 import PageCta from '@/components/shared/PageCta.astro';
 
-const DEFAULT_OG_IMAGE = '/images/gallery/elamrit-gallery-wedding-feast.png';
+const DEFAULT_OG_IMAGE = '/images/gallery/elamrit-gallery-wedding-feast.webp';
 const SITE_FALLBACK = 'https://elamrit.com';
 
 interface ArticleMeta {
@@ -130,13 +130,6 @@ const jsonLdSafe =
     {article?.section ? <meta property="article:section" content={article.section} /> : null}
 
     {jsonLdSafe ? <script type="application/ld+json" set:html={jsonLdSafe} /> : null}
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
 
     {
       gaId ? (

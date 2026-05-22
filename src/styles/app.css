@@ -1,3 +1,15 @@
+@import '@fontsource/aboreto/400.css';
+@import '@fontsource/cormorant-garamond/300.css';
+@import '@fontsource/cormorant-garamond/300-italic.css';
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/500-italic.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/400-italic.css';
+@import '@fontsource/eb-garamond/500.css';
+@import '@fontsource/eb-garamond/500-italic.css';
 
 @import 'tailwindcss';
 
@@ -439,12 +451,16 @@ body.mobile-menu-open {
   transform: rotate(225deg) translateY(2px);
 }
 
-/* Accordion content panel */
+/* Accordion content panel (fixed max-height — no JS scrollHeight reads) */
 .mobile-accordion-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
   background: color-mix(in srgb, var(--light-blush) 55%, var(--cream) 45%);
+}
+
+.mobile-accordion-content[data-open='true'] {
+  max-height: min(80vh, 720px);
 }
 
 .mobile-accordion-heading {

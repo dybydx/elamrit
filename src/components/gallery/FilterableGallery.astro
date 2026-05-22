@@ -1,6 +1,7 @@
 ---
 import type { GalleryItem } from '@/lib/gallery-data';
 import { galleryFilterOptions } from '@/lib/gallery-data';
+import { preferWebp } from '@/lib/images';
 
 interface Props {
   items: GalleryItem[];
@@ -82,15 +83,18 @@ const filterBtnClass =
                 data-src={item.src}
                 data-alt={item.alt}
               >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  width="800"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                />
+                <picture class="block h-full w-full">
+                  <source srcset={preferWebp(item.src)} type="image/webp" />
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  />
+                </picture>
                 <span
                   class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(36,33,31,0.55)_0%,transparent_55%)]"
                   aria-hidden="true"

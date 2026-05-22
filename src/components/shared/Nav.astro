@@ -222,7 +222,7 @@ const navLinkClasses =
           Services
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-services" class="mobile-accordion-content">
+        <div id="mob-services" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">By Occasion</span>
           <a href="/services/wedding-catering">Wedding Catering</a>
           <a href="/services/corporate-catering">Corporate Catering</a>
@@ -242,7 +242,7 @@ const navLinkClasses =
           Menus
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-menus" class="mobile-accordion-content">
+        <div id="mob-menus" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">By Cuisine</span>
           <a href="/menus">All Menus</a>
           <a href="/menus/indian-cuisine">Indian Cuisine</a>
@@ -260,7 +260,7 @@ const navLinkClasses =
           Locations
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-locations" class="mobile-accordion-content">
+        <div id="mob-locations" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">We Cater In</span>
           {NAV_LOCATIONS.map((loc) => (
             <a href={loc.href} class:list={[{ soon: loc.soon }]}>{loc.label}</a>
@@ -277,7 +277,7 @@ const navLinkClasses =
           Journal
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-journal" class="mobile-accordion-content">
+        <div id="mob-journal" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">Read &amp; browse</span>
           <a href="/journal">Overview</a>
           <a href="/blog">Blog</a>
@@ -290,7 +290,7 @@ const navLinkClasses =
           About
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-about" class="mobile-accordion-content">
+        <div id="mob-about" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">Elamrit</span>
           <a href="/about">About Elamrit</a>
           <a href="/about#story">Our Story</a>
@@ -305,7 +305,7 @@ const navLinkClasses =
           Food Junction
           <span class="mobile-nav-chevron" aria-hidden="true"></span>
         </button>
-        <div id="mob-fj" class="mobile-accordion-content">
+        <div id="mob-fj" class="mobile-accordion-content" data-open="false">
           <span class="mobile-accordion-heading">Our Sister Brand</span>
           <a href="/food-junction">Overview</a>
           <a href="/food-junction/services">Corporate Services</a>
@@ -325,6 +325,24 @@ const navLinkClasses =
     <a href={WHATSAPP_QUOTE_URL} target="_blank" rel="noopener noreferrer" class="mobile-menu-cta">Get a Quote</a>
   </div>
 </div>
+
+{!isSolid && (
+  <script is:inline>
+    (function () {
+      var nav = document.getElementById('mainNav');
+      if (!nav) return;
+      var scrolled = false;
+      function applyScrollState() {
+        var next = window.scrollY > 60;
+        if (next === scrolled) return;
+        scrolled = next;
+        nav.classList.toggle('scrolled', next);
+      }
+      window.addEventListener('scroll', applyScrollState, { passive: true });
+      requestAnimationFrame(applyScrollState);
+    })();
+  </script>
+)}
 
 <script is:inline>
   (function () {
@@ -364,21 +382,12 @@ const navLinkClasses =
       if (!content) return;
       var trigger = content.previousElementSibling;
       var isOpen = content.dataset.open === 'true';
+      var nextOpen = !isOpen;
 
-      if (isOpen) {
-        content.style.maxHeight = '0px';
-        content.dataset.open = 'false';
-        if (trigger) {
-          trigger.classList.remove('active');
-          trigger.setAttribute('aria-expanded', 'false');
-        }
-      } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        content.dataset.open = 'true';
-        if (trigger) {
-          trigger.classList.add('active');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
+      content.dataset.open = nextOpen ? 'true' : 'false';
+      if (trigger) {
+        trigger.classList.toggle('active', nextOpen);
+        trigger.setAttribute('aria-expanded', nextOpen ? 'true' : 'false');
       }
     };
   })();

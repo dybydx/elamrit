@@ -90,7 +90,7 @@ export function getGalleryItems(): GalleryItem[] {
   collectImageFiles(publicImages, absFiles);
 
   const publicRoot = path.join(process.cwd(), 'public');
-  const items: GalleryItem[] = [];
+  const byBase = new Map<string, GalleryItem>();
 
   for (const abs of absFiles) {
     const relPublic = path.relative(publicRoot, abs).replace(/\\/g, '/');
@@ -100,13 +100,26 @@ export function getGalleryItems(): GalleryItem[] {
     const categories = categoriesForRelPath(relFromImages);
     if (categories.length === 0) continue;
 
-    items.push({
-      src: `/${relPublic}`,
+    const src = `/${relPublic}`;
+    const baseKey = src.replace(/\.(png|jpe?g|webp|gif)$/i, '');
+    const ext = path.extname(src).toLowerCase();
+    const existing = byBase.get(baseKey);
+    const item: GalleryItem = {
+      src,
       alt: humanAlt(relFromImages),
       categories,
-    });
+    };
+
+    if (!existing) {
+      byBase.set(baseKey, item);
+      continue;
+    }
+    if (ext === '.webp' && !existing.src.endsWith('.webp')) {
+      byBase.set(baseKey, item);
+    }
   }
 
+  const items = [...byBase.values()];
   items.sort((a, b) => a.src.localeCompare(b.src));
   return items;
 }

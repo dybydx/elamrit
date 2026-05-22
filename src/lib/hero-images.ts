@@ -4,29 +4,29 @@
  */
 export const defaultHero = '/images/about/elamrit-about-hero.png';
 
-export const servicesHub = '/images/gallery/elamrit-gallery-artisan-plating.png';
-export const wedding = '/images/gallery/elamrit-gallery-wedding-feast.png';
-export const corporate = '/images/gallery/elamrit-gallery-corporate-event.png';
+export const servicesHub = '/images/gallery/elamrit-gallery-artisan-plating.webp';
+export const wedding = '/images/gallery/elamrit-gallery-wedding-feast.webp';
+export const corporate = '/images/gallery/elamrit-gallery-corporate-event.webp';
 export const social = '/images/services/social-gallery-1.png';
-export const privateDining = '/images/gallery/elamrit-gallery-private-dining.png';
-export const menusHub = '/images/gallery/elamrit-gallery-artisan-plating.png';
-export const liveStations = '/images/gallery/elamrit-gallery-live-station.png';
-export const themeCatering = '/images/gallery/elamrit-gallery-live-station.png';
+export const privateDining = '/images/gallery/elamrit-gallery-private-dining.webp';
+export const menusHub = '/images/gallery/elamrit-gallery-artisan-plating.webp';
+export const liveStations = '/images/gallery/elamrit-gallery-live-station.webp';
+export const themeCatering = '/images/gallery/elamrit-gallery-live-station.webp';
 export const destinationWeddingsHub = '/images/services/wedding-gallery-2.png';
 export const panIndiaService = '/images/services/corporate-gallery-1.png';
 export const testimonials = '/images/services/social-gallery-2.png';
 
 /** Split hero for the main gallery page */
-export const galleryPage = '/images/gallery/elamrit-gallery-live-station.png';
+export const galleryPage = '/images/gallery/elamrit-gallery-live-station.webp';
 
 /** Food Junction (sister brand — corporate events) */
 export const foodJunctionHub = '/images/services/corporate-gallery-2.png';
 export const foodJunctionMenusHero = '/images/menus/menu-card-fusion.png';
 
-export const cateringPune = '/images/gallery/elamrit-gallery-wedding-feast.png';
-export const cateringPuneWedding = '/images/gallery/elamrit-gallery-wedding-feast.png';
-export const cateringMumbai = '/images/gallery/elamrit-gallery-corporate-event.png';
-export const cateringDelhiNcr = '/images/gallery/elamrit-gallery-corporate-event.png';
+export const cateringPune = '/images/gallery/elamrit-gallery-wedding-feast.webp';
+export const cateringPuneWedding = '/images/gallery/elamrit-gallery-wedding-feast.webp';
+export const cateringMumbai = '/images/gallery/elamrit-gallery-corporate-event.webp';
+export const cateringDelhiNcr = '/images/gallery/elamrit-gallery-corporate-event.webp';
 export const cateringBangalore = '/images/services/corporate-gallery-2.png';
 export const cateringHyderabad = '/images/services/wedding-gallery-1.png';
 export const cateringChennai = '/images/services/corporate-gallery-1.png';

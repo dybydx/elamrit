@@ -19,6 +19,7 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
   description="Elamrit crafts unforgettable culinary experiences for weddings, corporate events, and social celebrations. Premium luxury catering across Pune and Pan India."
   bottomCta="home"
 >
+  <link slot="head" rel="preload" as="image" href="/images/hero-poster.webp" type="image/webp" />
   <Nav />
   <Hero />
   <Marquee />
@@ -35,17 +36,6 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
 
 <script is:inline>
   (function () {
-    function initNavScroll() {
-      const nav = document.getElementById('mainNav');
-      if (!nav || nav.getAttribute('data-nav-variant') !== 'hero') return;
-      const onScroll = () => {
-        if (window.scrollY > 60) nav.classList.add('scrolled');
-        else nav.classList.remove('scrolled');
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    }
-
     window.toggleMute = function toggleMute() {
       const video = document.getElementById('heroVideo');
       const muteBtn = document.getElementById('muteBtn');
@@ -63,7 +53,5 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
         muteBtn.classList.add('unmuted');
       }
     };
-
-    document.addEventListener('DOMContentLoaded', initNavScroll);
   })();
 </script>
