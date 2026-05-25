@@ -1,0 +1,9 @@
+---
+const { class: className } = Astro.props;
+const base =
+  'list-disc space-y-2 pl-6 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]';
+---
+
+<ul class:list={[base, className]}>
+  <slot />
+</ul>

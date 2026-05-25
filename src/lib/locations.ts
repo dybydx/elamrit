@@ -17,10 +17,14 @@ export const NAV_LOCATIONS: NavLocation[] = [
   { label: 'Singapore', href: '/catering-in/singapore', soon: true },
 ];
 
+/** Cities shown in the home hero eyebrow, in display order. */
+const HERO_EYEBROW_LABELS = ['Pune', 'Mumbai', 'Chennai', 'Pan India'] as const;
+
 /** Active cities for compact hero eyebrow (excludes coming-soon). */
 export function heroLocationsEyebrow(locations: NavLocation[] = NAV_LOCATIONS): string {
-  return locations
-    .filter((loc) => !loc.soon)
-    .map((loc) => loc.label)
+  return HERO_EYEBROW_LABELS.map(
+    (label) => locations.find((loc) => loc.label === label && !loc.soon)?.label,
+  )
+    .filter((label): label is string => Boolean(label))
     .join(' \u00a0·\u00a0 ');
 }

@@ -3,11 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/shared/Nav.astro';
 import PageHero from '../components/shared/PageHero.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
+import LegalSection from '@/components/legal/LegalSection.astro';
+import LegalParagraph from '@/components/legal/LegalParagraph.astro';
+import LegalList from '@/components/legal/LegalList.astro';
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
+import { LEGAL_LAST_UPDATED } from '@/lib/legal';
+import { SITE_LEGAL_NAME } from '@/lib/site-seo';
 ---
 
 <BaseLayout
   title="Privacy Policy — Elamrit Luxe Feast"
-  description="Elamrit Luxe Feast privacy policy covering how we collect, use, and protect information shared through our website."
+  description="How Elamrit Luxe Feast collects, uses, and protects personal information shared through our website, enquiries, and event planning."
 >
   <Nav variant="solid" />
 
@@ -21,53 +27,221 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
 
   <main class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-24">
     <div class="mx-auto w-full max-w-[920px]">
-      <div class="prose max-w-none">
-        <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-          This policy is a placeholder for now and will be updated with Elamrit’s official legal text. If you have
-          questions, contact us at <a class="text-dark-red underline underline-offset-4" href="mailto:hello@elamrit.example">hello@elamrit.example</a>.
-        </p>
+      <p class="font-body text-[16px] leading-relaxed tracking-wide text-[var(--text-muted-on-cream-soft)]">
+        Last updated: {LEGAL_LAST_UPDATED}
+      </p>
 
-        <section class="mt-10">
-          <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Information we collect</h2>
-          <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-            When you reach out (e.g. “Get a Quote”), you may share details such as your name, contact information, event
-            date, city, guest count, and preferences.
-          </p>
-        </section>
+      <LegalParagraph class="mt-6">
+        {SITE_LEGAL_NAME} (“Elamrit”, “we”, “us”, or “our”) operates this website and related enquiry channels for
+        premium catering services in India. This Privacy Policy explains how we collect, use, store, and protect
+        personal information when you visit our site, contact us, or work with us on an event.
+      </LegalParagraph>
 
-        <section class="mt-10">
-          <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">How we use information</h2>
-          <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-            We use your information to respond to enquiries, prepare proposals, coordinate event planning, and improve
-            our service experience.
-          </p>
-        </section>
+      <LegalParagraph>
+        By using this website or sharing information with us, you acknowledge this policy. If you do not agree, please
+        do not use the site or submit personal information to us.
+      </LegalParagraph>
 
-        <section class="mt-10">
-          <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Cookies & analytics</h2>
-          <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-            We may use standard analytics and cookies to understand site usage and improve performance. Where required,
-            we will implement consent controls.
-          </p>
-        </section>
+      <LegalSection title="Who this policy applies to">
+        <LegalParagraph>
+          This policy applies to visitors to elamrit.com (and related pages), people who enquire about catering through
+          email, phone, WhatsApp, or web forms, clients and hosts we serve, and representatives of venues or partners
+          we coordinate with for events. It also covers the Food Junction brand pages on this site, which are operated
+          as part of the Elamrit group for corporate catering enquiries.
+        </LegalParagraph>
+      </LegalSection>
 
-        <section class="mt-10">
-          <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Data retention</h2>
-          <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-            We retain information for as long as needed to fulfil the purposes described above, or as required by law.
-          </p>
-        </section>
+      <LegalSection title="Information we collect">
+        <LegalParagraph>
+          The information we collect depends on how you interact with us. We generally receive only what you choose to
+          share, plus limited technical data needed to run and improve the website.
+        </LegalParagraph>
+        <LegalList>
+          <li>
+            <strong class="font-medium text-dark-brown">Contact and identity details</strong> — such as your name, email
+            address, phone number, and organisation (if applicable).
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Event and enquiry details</strong> — occasion type, preferred
+            dates, city or venue, guest count, menu preferences, dietary requirements, budget indications, and other
+            notes you include in a brief.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Correspondence</strong> — messages, call notes, and planning
+            discussions with our team before, during, and after an event.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Billing and contractual information</strong> — where relevant for
+            confirmed engagements (e.g. invoicing details, tax identifiers, payment references). We do not store full
+            payment card numbers on this website.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Website usage data</strong> — such as pages viewed, approximate
+            location derived from IP address, browser type, device type, and referral source, collected through cookies
+            or similar technologies when analytics is enabled.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Media you provide or approve</strong> — photographs, testimonials,
+            or event descriptions you submit or expressly allow us to publish.
+          </li>
+        </LegalList>
+      </LegalSection>
 
-        <section class="mt-10">
-          <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Your choices</h2>
-          <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-            You may request access, correction, or deletion of your information by contacting us.
-          </p>
-        </section>
-      </div>
+      <LegalSection title="How we collect information">
+        <LegalList>
+          <li>Directly from you — via quote requests, contact pages, email, phone, WhatsApp, or in-person conversations.</li>
+          <li>Automatically — through essential site operation and, where configured, analytics tools.</li>
+          <li>
+            From third parties you authorise — such as wedding planners, corporate offices, or venue coordinators who
+            share briefs on your behalf (we expect they have your permission to do so).
+          </li>
+        </LegalList>
+      </LegalSection>
+
+      <LegalSection title="How we use your information">
+        <LegalParagraph>We use personal information for legitimate business purposes, including to:</LegalParagraph>
+        <LegalList>
+          <li>Respond to enquiries and prepare proposals, tastings, and menu directions.</li>
+          <li>Plan, coordinate, and deliver catering services you engage us for.</li>
+          <li>Communicate about timelines, logistics, staffing, dietary needs, and on-day coordination.</li>
+          <li>Issue quotes, contracts, invoices, and payment follow-ups where applicable.</li>
+          <li>Maintain internal records, quality review, and training (often in anonymised or aggregated form).</li>
+          <li>Improve our website, services, and client experience, including understanding which pages are useful.</li>
+          <li>
+            Publish gallery, journal, blog, or testimonial content only where you have given clear permission or the
+            material is already public in context of the event.
+          </li>
+          <li>Comply with applicable law, respond to lawful requests, and protect our rights and guests’ safety.</li>
+        </LegalList>
+        <LegalParagraph>
+          We do not sell your personal information. We do not use enquiry details for unrelated third-party marketing.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Legal basis (India)">
+        <LegalParagraph>
+          We process personal data in accordance with applicable Indian law, including the Digital Personal Data
+          Protection Act, 2023 (“DPDP Act”), where it applies. Depending on the context, processing may be based on your
+          consent, performance of a contract or pre-contract steps you request, compliance with law, or our legitimate
+          interests in operating a professional catering business — always balanced against your rights.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="When we share information">
+        <LegalParagraph>
+          We share information only where needed and with appropriate safeguards:
+        </LegalParagraph>
+        <LegalList>
+          <li>
+            <strong class="font-medium text-dark-brown">Service providers</strong> — such as hosting, email, analytics, or
+            operational tools that process data on our instructions and under confidentiality obligations.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Event partners</strong> — venues, planners, or vendors involved in
+            your programme, limited to what is necessary to execute the service you booked.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Professional advisers</strong> — lawyers, accountants, or insurers
+            where required for compliance or risk management.
+          </li>
+          <li>
+            <strong class="font-medium text-dark-brown">Legal and safety</strong> — when disclosure is required by law,
+            court order, or to prevent fraud, harm, or misuse.
+          </li>
+        </LegalList>
+        <LegalParagraph>
+          If analytics is enabled, Google Analytics may process usage data according to Google’s policies. You can learn
+          more at{' '}
+          <a class="text-dark-red underline underline-offset-4" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+            >Google’s Privacy Policy</a
+          >.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Cookies and similar technologies">
+        <LegalParagraph>
+          Our site may use essential cookies needed for basic functionality. When a Google Analytics measurement ID is
+          configured in our deployment, we may use analytics cookies to understand aggregated traffic patterns. You can
+          limit cookies through your browser settings; disabling cookies may affect some site features.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Data retention">
+        <LegalParagraph>
+          We retain personal information only for as long as necessary for the purposes described above — typically for
+          the duration of an enquiry or engagement, plus a reasonable period afterward for record-keeping, disputes,
+          tax, and legal compliance. Enquiry records that do not proceed to a booking may be archived or deleted
+          periodically unless you ask us to retain or remove them sooner.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Security">
+        <LegalParagraph>
+          We apply reasonable administrative, technical, and organisational measures to protect information against
+          unauthorised access, loss, or misuse. No method of transmission over the internet or electronic storage is
+          completely secure; we encourage you to share sensitive planning details through established contact channels
+          and avoid posting confidential information in public comments.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Your rights and choices">
+        <LegalParagraph>
+          Subject to applicable law, you may have the right to access, correct, update, or request deletion of your
+          personal information, withdraw consent where processing is consent-based, and raise a grievance with us
+          regarding our handling of your data.
+        </LegalParagraph>
+        <LegalParagraph>
+          To exercise these rights, contact us using the details below. We may need to verify your identity before
+          responding. If you are not satisfied with our response, you may have the right to lodge a complaint with the
+          Data Protection Board of India or other authority as provided under applicable law.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Children">
+        <LegalParagraph>
+          Our services are directed at adults planning events. We do not knowingly collect personal information from
+          children under 18 without appropriate parental or guardian involvement. If you believe we have received such
+          information in error, please contact us so we can delete it.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Third-party links">
+        <LegalParagraph>
+          Our website may link to external sites (for example social profiles or partner venues). We are not responsible
+          for the privacy practices of those sites. Review their policies before sharing information with them.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Changes to this policy">
+        <LegalParagraph>
+          We may update this Privacy Policy from time to time. The “Last updated” date at the top of this page will
+          change when we do. Material changes will be posted here; continued use of the site after updates constitutes
+          notice of the revised policy where permitted by law.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Contact and grievance">
+        <LegalParagraph>
+          For privacy questions, access requests, or grievances under the DPDP Act, contact:
+        </LegalParagraph>
+        <LegalList>
+          <li>
+            <strong class="font-medium text-dark-brown">{SITE_LEGAL_NAME}</strong> — Pune, Maharashtra, India (operational
+            headquarters)
+          </li>
+          <li>
+            Email:{' '}
+            <a class="text-dark-red underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </li>
+          <li>Phone: {CONTACT_PHONE_DISPLAY}</li>
+        </LegalList>
+        <LegalParagraph>
+          Related terms for use of this website are in our{' '}
+          <a class="text-dark-red underline underline-offset-4" href="/terms">Terms &amp; Conditions</a>.
+        </LegalParagraph>
+      </LegalSection>
     </div>
   </main>
 
   <SiteFooter slot="footer" />
 </BaseLayout>
-

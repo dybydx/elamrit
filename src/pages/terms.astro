@@ -3,11 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/shared/Nav.astro';
 import PageHero from '../components/shared/PageHero.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
+import LegalSection from '@/components/legal/LegalSection.astro';
+import LegalParagraph from '@/components/legal/LegalParagraph.astro';
+import LegalList from '@/components/legal/LegalList.astro';
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
+import { LEGAL_LAST_UPDATED } from '@/lib/legal';
+import { SITE_LEGAL_NAME } from '@/lib/site-seo';
 ---
 
 <BaseLayout
   title="Terms & Conditions — Elamrit Luxe Feast"
-  description="Elamrit Luxe Feast terms and conditions for website use and enquiries."
+  description="Terms and conditions for using the Elamrit Luxe Feast website and engaging with our premium catering services."
 >
   <Nav variant="solid" />
 
@@ -15,42 +21,186 @@ import SiteFooter from '../components/shared/SiteFooter.astro';
     variant="center"
     breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Terms' }]}
     titleHtml="TERMS &amp;<br />CONDITIONS"
-    description="Simple, fair terms for using our website and contacting our team."
+    description="Simple, fair terms for using our website and working with our team on your event."
     descriptionClass="mx-auto max-w-[760px]"
   />
 
   <main class="bg-cream px-5 py-16 md:px-10 lg:px-20 lg:py-24">
     <div class="mx-auto w-full max-w-[920px]">
-      <p class="font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-        This page is a placeholder and will be replaced with Elamrit’s official terms. For now, please treat all content
-        and proposals as subject to confirmation in writing.
+      <p class="font-body text-[16px] leading-relaxed tracking-wide text-[var(--text-muted-on-cream-soft)]">
+        Last updated: {LEGAL_LAST_UPDATED}
       </p>
 
-      <section class="mt-10">
-        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Website use</h2>
-        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-          You may browse and share site content for informational purposes. You agree not to misuse the site or attempt
-          to disrupt its operation.
-        </p>
-      </section>
+      <LegalParagraph class="mt-6">
+        These Terms &amp; Conditions (“Terms”) govern your use of the website operated by {SITE_LEGAL_NAME} (“Elamrit”,
+        “we”, “us”, or “our”) and your initial interactions with us before a separate written catering agreement is
+        signed. Please read them carefully.
+      </LegalParagraph>
 
-      <section class="mt-10">
-        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Enquiries & availability</h2>
-        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-          Submitting an enquiry does not guarantee availability. Dates, pricing, and service scope are confirmed only
-          through a written agreement.
-        </p>
-      </section>
+      <LegalParagraph>
+        By accessing or using this website, you agree to these Terms. If you do not agree, you must not use the site. A
+        confirmed catering engagement is governed by the written proposal, quotation, or contract we issue for that
+        event — which prevails over these Terms where they differ on commercial matters.
+      </LegalParagraph>
 
-      <section class="mt-10">
-        <h2 class="font-serif text-[26px] font-light leading-tight text-dark-brown">Changes</h2>
-        <p class="mt-3 font-body text-[18px] leading-[1.85] text-[var(--text-muted-on-cream)]">
-          We may update these terms over time. The latest version will be posted on this page.
-        </p>
-      </section>
+      <LegalSection title="About our services">
+        <LegalParagraph>
+          Elamrit provides premium catering and related event food services — including weddings, corporate programmes,
+          social celebrations, private dining, live stations, and Pan India deployments — primarily from our operational
+          base in Pune. Food Junction pages on this site describe our corporate catering offering under the same
+          operational standards.
+        </LegalParagraph>
+        <LegalParagraph>
+          Information on this website — menus, imagery, guest counts, cities served, and service descriptions — is
+          illustrative. Availability, pricing, staffing levels, and scope are confirmed only in writing for your
+          specific event.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Website use">
+        <LegalParagraph>You may browse this site for lawful, personal, or business planning purposes. You agree not to:</LegalParagraph>
+        <LegalList>
+          <li>Use the site in any way that violates applicable law or third-party rights.</li>
+          <li>Attempt to gain unauthorised access to our systems, scrape the site excessively, or disrupt its operation.</li>
+          <li>Copy, reproduce, or republish substantial portions of the site for commercial use without our written consent.</li>
+          <li>Misrepresent your affiliation with Elamrit or submit false or misleading enquiry information.</li>
+        </LegalList>
+      </LegalSection>
+
+      <LegalSection title="Intellectual property">
+        <LegalParagraph>
+          All content on this website — including text, photography, video, logos, layout, and design — is owned by or
+          licensed to Elamrit and protected by applicable intellectual property laws. You may share links to our pages
+          and quote brief excerpts with attribution; you may not use our brand assets or imagery to imply endorsement
+          without permission.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Enquiries, quotes, and bookings">
+        <LegalParagraph>
+          Submitting a “Get a Quote” request, contact form, email, WhatsApp message, or phone call does not create a
+          binding reservation or contract. Dates, menus, crew, equipment, and pricing remain subject to availability and
+          our written confirmation.
+        </LegalParagraph>
+        <LegalParagraph>
+          We may decline enquiries that are outside our capacity, location, licensing, or safety requirements. We aim to
+          respond promptly, but response times vary by season and enquiry complexity and are not guaranteed.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Commercial terms for confirmed events">
+        <LegalParagraph>
+          For events we agree to cater, the following will typically be set out in your quotation or contract (not on
+          this page):
+        </LegalParagraph>
+        <LegalList>
+          <li>Confirmed date, venue, service window, and guest numbers.</li>
+          <li>Menu scope, live stations, beverages, rentals, and staffing.</li>
+          <li>Fees, taxes, deposits, payment schedule, and accepted payment methods.</li>
+          <li>Cancellation, postponement, force majeure, and refund rules.</li>
+          <li>Venue access, power, water, permits, and host-provided infrastructure.</li>
+        </LegalList>
+        <LegalParagraph>
+          Unless expressly agreed in writing, standard commercial terms in that document apply. Verbal assurances from
+          any individual are not binding unless confirmed in the signed or written agreement.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Your responsibilities as a host">
+        <LegalParagraph>
+          You are responsible for providing accurate event information, timely approvals, and reasonable cooperation
+          with venue rules. This includes:
+        </LegalParagraph>
+        <LegalList>
+          <li>Timely sharing of final guest counts within agreed cut-off windows.</li>
+          <li>Accurate dietary and allergen information for your guests, communicated in advance.</li>
+          <li>Venue permissions, load-in access, parking, and security coordination.</li>
+          <li>Compliance with local laws, liquor licensing, and noise or timing restrictions at the property.</li>
+        </LegalList>
+      </LegalSection>
+
+      <LegalSection title="Food safety, allergies, and menus">
+        <LegalParagraph>
+          We take food safety and allergen management seriously and plan menus with the information you provide.
+          However, cross-contact may occur in busy kitchens and buffet environments, and we cannot guarantee an
+          allergen-free environment unless expressly agreed for a specific setup. Guests with severe allergies should
+          be advised to exercise caution and consult our team before the event.
+        </LegalParagraph>
+        <LegalParagraph>
+          Menu substitutions may be required due to seasonality, supply, or venue constraints. We will communicate
+          material changes in advance where possible.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Limitation of liability">
+        <LegalParagraph>
+          To the fullest extent permitted by applicable law, Elamrit is not liable for indirect, incidental, or
+          consequential losses arising from use of this website or from events beyond our reasonable control (including
+          venue failures, strikes, extreme weather, or government restrictions).
+        </LegalParagraph>
+        <LegalParagraph>
+          For confirmed catering services, liability limits and remedies (if any) are as set out in your written
+          agreement. Nothing in these Terms excludes liability that cannot be excluded under Indian law.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Indemnity">
+        <LegalParagraph>
+          You agree to indemnify and hold harmless Elamrit against claims, damages, or expenses arising from your breach
+          of these Terms, inaccurate information you provide, or conduct at your event that violates law or venue rules
+          — except to the extent caused by our negligence or wilful misconduct.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Force majeure">
+        <LegalParagraph>
+          Neither party is responsible for failure or delay due to events outside reasonable control — including natural
+          disasters, epidemics, government orders, civil unrest, or major transport disruption. Affected obligations
+          will be resumed or renegotiated in good faith; commercial treatment of deposits and postponements follows your
+          written contract.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Privacy">
+        <LegalParagraph>
+          Our collection and use of personal information is described in our{' '}
+          <a class="text-dark-red underline underline-offset-4" href="/privacy-policy">Privacy Policy</a>, which forms
+          part of your relationship with us.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Changes to these Terms">
+        <LegalParagraph>
+          We may update these Terms from time to time. The “Last updated” date will change accordingly. Your continued
+          use of the website after changes are posted constitutes acceptance of the revised Terms for website use.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Governing law and disputes">
+        <LegalParagraph>
+          These Terms are governed by the laws of India. Courts in Pune, Maharashtra shall have exclusive jurisdiction
+          over disputes arising from website use or pre-contract interactions, subject to any mandatory consumer
+          protections that apply to you.
+        </LegalParagraph>
+        <LegalParagraph>
+          We prefer to resolve concerns directly — please contact us first so we can address them promptly.
+        </LegalParagraph>
+      </LegalSection>
+
+      <LegalSection title="Contact">
+        <LegalList>
+          <li>
+            <strong class="font-medium text-dark-brown">{SITE_LEGAL_NAME}</strong> — Pune, Maharashtra, India
+          </li>
+          <li>
+            Email:{' '}
+            <a class="text-dark-red underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </li>
+          <li>Phone: {CONTACT_PHONE_DISPLAY}</li>
+        </LegalList>
+      </LegalSection>
     </div>
   </main>
 
   <SiteFooter slot="footer" />
 </BaseLayout>
-
