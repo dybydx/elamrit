@@ -638,6 +638,18 @@ body.mobile-menu-open {
   mix-blend-mode: multiply;
 }
 
+.client-logo-shell--rounded-dark {
+  @apply h-16 min-w-[168px] overflow-hidden rounded-lg bg-black px-4 py-2.5 opacity-90 md:h-[68px] md:min-w-[188px] md:px-5 md:py-3;
+}
+
+.client-logo-shell--rounded-dark:hover {
+  @apply opacity-100;
+}
+
+.client-logo-img--on-dark {
+  @apply h-11 w-auto max-w-[188px] object-contain md:h-12 md:max-w-[210px];
+}
+
 /* ═══ Testimonials — large quote glyph ═══ */
 .testi-card::before {
   content: '"';

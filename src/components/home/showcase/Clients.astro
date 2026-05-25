@@ -1,7 +1,7 @@
 ---
 import { cn } from '@/lib/utils';
 
-type ClientLogoTreatment = 'multiply' | 'default';
+type ClientLogoTreatment = 'multiply' | 'roundedDark' | 'default';
 
 interface ClientLogo {
   name: string;
@@ -20,9 +20,9 @@ const clients: ClientLogo[] = [
   { name: 'Globeflex', src: '/images/clients/globeflex.png', treatment: 'multiply' },
   { name: 'Amrut Software', src: '/images/clients/amrut.svg' },
   { name: 'KARA', src: '/images/clients/kra.png', treatment: 'multiply' },
-  { name: 'me-HR', src: '/images/clients/mehr.png', treatment: 'multiply' },
-  { name: 'Mittal Brothers', src: '/images/clients/mutual.png', treatment: 'multiply' },
-  { name: 'Parakh Foods', src: '/images/clients/parakh.png', treatment: 'multiply' },
+  { name: 'me-HR', src: '/images/clients/mehr-.png' },
+  { name: 'Mittal Brothers', src: '/images/clients/mittal-brothers.png', treatment: 'roundedDark' },
+  { name: 'Parakh Foods', src: '/images/clients/parakh-tr.png' },
 ];
 
 const clientsWrapperClasses = 'clients-track-wrapper relative overflow-hidden';
@@ -43,7 +43,12 @@ const clientsTrackClasses =
         [...clients, ...clients].map((client) => (
           <>
             <div class="client-logo flex shrink-0 items-center justify-center px-10 md:px-[52px]">
-              <div class="client-logo-shell">
+              <div
+                class={cn(
+                  'client-logo-shell',
+                  client.treatment === 'roundedDark' && 'client-logo-shell--rounded-dark',
+                )}
+              >
                 <img
                   src={client.src}
                   alt={client.name}
@@ -54,6 +59,7 @@ const clientsTrackClasses =
                   class={cn(
                     'client-logo-img',
                     client.treatment === 'multiply' && 'client-logo-img--multiply',
+                    client.treatment === 'roundedDark' && 'client-logo-img--on-dark',
                   )}
                 />
               </div>
