@@ -622,6 +622,22 @@ body.mobile-menu-open {
   background: linear-gradient(to left, var(--cream), transparent);
 }
 
+.client-logo-shell {
+  @apply flex h-14 min-w-[120px] items-center justify-center rounded-sm px-4 py-2 opacity-[0.72] transition-[opacity,filter] duration-300 md:h-[60px] md:min-w-[140px] md:px-5;
+}
+
+.client-logo-shell:hover {
+  @apply opacity-100;
+}
+
+.client-logo-img {
+  @apply h-9 w-auto max-w-[128px] object-contain md:h-10 md:max-w-[140px];
+}
+
+.client-logo-img--multiply {
+  mix-blend-mode: multiply;
+}
+
 /* ═══ Testimonials — large quote glyph ═══ */
 .testi-card::before {
   content: '"';
